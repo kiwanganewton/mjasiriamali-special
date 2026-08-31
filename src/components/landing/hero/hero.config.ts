@@ -33,7 +33,7 @@ export const heroSlides: HeroSlideData[] = [
   {
     id: 1,
 
-    title: "Market Your Business Properly",
+    title: "Skip the Cost. Keep Growing",
 
     description:
       "Running your business is already a full-time job, and you miss doing important things.",
