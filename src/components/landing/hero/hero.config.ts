@@ -69,7 +69,7 @@ export const heroSlides: HeroSlideData[] = [
   {
     id: 2,
 
-    title: "Package That Saves You Time and Money",
+    title: "Package That Makes Marketing Easier",
 
     description:
       "Running your business is already a full-time job, and you miss doing important things.",
@@ -92,7 +92,7 @@ export const heroSlides: HeroSlideData[] = [
       mobile: {
         x: "7%",
         y: "45%",
-        width: "66%",
+        width: "80%",
       },
     },
 
