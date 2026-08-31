@@ -127,8 +127,8 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
       >
         <h2
           className="
-            text-[27px]
-            font-semibold
+            text-[32px]
+            font-bold
             leading-[1.12]
             tracking-[-0.018em]
           "
