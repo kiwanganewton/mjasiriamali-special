@@ -15,13 +15,11 @@ export type HeroSlideData = {
   description: string;
   image: string;
 
-
-cta?: {
-  label: string;
-  variant?: "solid" | "outline";
-  tone?: "brand" | "dark" | "light";
-};
-
+  cta?: {
+    label: string;
+    variant?: "solid" | "outline";
+    tone?: "brand" | "dark" | "light";
+  };
 
   position: {
     desktop: HeroSlidePosition;
@@ -35,19 +33,18 @@ export const heroSlides: HeroSlideData[] = [
   {
     id: 1,
 
-    title: "Skip the Cost of Hiring a Team",
+    title: "Market Your Business Properly",
 
     description:
       "Running your business is already a full-time job, and you miss doing important things.",
 
     image: "/images/hero/slide-01.webp",
 
-
     cta: {
-  label: "Dicover More",
-  variant: "solid",
-  tone: "brand",
-},
+      label: "Dicover More",
+      variant: "solid",
+      tone: "brand",
+    },
 
     position: {
       desktop: {
@@ -79,11 +76,11 @@ export const heroSlides: HeroSlideData[] = [
 
     image: "/images/hero/slide-0000000000002.webp",
 
-        cta: {
-  label: "Discover More",
-  variant: "outline",
-  tone: "light",
-},
+    cta: {
+      label: "Discover More",
+      variant: "outline",
+      tone: "light",
+    },
 
     position: {
       desktop: {
@@ -110,16 +107,15 @@ export const heroSlides: HeroSlideData[] = [
 
     title: "Start Small & Grow Digitally with Us",
 
-    description:
-      "",
+    description: "",
 
     image: "/images/hero/slide-000003.webp",
 
-        cta: {
-  label: "Discover More",
-  variant: "outline",
-  tone: "brand",
-},
+    cta: {
+      label: "Discover More",
+      variant: "outline",
+      tone: "brand",
+    },
 
     position: {
       desktop: {
@@ -140,8 +136,4 @@ export const heroSlides: HeroSlideData[] = [
       paragraph: "#363a3e",
     },
   },
-
-  
 ];
-
-
