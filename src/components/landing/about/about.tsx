@@ -10,9 +10,9 @@ export default function About() {
             {aboutContent.eyebrow}
           </p> */}
 
-          <h2 className="text-3xl font-semibold leading-[1.15] tracking-[-0.025em] text-[#3f3f46] sm:text-4xl lg:text-[42px]">
+{/*           <h2 className="text-3xl font-semibold leading-[1.15] tracking-[-0.025em] text-[#3f3f46] sm:text-4xl lg:text-[42px]">
   {aboutContent.title}
-</h2>
+</h2> */}
 
           <p className="mt-7 text-base leading-[1.7] text-neutral-400 sm:text-lg lg:text-xl">
             {aboutContent.description}
