@@ -1,5 +1,5 @@
 export const aboutContent = {
-  eyebrow: "ABOUT US",
+  eyebrow: "ABOUT THE PACKAGE",
 
   title: "Your Entry to Result Driven Marketing",
 
