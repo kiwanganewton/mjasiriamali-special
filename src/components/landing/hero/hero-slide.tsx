@@ -136,7 +136,7 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
             leading-[1.12]
             tracking-[-0.018em]
 
-            max-[380px]:text-[30px]
+            max-[380px]:text-[32px]
           "
           style={{
             color: slide.colors.heading,
