@@ -69,7 +69,7 @@ export const heroSlides: HeroSlideData[] = [
   {
     id: 2,
 
-    title: "Package That Gives You Time Back",
+    title: "Stop Doing It All Yourself.",
 
     description:
       "Running your business is already a full-time job, and you miss doing important things.",
