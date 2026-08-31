@@ -14,7 +14,7 @@ export default function About() {
   {aboutContent.title}
 </h2> */}
 
-          <p className="mt-7 text-base leading-[1.7] text-neutral-400 sm:text-lg lg:text-xl">
+          <p className="mt-7 text-base leading-[1.7] text-neutral-500 sm:text-lg lg:text-xl">
             {aboutContent.description}
           </p>
         </div>
