@@ -2,7 +2,7 @@ import { aboutContent } from "./about.config";
 
 export default function About() {
   return (
-    <section className="bg-white pb-16 pt-6 sm:pb-20 sm:pt-10 lg:py-28">
+    <section className="bg-white pb-16 pt-0 sm:pb-20 sm:pt-6 lg:py-28">
       <div className="mx-auto grid w-full max-w-[1280px] items-center gap-10 px-5 sm:px-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16 lg:px-10">
         {/* Text content */}
         <div className="max-w-[540px]">
