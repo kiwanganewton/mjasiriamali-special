@@ -191,17 +191,18 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
 
       {/* MOBILE BUTTON */}
       {slide.cta && (
-        <div
-          className="
-            absolute
-            bottom-6
-            left-1/2
-            z-20
-            flex
-            -translate-x-1/2
-            md:hidden
-          "
-        >
+       <div
+  className="
+    absolute
+    bottom-6
+    left-0
+    z-20
+    flex
+    w-full
+    justify-center
+    md:hidden
+  "
+>
           <Button
             variant={slide.cta.variant}
             tone={slide.cta.tone}

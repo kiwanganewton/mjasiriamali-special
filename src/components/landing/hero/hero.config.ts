@@ -72,7 +72,7 @@ export const heroSlides: HeroSlideData[] = [
   {
     id: 2,
 
-    title: "Package That Saves You Time and Money..",
+    title: "Package That Saves You Time and Money",
 
     description:
       "Running your business is already a full-time job, and you miss doing important things.",
