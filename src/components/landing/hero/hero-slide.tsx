@@ -113,15 +113,16 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
       </div>
 
       {/* MOBILE CONTENT */}
-      <div
-        className="
-          absolute
-          z-10
-          flex
-          -translate-y-1/2
-          flex-col
-          md:hidden
-        "
+     <div
+  className="
+    absolute
+    z-10
+    flex
+    -translate-y-1/2
+    flex-col
+    md:hidden
+    max-[380px]:-translate-y-[60%]
+  "
         style={{
           left: mobile.x,
           top: mobile.y,
@@ -135,7 +136,7 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
             leading-[1.12]
             tracking-[-0.018em]
 
-            max-[380px]:text-[28px]
+            max-[380px]:text-[30px]
           "
           style={{
             color: slide.colors.heading,
