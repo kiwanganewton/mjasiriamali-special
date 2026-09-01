@@ -33,7 +33,7 @@ export const heroSlides: HeroSlideData[] = [
   {
     id: 1,
 
-    title: "Skip the Cost. Keep Growing",
+    title: "Just Skip the Cost. Keep Growing",
 
     description:
       "Running your business is already a full-time job, and you miss doing miss already ",
@@ -56,7 +56,7 @@ export const heroSlides: HeroSlideData[] = [
       mobile: {
         x: "7%",
         y: "33%",
-        width: "66%",
+        width: "86%",
       },
     },
 
