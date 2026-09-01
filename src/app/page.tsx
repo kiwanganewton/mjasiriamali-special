@@ -1,5 +1,6 @@
 import Hero from "@/components/landing/hero/hero";
 import About from "@/components/landing/about/about";
+import PackFeatures from "@/components/landing/pack-features/pack-features";
 
 export default function Home() {
   return (
@@ -8,7 +9,7 @@ export default function Home() {
       <Hero />
       <About />
 
-
+      <PackFeatures />
 
       
     </main>
