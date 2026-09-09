@@ -15,7 +15,7 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
       className="
         group
         relative
-        h-[520px]
+        h-[calc(100svh-4rem)]
         w-full
         shrink-0
         overflow-hidden
@@ -27,7 +27,7 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
         hover:-translate-y-[2px]
         hover:shadow-[0_18px_45px_rgba(0,0,0,0.12)]
 
-        sm:h-[560px]
+        sm:h-[calc(100svh-5rem)]
 
         md:h-[500px]
 
