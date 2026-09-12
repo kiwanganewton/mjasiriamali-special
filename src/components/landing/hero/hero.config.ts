@@ -69,12 +69,12 @@ export const heroSlides: HeroSlideData[] = [
   {
     id: 2,
 
-    title: "25% Discount On All Add-on.",
+    title: "",
 
     description:
-      "Running your business is already",
+      "Running your business is already a full-time job, and you miss doingtime job, and you miss doing",
 
-    image: "/images/hero/slide-00000000000000002.webp",
+    image: "/images/hero/slide-000000000000000002.webp",
 
     cta: {
       label: "Discover More",
@@ -97,8 +97,8 @@ export const heroSlides: HeroSlideData[] = [
     },
 
     colors: {
-      heading: "#f9f8f8",
-      paragraph: "#dbe0e6",
+      heading: "#C62828",
+      paragraph: "#363a3e",
     },
   },
 
