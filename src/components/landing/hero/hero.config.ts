@@ -72,9 +72,9 @@ export const heroSlides: HeroSlideData[] = [
     title: "25% Discount On All Add-on.",
 
     description:
-      "Running your business is already a full time job, and you miss doing miss already.",
+      "Running your business is already",
 
-    image: "/images/hero/slide-0000000000002.webp",
+    image: "/images/hero/slide-000000000000002.webp",
 
     cta: {
       label: "Discover More",
@@ -85,14 +85,14 @@ export const heroSlides: HeroSlideData[] = [
     position: {
       desktop: {
         x: "7%",
-        y: "50%",
+        y: "30%",
         width: "300px",
       },
 
       mobile: {
         x: "7%",
-        y: "45%",
-        width: "66%",
+        y: "33%",
+        width: "86%",
       },
     },
 
