@@ -28,7 +28,6 @@ export default function TrustConsultationBar({
           rounded-md
           border border-[#e3e3e3]
           bg-white
-          shadow-[0_3px_12px_rgba(0,0,0,0.05)]
           lg:grid-cols-[minmax(0,1fr)_300px]
         "
       >
