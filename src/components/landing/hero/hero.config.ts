@@ -69,7 +69,7 @@ export const heroSlides: HeroSlideData[] = [
   {
     id: 2,
 
-    title: "Stop Doing It All Yourself.",
+    title: "25% Discount On All Add-on.",
 
     description:
       "Running your business is already a full time job, and you miss doing miss already.",
@@ -113,7 +113,7 @@ export const heroSlides: HeroSlideData[] = [
 
     cta: {
       label: "Discover More",
-      variant: "outline",
+      variant: "solid",
       tone: "brand",
     },
 
