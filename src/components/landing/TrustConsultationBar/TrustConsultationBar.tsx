@@ -16,28 +16,41 @@ export default function TrustConsultationBar({
       aria-label="Consultation invitation"
       style={{ colorScheme: "only light" }}
       className="
-        relative mx-auto mt-6 mb-12
+        relative mx-auto mt-0 mb-12
         w-[calc(100%_-_2.5rem)] max-w-[1240px]
-        sm:mt-8 sm:mb-14 sm:w-[calc(100%_-_5rem)]
-        lg:mt-10 lg:mb-16 lg:w-[calc(100%_-_8rem)]
+        sm:mt-0 sm:mb-14 sm:w-[calc(100%_-_5rem)]
+        lg:mt-1 lg:mb-16 lg:w-[calc(100%_-_8rem)]
       "
     >
       <div
         className="
-          grid overflow-hidden rounded-lg
-          border border-[#e5e5e5]
-          !bg-[#ffffff]
-          shadow-[0_16px_38px_rgba(15,23,42,0.10)]
-          lg:grid-cols-[minmax(0,1fr)_330px]
+          grid overflow-hidden
+          rounded-md
+          border border-[#e3e3e3]
+          bg-white
+          shadow-[0_3px_12px_rgba(0,0,0,0.05)]
+          lg:grid-cols-[minmax(0,1fr)_300px]
         "
       >
-        <div className="flex items-center !bg-[#ffffff] px-7 py-8 sm:px-10 sm:py-9 lg:px-12 lg:py-10">
+        <div
+          className="
+            flex items-center
+            bg-white
+            px-7 py-7
+            sm:px-10 sm:py-8
+            lg:px-11 lg:py-9
+          "
+        >
           <div>
             <h2
               className="
-                max-w-[420px] text-[23px] font-semibold
-                leading-[1.12] tracking-[-0.025em]
-                !text-[#262626] sm:text-[25px]
+                max-w-[500px]
+                text-[23px]
+                font-semibold
+                leading-[1.15]
+                tracking-[-0.02em]
+                text-[#262626]
+                sm:text-[24px]
               "
             >
               {content.titlePrefix}
@@ -45,8 +58,11 @@ export default function TrustConsultationBar({
 
             <p
               className="
-                mt-4 max-w-[680px] text-[15px]
-                leading-[1.55] !text-[#737373]
+                mt-3
+                max-w-[680px]
+                text-[15px]
+                leading-[1.55]
+                text-[#737373]
                 sm:text-[16px]
               "
             >
@@ -57,10 +73,13 @@ export default function TrustConsultationBar({
 
         <div
           className="
-            flex items-center border-t border-[#e5e5e5]
-            !bg-[#fafafa] px-7 py-6
+            flex items-center
+            border-t border-[#e3e3e3]
+            bg-[#fafafa]
+            px-7 py-6
             sm:px-10 sm:py-7
-            lg:border-t-0 lg:border-l lg:px-8
+            lg:border-l lg:border-t-0
+            lg:px-8
           "
         >
           <Button
