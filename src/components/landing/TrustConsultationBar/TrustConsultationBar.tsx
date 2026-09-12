@@ -85,7 +85,15 @@ export default function TrustConsultationBar({
             tone="brand"
             variant="solid"
             onClick={onConsultationClick}
-            className="w-full gap-2"
+            className="
+              w-full gap-2
+              lg:border
+              lg:border-[#c8102e]
+              lg:bg-transparent
+              lg:text-[#c8102e]
+              lg:hover:bg-[#c8102e]
+              lg:hover:text-white
+            "
           >
             {content.buttonText}
             <ArrowRight size={17} aria-hidden="true" />

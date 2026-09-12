@@ -113,7 +113,7 @@ export const heroSlides: HeroSlideData[] = [
 
     cta: {
       label: "Discover More",
-      variant: "solid",
+      variant: "outline",
       tone: "brand",
     },
 

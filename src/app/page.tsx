@@ -12,10 +12,10 @@ export default function Home() {
       <Hero />
       <TrustConsultationBar />
      
-     
+      <About />
 
       <PackFeatures />
-       <About />
+     
 
       
     </main>
