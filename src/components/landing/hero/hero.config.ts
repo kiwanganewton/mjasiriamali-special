@@ -56,7 +56,7 @@ export const heroSlides: HeroSlideData[] = [
       mobile: {
         x: "7%",
         y: "30%",
-        width: "66%",
+        width: "86%",
       },
     },
 
@@ -127,7 +127,7 @@ export const heroSlides: HeroSlideData[] = [
       mobile: {
         x: "7%",
         y: "55%",
-        width: "66%",
+        width: "86%",
       },
     },
 
