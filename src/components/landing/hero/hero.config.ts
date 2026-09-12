@@ -36,7 +36,7 @@ export const heroSlides: HeroSlideData[] = [
     title: "Just Skip the Cost. Keep Growing",
 
     description:
-      "Running your business is already a full-time job, and you miss doing miss already ",
+      "Running your business is already a full-time job, and you miss doing  ",
 
     image: "/images/hero/slide-01.webp",
 
@@ -74,12 +74,12 @@ export const heroSlides: HeroSlideData[] = [
     description:
       "Running your business is already",
 
-    image: "/images/hero/slide-000000000000002.webp",
+    image: "/images/hero/slide-00000000000000002.webp",
 
     cta: {
       label: "Discover More",
-      variant: "outline",
-      tone: "light",
+      variant: "solid",
+      tone: "brand",
     },
 
     position: {
