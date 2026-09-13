@@ -26,16 +26,20 @@ export default function TrustConsultationBar({
         className="
           grid overflow-hidden
           rounded-md
-          border border-[#e3e3e3]
-          bg-white
+          border border-[#c8102e]
+          bg-[#c8102e]
+          sm:border-[#e3e3e3]
+          sm:bg-white
           lg:grid-cols-[minmax(0,1fr)_300px]
         "
       >
+        {/* Content */}
         <div
           className="
             flex items-center
-            bg-white
+            bg-[#c8102e]
             px-7 py-7
+            sm:bg-white
             sm:px-10 sm:py-8
             lg:px-11 lg:py-9
           "
@@ -48,8 +52,9 @@ export default function TrustConsultationBar({
                 font-semibold
                 leading-[1.15]
                 tracking-[-0.02em]
-                text-[#262626]
+                text-white
                 sm:text-[24px]
+                sm:text-[#262626]
               "
             >
               {content.titlePrefix}
@@ -61,8 +66,9 @@ export default function TrustConsultationBar({
                 max-w-[680px]
                 text-[15px]
                 leading-[1.55]
-                text-[#737373]
+                text-white/90
                 sm:text-[16px]
+                sm:text-[#737373]
               "
             >
               {content.description}
@@ -70,14 +76,18 @@ export default function TrustConsultationBar({
           </div>
         </div>
 
+        {/* Button */}
         <div
           className="
             flex items-center
-            border-t border-[#e3e3e3]
-            bg-[#fafafa]
+            border-t border-white/25
+            bg-[#c8102e]
             px-7 py-6
+            sm:border-t-0
+            sm:bg-[#fafafa]
             sm:px-10 sm:py-7
             lg:border-l lg:border-t-0
+            lg:border-[#e3e3e3]
             lg:px-8
           "
         >
@@ -87,12 +97,19 @@ export default function TrustConsultationBar({
             onClick={onConsultationClick}
             className="
               w-full gap-2
+              border-white
+              bg-white
+              text-[#c8102e]
+              hover:bg-white
+              hover:text-[#c8102e]
+
+              sm:border-[#c8102e]
+              sm:bg-transparent
+              sm:text-[#c8102e]
+              sm:hover:bg-[#c8102e]
+              sm:hover:text-white
+
               lg:border
-              lg:border-[#c8102e]
-              lg:bg-transparent
-              lg:text-[#c8102e]
-              lg:hover:bg-[#c8102e]
-              lg:hover:text-white
             "
           >
             {content.buttonText}
