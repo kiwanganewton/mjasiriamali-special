@@ -50,17 +50,36 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
         "
       />
 
-      {/* SUBTLE FULL OVERLAY */}
-      <div
-        className="
-          absolute
-          inset-0
-          bg-black/[0.12]
-          transition-opacity
-          duration-500
-          group-hover:bg-black/[0.08]
-        "
-      />
+     {/* SUBTLE FULL IMAGE OVERLAY */}
+<div
+  className="
+    absolute
+    inset-0
+    bg-black/[0.04]
+    transition-opacity
+    duration-500
+    group-hover:bg-black/[0.02]
+  "
+/>
+
+{/* LIGHT CORPORATE CONTENT OVERLAY */}
+<div
+  className="
+    pointer-events-none
+    absolute
+    inset-x-0
+    bottom-0
+    z-[5]
+    h-[55%]
+    bg-gradient-to-t
+    from-black/[0.21]
+    via-black/[0.075]
+    to-transparent
+    transition-opacity
+    duration-500
+    group-hover:opacity-85
+  "
+/>
 
       {/* DESKTOP / TABLET CONTENT */}
       <div
@@ -90,6 +109,7 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
           "
           style={{
             color: slide.colors.heading,
+            opacity: 0.84,
           }}
         >
           {slide.title}
@@ -113,16 +133,16 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
       </div>
 
       {/* MOBILE CONTENT */}
-     <div
-  className="
-    absolute
-    z-10
-    flex
-    -translate-y-1/2
-    flex-col
-    md:hidden
-    max-[380px]:-translate-y-[60%]
-  "
+      <div
+        className="
+          absolute
+          z-10
+          flex
+          -translate-y-1/2
+          flex-col
+          md:hidden
+          max-[380px]:-translate-y-[60%]
+        "
         style={{
           left: mobile.x,
           top: mobile.y,
@@ -135,11 +155,11 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
             font-bold
             leading-[1.12]
             tracking-[-0.018em]
-
             max-[380px]:text-[32px]
           "
           style={{
             color: slide.colors.heading,
+            opacity: 0.84,
           }}
         >
           {slide.title}
@@ -151,7 +171,6 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
             text-[15px]
             font-normal
             leading-[1.55]
-
             max-[380px]:text-[14px]
           "
           style={{
@@ -192,16 +211,16 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
 
       {/* MOBILE BUTTON */}
       {slide.cta && (
-      <div
-    className="
-      absolute
-      bottom-6
-      right-[7%]
-      z-20
-      flex
-      md:hidden
-    "
-  >
+        <div
+          className="
+            absolute
+            bottom-6
+            right-[7%]
+            z-20
+            flex
+            md:hidden
+          "
+        >
           <Button
             variant={slide.cta.variant}
             tone={slide.cta.tone}
