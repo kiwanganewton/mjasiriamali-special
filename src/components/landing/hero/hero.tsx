@@ -129,7 +129,7 @@ export default function Hero() {
     border
     border-neutral-200
     bg-white
-    text-neutral-900
+    text-neutral-900      /* text-[#c8102e] */
     shadow-[0_8px_30px_rgba(0,0,0,0.14)]
     transition-all
     duration-300
@@ -168,7 +168,7 @@ export default function Hero() {
     border
     border-neutral-200
     bg-white
-    text-[#c8102e]
+    text-neutral-900
     shadow-[0_8px_30px_rgba(0,0,0,0.14)]
     transition-all
     duration-300
