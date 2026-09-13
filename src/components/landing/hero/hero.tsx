@@ -119,8 +119,8 @@ export default function Hero() {
     top-1/2
     z-30
     flex
-    h-10
-    w-10
+    h-12
+    w-12
     -translate-x-1/2
     -translate-y-1/2
     items-center
@@ -133,6 +133,7 @@ export default function Hero() {
     shadow-[0_8px_30px_rgba(0,0,0,0.14)]
     transition-all
     duration-300
+    ease-out
     hover:scale-105
     hover:text-[#c8102e]
     active:scale-95
@@ -140,13 +141,10 @@ export default function Hero() {
     md:left-[-22px]
     md:h-14
     md:w-14
+    md:translate-x-0
   "
 >
-  <ChevronLeft
-    size={22}
-    strokeWidth={1.8}
-    className="md:h-7 md:w-7"
-  />
+  <ChevronLeft size={28} strokeWidth={1.8} />
 </button>
 
 {/* Next slide */}
@@ -160,10 +158,10 @@ export default function Hero() {
     top-1/2
     z-30
     flex
-    h-10
-    w-10
-    -translate-y-1/2
+    h-12
+    w-12
     translate-x-1/2
+    -translate-y-1/2
     items-center
     justify-center
     rounded-full
@@ -174,6 +172,7 @@ export default function Hero() {
     shadow-[0_8px_30px_rgba(0,0,0,0.14)]
     transition-all
     duration-300
+    ease-out
     hover:scale-105
     hover:bg-neutral-50
     active:scale-95
@@ -184,12 +183,9 @@ export default function Hero() {
     md:translate-x-0
   "
 >
-  <ChevronRight
-    size={22}
-    strokeWidth={1.8}
-    className="md:h-7 md:w-7"
-  />
+  <ChevronRight size={28} strokeWidth={1.8} />
 </button>
+
         </div>
       </div>
     </section>
