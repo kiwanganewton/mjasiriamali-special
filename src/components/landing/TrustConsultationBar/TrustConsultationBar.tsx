@@ -83,7 +83,7 @@ export default function TrustConsultationBar({
         >
           <Button
             tone="brand"
-            variant="solid"
+            variant="outline"
             onClick={onConsultationClick}
             className="
               w-full gap-2
