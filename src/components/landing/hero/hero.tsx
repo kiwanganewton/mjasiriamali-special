@@ -108,43 +108,88 @@ export default function Hero() {
             </AnimatePresence>
           </div>
 
-          {/* Previous slide */}
-          <button
-            type="button"
-            onClick={previousSlide}
-            aria-label="Previous slide"
-            className="
-              absolute left-[-22px] top-1/2 z-30 hidden h-14 w-14
-              -translate-y-1/2 items-center justify-center rounded-full
-              border border-neutral-200 bg-white text-neutral-900
-              shadow-[0_8px_30px_rgba(0,0,0,0.14)]
-              transition-all duration-300 ease-out
-              hover:scale-105 hover:text-[#c8102e]
-              active:scale-95
-              md:flex
-            "
-          >
-            <ChevronLeft size={28} strokeWidth={1.8} />
-          </button>
+         {/* Previous slide */}
+<button
+  type="button"
+  onClick={previousSlide}
+  aria-label="Previous slide"
+  className="
+    absolute
+    left-0
+    top-1/2
+    z-30
+    flex
+    h-10
+    w-10
+    -translate-x-1/2
+    -translate-y-1/2
+    items-center
+    justify-center
+    rounded-full
+    border
+    border-neutral-200
+    bg-white
+    text-neutral-900
+    shadow-[0_8px_30px_rgba(0,0,0,0.14)]
+    transition-all
+    duration-300
+    hover:scale-105
+    hover:text-[#c8102e]
+    active:scale-95
 
-          {/* Next slide */}
-          <button
-            type="button"
-            onClick={nextSlide}
-            aria-label="Next slide"
-            className="
-              absolute -right-2 top-1/2 z-30 flex h-12 w-12
-              -translate-y-1/2 items-center justify-center rounded-full
-              border border-neutral-200 bg-white text-[#c8102e]
-              shadow-[0_8px_30px_rgba(0,0,0,0.14)]
-              transition-all duration-300 ease-out
-              hover:scale-105 hover:bg-neutral-50
-              active:scale-95
-              md:right-[-22px] md:h-14 md:w-14
-            "
-          >
-            <ChevronRight size={28} strokeWidth={1.8} />
-          </button>
+    md:left-[-22px]
+    md:h-14
+    md:w-14
+  "
+>
+  <ChevronLeft
+    size={22}
+    strokeWidth={1.8}
+    className="md:h-7 md:w-7"
+  />
+</button>
+
+{/* Next slide */}
+<button
+  type="button"
+  onClick={nextSlide}
+  aria-label="Next slide"
+  className="
+    absolute
+    right-0
+    top-1/2
+    z-30
+    flex
+    h-10
+    w-10
+    -translate-y-1/2
+    translate-x-1/2
+    items-center
+    justify-center
+    rounded-full
+    border
+    border-neutral-200
+    bg-white
+    text-[#c8102e]
+    shadow-[0_8px_30px_rgba(0,0,0,0.14)]
+    transition-all
+    duration-300
+    hover:scale-105
+    hover:bg-neutral-50
+    active:scale-95
+
+    md:right-[-22px]
+    md:h-14
+    md:w-14
+    md:translate-x-0
+  "
+>
+  <ChevronRight
+    size={22}
+    strokeWidth={1.8}
+    className="md:h-7 md:w-7"
+  />
+</button>
         </div>
       </div>
     </section>
