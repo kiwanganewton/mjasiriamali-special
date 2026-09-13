@@ -109,7 +109,7 @@ export const heroSlides: HeroSlideData[] = [
 
     description: "",
 
-    image: "/images/hero/slide-000003.webp",
+    image: "/images/hero/slide-0000003.webp",
 
     cta: {
       label: "Discover More",
