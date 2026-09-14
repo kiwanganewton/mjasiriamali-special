@@ -49,20 +49,19 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
           group-hover:scale-[1.025]
         "
       />
-
-   {/* SUBTLE FULL IMAGE OVERLAY */}
+{/* VERY SUBTLE FULL IMAGE OVERLAY */}
 <div
   className="
     absolute
     inset-0
-    bg-black/[0.025]
+    bg-black/[0.005]
     transition-opacity
     duration-500
-    group-hover:bg-black/[0.015]
+    group-hover:bg-black/[0]
   "
 />
 
-{/* LIGHT CORPORATE CONTENT OVERLAY */}
+{/* VERY LIGHT CONTENT OVERLAY */}
 <div
   className="
     pointer-events-none
@@ -72,15 +71,14 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
     z-[5]
     h-[55%]
     bg-gradient-to-t
-    from-black/[0.16]
-    via-black/[0.05]
+    from-black/[0.04]
+    via-black/[0.01]
     to-transparent
     transition-opacity
     duration-500
     group-hover:opacity-85
   "
 />
-
       {/* DESKTOP / TABLET CONTENT */}
       <div
         className="
@@ -159,7 +157,7 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
           "
           style={{
             color: slide.colors.heading,
-            opacity: 0.98,
+           
           }}
         >
           {slide.title}
