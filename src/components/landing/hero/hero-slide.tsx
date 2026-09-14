@@ -146,7 +146,20 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
           top: mobile.y,
           width: mobile.width,
         }}
-      >
+      ><p
+          className="
+            mt-4
+            text-[15px]
+            font-normal
+            leading-[1.55]
+            max-[380px]:text-[14px]
+          "
+          style={{
+            color: slide.colors.paragraph,
+          }}
+        >
+          {slide.description}
+        </p>
         <h2
           className="
             text-[34px]
@@ -163,20 +176,7 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
           {slide.title}
         </h2>
 
-        <p
-          className="
-            mt-4
-            text-[15px]
-            font-normal
-            leading-[1.55]
-            max-[380px]:text-[14px]
-          "
-          style={{
-            color: slide.colors.paragraph,
-          }}
-        >
-          {slide.description}
-        </p>
+        
       </div>
 
       {/* TABLET + DESKTOP BUTTON */}
