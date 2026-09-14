@@ -146,6 +146,7 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
           top: mobile.y,
           width: mobile.width,
         }}
+        
       ><p
           className="
             mt-4
@@ -160,6 +161,7 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
         >
           {slide.description}
         </p>
+
         <h2
           className="
             text-[34px]
