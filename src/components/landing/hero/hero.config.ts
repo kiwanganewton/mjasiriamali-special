@@ -38,7 +38,7 @@ export const heroSlides: HeroSlideData[] = [
     description:
       "Running your business is already a full-time job, and you miss doing  ",
 
-    image: "/images/hero/slide-000000001.webp",
+    image: "/images/hero/slide-00000000001.webp",
 
     cta: {
       label: "Dicover More",
