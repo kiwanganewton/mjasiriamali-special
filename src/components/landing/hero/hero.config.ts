@@ -38,7 +38,7 @@ export const heroSlides: HeroSlideData[] = [
     description:
       "Running your business is already a full-time job, and you miss doing  ",
 
-    image: "/images/hero/slide-00001.webp",
+    image: "/images/hero/slide-000000001.webp",
 
     cta: {
       label: "Dicover More",
@@ -61,8 +61,8 @@ export const heroSlides: HeroSlideData[] = [
     },
 
      colors: {
-      heading: "#C62828",
-      paragraph: "#363a3e",
+      heading: "#f5f2f2",
+      paragraph: "#eef1f4",
     },
   },
 

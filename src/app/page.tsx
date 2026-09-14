@@ -1,6 +1,6 @@
 import Hero from "@/components/landing/hero/hero";
 import TrustConsultationBar from "@/components/landing/TrustConsultationBar/TrustConsultationBar";
-
+import Newsletter from "@/components/landing/newsletter-tab/newsletter-tab";
 import About from "@/components/landing/about/about";
 import PackFeatures from "@/components/landing/pack-features/pack-features";
 
@@ -11,7 +11,7 @@ export default function Home() {
 
       <Hero />
       <TrustConsultationBar />
-     
+      <Newsletter />
       <About />
 
       <PackFeatures />

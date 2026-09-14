@@ -103,13 +103,13 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
             font-semibold
             leading-[1.15]
             tracking-[-0.018em]
-            md:text-[28px]
-            lg:text-[30px]
-            xl:text-[34px]
+            md:text-[26px]
+            lg:text-[28px]
+            xl:text-[32px]
           "
           style={{
             color: slide.colors.heading,
-            opacity: 0.84,
+            opacity: 0.98,
           }}
         >
           {slide.title}
@@ -159,7 +159,7 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
           "
           style={{
             color: slide.colors.heading,
-            opacity: 0.84,
+            opacity: 0.98,
           }}
         >
           {slide.title}
