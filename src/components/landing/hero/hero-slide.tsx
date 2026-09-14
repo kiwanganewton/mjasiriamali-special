@@ -50,15 +50,15 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
         "
       />
 
-     {/* SUBTLE FULL IMAGE OVERLAY */}
+   {/* SUBTLE FULL IMAGE OVERLAY */}
 <div
   className="
     absolute
     inset-0
-    bg-black/[0.04]
+    bg-black/[0.025]
     transition-opacity
     duration-500
-    group-hover:bg-black/[0.02]
+    group-hover:bg-black/[0.015]
   "
 />
 
@@ -72,8 +72,8 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
     z-[5]
     h-[55%]
     bg-gradient-to-t
-    from-black/[0.21]
-    via-black/[0.075]
+    from-black/[0.16]
+    via-black/[0.05]
     to-transparent
     transition-opacity
     duration-500
