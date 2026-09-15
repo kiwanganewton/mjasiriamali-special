@@ -4,6 +4,7 @@ import Newsletter from "@/components/landing/newsletter-tab/newsletter-tab";
 import About from "@/components/landing/about/about";
 import PackFeatures from "@/components/landing/pack-features/pack-features";
 
+import CookieConsent from "@/components/cookie-consent/CookieConsent";
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
 
       <PackFeatures />
      
-
+  <CookieConsent />
       
     </main>
   );
