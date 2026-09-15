@@ -72,7 +72,7 @@ export default function CookieConsent() {
                 {cookieConsentContent.title}
               </h2>
 
-             <p
+           <p
   className="
     mt-2
     w-full
@@ -82,6 +82,8 @@ export default function CookieConsent() {
     leading-[1.7]
     text-neutral-500
     sm:text-[15px]
+    [hyphens:auto]
+    [overflow-wrap:break-word]
   "
 >
   {cookieConsentContent.description}
