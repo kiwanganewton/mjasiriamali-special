@@ -5,10 +5,13 @@ import About from "@/components/landing/about/about";
 import PackFeatures from "@/components/landing/pack-features/pack-features";
 
 import CookieConsent from "@/components/cookie-consent/CookieConsent";
+import Navbar from "@/components/navigation/Navbar";
 
 export default function Home() {
   return (
     <main>
+
+           <Navbar />
 
       <Hero />
       <TrustConsultationBar />
