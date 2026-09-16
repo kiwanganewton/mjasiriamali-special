@@ -10,18 +10,27 @@ import Navbar from "@/components/navigation/Navbar";
 export default function Home() {
   return (
     <main>
-
-           <Navbar />
+      <Navbar />
 
       <Hero />
-      <TrustConsultationBar />
+
+      {/* Mobile: About → TrustConsultationBar
+          Desktop: TrustConsultationBar → About */}
+      <div className="flex flex-col">
+        <div className="order-2 lg:order-1">
+          <TrustConsultationBar />
+        </div>
+
+        <div className="order-1 lg:order-2">
+          <About />
+        </div>
+      </div>
+
       <Newsletter />
-      <About />
 
       <PackFeatures />
-     
-  <CookieConsent />
-      
+
+      <CookieConsent />
     </main>
   );
 }
