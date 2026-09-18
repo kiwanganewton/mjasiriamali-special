@@ -266,7 +266,7 @@ function DesktopCard({
         w-[300px]
         shrink-0
         overflow-hidden
-        rounded-[24px]
+        rounded-[16px]
         border
         border-neutral-200
         bg-white
@@ -356,7 +356,7 @@ function DesktopCard({
 function MobileServices() {
   return (
     <section className="bg-white py-16 sm:py-20 md:hidden">
-      <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-6">
+     <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8">
         {/* Section heading */}
         <motion.div
           initial={{
@@ -463,7 +463,7 @@ function MobileCard({
         }}
         className="
           overflow-hidden
-          rounded-[22px]
+          rounded-[16px]
           border
           border-neutral-200
           bg-white
