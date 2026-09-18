@@ -60,6 +60,10 @@ export default function AddonServices() {
 
   const [horizontalDistance, setHorizontalDistance] = useState(0);
 
+  /*
+   * Calculate the exact horizontal distance
+   * required for the card track.
+   */
   useEffect(() => {
     const calculateDistance = () => {
       if (!desktopViewportRef.current || !desktopTrackRef.current) {
@@ -69,9 +73,9 @@ export default function AddonServices() {
       const viewportWidth = desktopViewportRef.current.clientWidth;
       const trackWidth = desktopTrackRef.current.scrollWidth;
 
-      const distance = Math.max(trackWidth - viewportWidth, 0);
-
-      setHorizontalDistance(distance);
+      setHorizontalDistance(
+        Math.max(trackWidth - viewportWidth, 0)
+      );
     };
 
     calculateDistance();
@@ -94,17 +98,26 @@ export default function AddonServices() {
     };
   }, []);
 
+  /*
+   * Desktop scroll progress.
+   */
   const { scrollYProgress } = useScroll({
     target: desktopSectionRef,
     offset: ["start start", "end end"],
   });
 
+  /*
+   * Horizontal card movement.
+   */
   const horizontalX = useTransform(
     scrollYProgress,
     [0, 1],
     [0, -horizontalDistance]
   );
 
+  /*
+   * Subtle heading entrance.
+   */
   const headingY = useTransform(
     scrollYProgress,
     [0, 0.18],
@@ -121,7 +134,6 @@ export default function AddonServices() {
     <>
       {/* =====================================================
           DESKTOP + TABLET
-          Horizontal scrolling cards
       ====================================================== */}
 
       <section
@@ -143,10 +155,10 @@ export default function AddonServices() {
             >
               <div className="max-w-[720px]">
                 <h2 className="max-w-[680px] text-[32px] font-semibold leading-[1.2] tracking-[-0.025em] text-[#262626] sm:text-[34px] lg:text-[36px]">
-  Build more with the right digital support.
-</h2>
+                  Build more with the right digital support.
+                </h2>
 
-                <p className="mt-4 max-w-[660px] text-base leading-[1.7] text-neutral-500 sm:text-[17px]">
+                <p className="mt-4 max-w-[660px] text-base leading-[1.7] text-[#737373] sm:text-[17px]">
                   Extend your Mjasiriamali package with professional
                   services designed to strengthen your brand, improve
                   your digital presence, and support your day-to-day
@@ -192,7 +204,6 @@ export default function AddonServices() {
 
       {/* =====================================================
           MOBILE
-          Sticky overlapping cards
       ====================================================== */}
 
       <MobileServices />
@@ -287,15 +298,15 @@ function DesktopCard({
 
       {/* Content */}
       <div className="p-6 lg:p-7">
-        <h3 className="text-xl font-semibold tracking-[-0.02em] text-neutral-900">
+        <h3 className="text-xl font-semibold leading-[1.25] tracking-[-0.02em] text-[#262626]">
           {service.title}
         </h3>
 
-        <p className="mt-3 text-base leading-[1.7] text-neutral-500">
+        <p className="mt-3 text-base leading-[1.7] text-[#737373]">
           {service.description}
         </p>
 
-        <div className="mt-6 h-px w-full bg-neutral-200" />
+        <div className="mt-6 h-px w-full bg-[#e3e3e3]" />
 
         <div className="mt-4 text-sm font-medium text-[#c8102e]">
           Available as an add-on
@@ -313,37 +324,37 @@ function MobileServices() {
   return (
     <section className="bg-white py-16 sm:py-20 md:hidden">
       <div className="mx-auto w-full max-w-[1240px] px-5 sm:px-6">
-      {/* Heading */}
-<motion.div
-  initial={{
-    opacity: 0,
-    y: 20,
-  }}
-  whileInView={{
-    opacity: 1,
-    y: 0,
-  }}
-  viewport={{
-    once: true,
-    amount: 0.2,
-  }}
-  transition={{
-    duration: 0.65,
-    ease: [0.22, 1, 0.36, 1],
-  }}
-  className="px-2 sm:px-3"
->
-  <h2 className="text-[30px] font-semibold leading-[1.2] tracking-[-0.025em] text-[#262626] sm:text-[32px]">
-    Build more with the right digital support.
-  </h2>
+        {/* Section heading */}
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.2,
+          }}
+          transition={{
+            duration: 0.65,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="px-2 sm:px-3"
+        >
+          <h2 className="text-[30px] font-semibold leading-[1.2] tracking-[-0.025em] text-[#262626] sm:text-[32px]">
+            Build more with the right digital support.
+          </h2>
 
-  <p className="mt-4 text-base leading-[1.7] text-neutral-500 sm:text-lg">
-    Extend your Mjasiriamali package with professional
-    services designed to strengthen your brand, improve
-    your digital presence, and support your day-to-day
-    business needs.
-  </p>
-</motion.div>
+          <p className="mt-4 text-base leading-[1.7] text-[#737373] sm:text-lg">
+            Extend your Mjasiriamali package with professional
+            services designed to strengthen your brand, improve
+            your digital presence, and support your day-to-day
+            business needs.
+          </p>
+        </motion.div>
 
         {/* Sticky cards */}
         <div className="mt-10 space-y-5">
@@ -449,11 +460,11 @@ function MobileCard({
 
         {/* Content */}
         <div className="p-5 sm:p-6">
-          <h3 className="text-xl font-semibold tracking-[-0.02em] text-neutral-900">
+          <h3 className="text-xl font-semibold leading-[1.25] tracking-[-0.02em] text-[#262626]">
             {service.title}
           </h3>
 
-          <p className="mt-3 text-[15px] leading-[1.7] text-neutral-500">
+          <p className="mt-3 text-[15px] leading-[1.7] text-[#737373]">
             {service.description}
           </p>
 
