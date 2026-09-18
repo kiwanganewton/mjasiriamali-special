@@ -42,8 +42,8 @@ export const heroSlides: HeroSlideData[] = [
 
     cta: {
       label: "Dicover More",
-      variant: "outline",
-      tone: "light",
+      variant: "solid",
+      tone: "brand",
     },
 
     position: {
