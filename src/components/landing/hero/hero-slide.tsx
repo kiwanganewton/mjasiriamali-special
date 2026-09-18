@@ -143,7 +143,7 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
         "
        style={{
   left: mobile.x,
-  top: `calc(${mobile.y} - 3%)`,
+  top: `calc(${mobile.y} - 1%)`,
   width: mobile.width,
 }}
       >
