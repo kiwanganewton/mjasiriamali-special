@@ -3,6 +3,7 @@ import TrustConsultationBar from "@/components/landing/TrustConsultationBar/Trus
 import Newsletter from "@/components/landing/newsletter-tab/newsletter-tab";
 import About from "@/components/landing/about/about";
 import PackFeatures from "@/components/landing/pack-features/pack-features";
+import AddonServices from "@/components/landing/addon-services/addon-services";
 
 import CookieConsent from "@/components/cookie-consent/CookieConsent";
 import Navbar from "@/components/navigation/Navbar";
@@ -29,6 +30,8 @@ export default function Home() {
       <Newsletter />
 
       <PackFeatures />
+
+      <AddonServices />
 
       <CookieConsent />
     </main>
