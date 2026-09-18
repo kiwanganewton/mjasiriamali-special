@@ -99,7 +99,7 @@ export default function AddonServices() {
   }, []);
 
   /*
-   * Desktop scroll progress.
+   * Desktop / tablet scroll progress.
    */
   const { scrollYProgress } = useScroll({
     target: desktopSectionRef,
@@ -116,18 +116,16 @@ export default function AddonServices() {
   );
 
   /*
-   * Subtle heading entrance.
+   * Subtle heading movement only.
+   *
+   * No opacity animation here.
+   * This keeps the heading colour visually
+   * identical to the mobile version.
    */
   const headingY = useTransform(
     scrollYProgress,
     [0, 0.18],
     [20, 0]
-  );
-
-  const headingOpacity = useTransform(
-    scrollYProgress,
-    [0, 0.15],
-    [0.75, 1]
   );
 
   return (
@@ -149,16 +147,35 @@ export default function AddonServices() {
             <motion.div
               style={{
                 y: headingY,
-                opacity: headingOpacity,
               }}
               className="mx-auto w-full max-w-[1240px] px-6 lg:px-8"
             >
               <div className="max-w-[720px]">
-                <h2 className="max-w-[680px] text-[32px] font-semibold leading-[1.2] tracking-[-0.025em] text-[#262626] sm:text-[34px] lg:text-[36px]">
+                <h2
+                  className="
+                    max-w-[680px]
+                    text-[30px]
+                    font-semibold
+                    leading-[1.2]
+                    tracking-[-0.025em]
+                    text-[#262626]
+                    sm:text-[32px]
+                    lg:text-[34px]
+                  "
+                >
                   Build more with the right digital support.
                 </h2>
 
-                <p className="mt-4 max-w-[660px] text-base leading-[1.7] text-[#737373] sm:text-[17px]">
+                <p
+                  className="
+                    mt-4
+                    max-w-[660px]
+                    text-base
+                    leading-[1.7]
+                    text-[#737373]
+                    sm:text-lg
+                  "
+                >
                   Extend your Mjasiriamali package with professional
                   services designed to strengthen your brand, improve
                   your digital presence, and support your day-to-day
@@ -298,11 +315,27 @@ function DesktopCard({
 
       {/* Content */}
       <div className="p-6 lg:p-7">
-        <h3 className="text-xl font-semibold leading-[1.25] tracking-[-0.02em] text-[#262626]">
+        <h3
+          className="
+            text-xl
+            font-semibold
+            leading-[1.25]
+            tracking-[-0.02em]
+            text-[#262626]
+          "
+        >
           {service.title}
         </h3>
 
-        <p className="mt-3 text-base leading-[1.7] text-[#737373]">
+        <p
+          className="
+            mt-3
+            text-[15px]
+            leading-[1.7]
+            text-[#737373]
+            sm:text-base
+          "
+        >
           {service.description}
         </p>
 
@@ -344,11 +377,28 @@ function MobileServices() {
           }}
           className="px-2 sm:px-3"
         >
-          <h2 className="text-[30px] font-semibold leading-[1.2] tracking-[-0.025em] text-[#262626] sm:text-[32px]">
+          <h2
+            className="
+              text-[30px]
+              font-semibold
+              leading-[1.2]
+              tracking-[-0.025em]
+              text-[#262626]
+              sm:text-[32px]
+            "
+          >
             Build more with the right digital support.
           </h2>
 
-          <p className="mt-4 text-base leading-[1.7] text-[#737373] sm:text-lg">
+          <p
+            className="
+              mt-4
+              text-base
+              leading-[1.7]
+              text-[#737373]
+              sm:text-lg
+            "
+          >
             Extend your Mjasiriamali package with professional
             services designed to strengthen your brand, improve
             your digital presence, and support your day-to-day
@@ -460,11 +510,26 @@ function MobileCard({
 
         {/* Content */}
         <div className="p-5 sm:p-6">
-          <h3 className="text-xl font-semibold leading-[1.25] tracking-[-0.02em] text-[#262626]">
+          <h3
+            className="
+              text-xl
+              font-semibold
+              leading-[1.25]
+              tracking-[-0.02em]
+              text-[#262626]
+            "
+          >
             {service.title}
           </h3>
 
-          <p className="mt-3 text-[15px] leading-[1.7] text-[#737373]">
+          <p
+            className="
+              mt-3
+              text-[15px]
+              leading-[1.7]
+              text-[#737373]
+            "
+          >
             {service.description}
           </p>
 

@@ -141,11 +141,11 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
           md:hidden
           max-[380px]:-translate-y-[60%]
         "
-        style={{
-          left: mobile.x,
-          top: mobile.y,
-          width: mobile.width,
-        }}
+       style={{
+  left: mobile.x,
+  top: `calc(${mobile.y} - 3%)`,
+  width: mobile.width,
+}}
       >
         <h2
           className="

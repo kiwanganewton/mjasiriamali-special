@@ -39,7 +39,7 @@ export default function Hero() {
 
   return (
     <section
-      className="w-full overflow-hidden bg-white py-8 sm:py-10 lg:py-12"
+    className="w-full overflow-hidden bg-white pt-3 pb-8 sm:pt-10 sm:pb-10 lg:pt-12 lg:pb-12"
       aria-roledescription="carousel"
     >
       <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-10">
