@@ -11,19 +11,20 @@ export default function About() {
           </p>
         </div>
 
-        {/* YouTube video */}
-        <div className="overflow-hidden rounded-lg border border-neutral-200 bg-black shadow-[0_18px_45px_rgba(0,0,0,0.12)]">
-          <div className="aspect-video">
-            <iframe
-              className="h-full w-full"
-              src={`https://www.youtube-nocookie.com/embed/${aboutContent.videoId}?rel=0`}
-              title={aboutContent.videoTitle}
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          </div>
-        </div>
+     {/* YouTube video */}
+<div className="overflow-hidden rounded-lg border border-neutral-200 bg-black shadow-[0_18px_45px_rgba(0,0,0,0.12)]">
+  <div className="aspect-video">
+    <iframe
+      className="h-full w-full"
+      src="https://www.youtube.com/embed/ldFFYFE-BKk?si=7ZojH-FaT-ldWgs0"
+      title="YouTube video player"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerPolicy="strict-origin-when-cross-origin"
+      allowFullScreen
+    />
+  </div>
+</div>
       </div>
     </section>
   );
