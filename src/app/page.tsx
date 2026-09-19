@@ -18,6 +18,8 @@ export default function Home() {
       {/* Mobile: About → TrustConsultationBar
           Desktop: TrustConsultationBar → About */}
       <div className="flex flex-col">
+
+        
         <div className="order-2 lg:order-1">
           <TrustConsultationBar />
         </div>
