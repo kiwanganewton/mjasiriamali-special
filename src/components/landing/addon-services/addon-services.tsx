@@ -387,7 +387,7 @@ function MobileServices() {
               sm:text-[24px]
             "
           >
-            Build more with the right digital support.
+            Get 25% Discount on all Add-ons Services with our mjasiriamali special pack.
           </h2>
 
           <p
