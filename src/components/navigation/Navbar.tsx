@@ -69,7 +69,7 @@ export default function Navbar() {
   return (
     <>
       <header className="relative z-[100] border-b border-neutral-200 bg-white">
-        <div className="mx-auto flex h-[76px] w-full max-w-[1240px] items-center justify-between px-5 sm:px-6 lg:h-[80px] lg:px-8">
+      <div className="mx-auto flex h-[76px] w-full max-w-[1240px] items-center justify-between px-5 sm:px-6 lg:h-[80px] lg:px-8">
 
           {/* LOGO */}
           <Link
@@ -89,10 +89,11 @@ export default function Navbar() {
           </Link>
 
           {/* DESKTOP NAVIGATION */}
-          <nav
-            className="hidden items-center gap-7 lg:flex"
-            aria-label="Main navigation"
-          >
+         {/* DESKTOP NAVIGATION */}
+<nav
+  className="hidden items-center gap-7 lg:ml-10 lg:flex xl:ml-14"
+  aria-label="Main navigation"
+>
             {/* SERVICES */}
             <button
               type="button"
@@ -161,7 +162,8 @@ export default function Navbar() {
           </nav>
 
           {/* DESKTOP RIGHT SIDE */}
-          <div className="hidden items-center gap-6 lg:flex">
+        {/* DESKTOP RIGHT SIDE */}
+<div className="ml-auto hidden items-center gap-6 lg:flex">
             <Link
               href="/contact"
               onClick={() => setActiveMenu(null)}
@@ -184,8 +186,7 @@ export default function Navbar() {
           </div>
 
           {/* MOBILE / TABLET ACTIONS */}
-          <div className="flex items-center gap-1 lg:hidden">
-
+         <div className="flex items-center gap-1 lg:hidden">
             {/* SEARCH ICON */}
             <button
               type="button"

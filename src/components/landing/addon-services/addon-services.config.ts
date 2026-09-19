@@ -11,7 +11,7 @@ export const addonServicesContent = {
   title: "Get 25% Discount on all Add-ons Services",
 
   description:
-    "Extend your Mjasiriamali package with professional services designed to strengthen your brand, improve your digital presence, and support your day-to-day business needs.",
+    "Extend your Mjasiriamali package with professional services designed to strengthen your brand and improve your digital presence.",
 
   services: [
     {
