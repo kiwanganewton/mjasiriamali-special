@@ -13,15 +13,15 @@ export default function TrustConsultationBar({
 
   return (
     <section
-      aria-label="Consultation invitation"
-      style={{ colorScheme: "only light" }}
-      className="
-        relative mx-auto mt-0 mb-12
-        w-[calc(100%_-_2.5rem)] max-w-[1240px]
-        sm:mt-0 sm:mb-14 sm:w-[calc(100%_-_5rem)]
-        lg:mt-1 lg:mb-16 lg:w-[calc(100%_-_8rem)]
-      "
-    >
+  aria-label="Consultation invitation"
+  style={{ colorScheme: "only light" }}
+  className="
+    relative mx-auto mt-0 mb-5
+    w-[calc(100%_-_2.5rem)] max-w-[1240px]
+    sm:mt-0 sm:mb-6 sm:w-[calc(100%_-_5rem)]
+    lg:mt-1 lg:mb-8 lg:w-[calc(100%_-_8rem)]
+  "
+>
       <div
         className="
           grid overflow-hidden

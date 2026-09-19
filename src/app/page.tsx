@@ -15,19 +15,21 @@ export default function Home() {
 
       <Hero />
 
-      {/* Mobile: About → TrustConsultationBar
-          Desktop: TrustConsultationBar → About */}
-      <div className="flex flex-col">
+     {/* Mobile: About only
+    Desktop: TrustConsultationBar → About */}
+<div className="flex flex-col">
 
-        
-        <div className="order-2 lg:order-1">
-          <TrustConsultationBar />
-        </div>
+  {/* Trust bar: desktop only */}
+  <div className="hidden lg:block">
+    <TrustConsultationBar />
+  </div>
 
-        <div className="order-1 lg:order-2">
-          <About />
-        </div>
-      </div>
+  {/* About: all screen sizes */}
+  <div>
+    <About />
+  </div>
+
+</div>
 
       <Newsletter />
 
