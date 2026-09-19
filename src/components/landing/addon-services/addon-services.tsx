@@ -163,7 +163,7 @@ export default function AddonServices() {
                     lg:text-[30px]
                   "
                 >
-                  Get 25% Discount on all Add-ons Services with our mjasiriamali special pack.
+                  Get 25% Discount on all Add-ons Services 
                 </h2>
 
                 <p
@@ -387,7 +387,7 @@ function MobileServices() {
               sm:text-[24px]
             "
           >
-            Get 25% Discount on all Add-ons Services with our mjasiriamali special pack.
+            Get 25% Discount on all Add-ons Services 
           </h2>
 
           <p
