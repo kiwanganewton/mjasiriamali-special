@@ -8,50 +8,10 @@ import {
 } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-type Service = {
-  number: string;
-  title: string;
-  description: string;
-  image: string;
-};
-
-const services: Service[] = [
-  {
-    number: "01",
-    title: "Website Design",
-    description:
-      "Professional, responsive websites that give your business a credible digital presence and make it easier for customers to find you.",
-    image: "/images/addon-services/website-design.webp",
-  },
-  {
-    number: "02",
-    title: "Company Profiles",
-    description:
-      "Professionally designed company profiles that clearly present your business, services, capabilities, and experience.",
-    image: "/images/addon-services/company-profile.webp",
-  },
-  {
-    number: "03",
-    title: "Professional Emails",
-    description:
-      "Business email addresses using your own domain to give your communication a more professional and trusted appearance.",
-    image: "/images/addon-services/professional-emails.webp",
-  },
-  {
-    number: "04",
-    title: "Branding Items",
-    description:
-      "From logos and business cards to letterheads and other branded materials, keep your business identity consistent.",
-    image: "/images/addon-services/branding-items.webp",
-  },
-  {
-    number: "05",
-    title: "Social Media Management",
-    description:
-      "Keep your social channels active with planned content, creative designs, publishing support, and ongoing management.",
-    image: "/images/addon-services/social-media.webp",
-  },
-];
+import {
+  addonServicesContent,
+  AddonService,
+} from "./addon-services.config";
 
 export default function AddonServices() {
   const desktopSectionRef = useRef<HTMLElement>(null);
@@ -60,10 +20,6 @@ export default function AddonServices() {
 
   const [horizontalDistance, setHorizontalDistance] = useState(0);
 
-  /*
-   * Calculate the exact horizontal distance
-   * required for the card track.
-   */
   useEffect(() => {
     const calculateDistance = () => {
       if (!desktopViewportRef.current || !desktopTrackRef.current) {
@@ -98,30 +54,17 @@ export default function AddonServices() {
     };
   }, []);
 
-  /*
-   * Desktop / tablet scroll progress.
-   */
   const { scrollYProgress } = useScroll({
     target: desktopSectionRef,
     offset: ["start start", "end end"],
   });
 
-  /*
-   * Horizontal card movement.
-   */
   const horizontalX = useTransform(
     scrollYProgress,
     [0, 1],
     [0, -horizontalDistance]
   );
 
-  /*
-   * Subtle heading movement only.
-   *
-   * No opacity animation here.
-   * This keeps the heading colour visually
-   * identical to the mobile version.
-   */
   const headingY = useTransform(
     scrollYProgress,
     [0, 0.18],
@@ -130,10 +73,7 @@ export default function AddonServices() {
 
   return (
     <>
-      {/* =====================================================
-          DESKTOP + TABLET
-      ====================================================== */}
-
+      {/* DESKTOP + TABLET */}
       <section
         ref={desktopSectionRef}
         className="relative hidden bg-white md:block"
@@ -143,11 +83,10 @@ export default function AddonServices() {
       >
         <div className="sticky top-0 flex h-screen items-center overflow-hidden">
           <div className="w-full pt-8 lg:pt-10">
+
             {/* Section heading */}
             <motion.div
-              style={{
-                y: headingY,
-              }}
+              style={{ y: headingY }}
               className="mx-auto w-full max-w-[1240px] px-6 lg:px-8"
             >
               <div className="max-w-[720px]">
@@ -163,7 +102,7 @@ export default function AddonServices() {
                     lg:text-[30px]
                   "
                 >
-                  Get 25% Discount on all Add-ons Services 
+                  {addonServicesContent.title}
                 </h2>
 
                 <p
@@ -176,24 +115,19 @@ export default function AddonServices() {
                     sm:text-lg
                   "
                 >
-                  Extend your Mjasiriamali package with professional
-                  services designed to strengthen your brand, improve
-                  your digital presence, and support your day-to-day
-                  business needs.
+                  {addonServicesContent.description}
                 </p>
               </div>
             </motion.div>
 
-            {/* Horizontal card viewport */}
+            {/* Horizontal cards */}
             <div
               ref={desktopViewportRef}
               className="mt-9 w-full overflow-visible lg:mt-12"
             >
               <motion.div
                 ref={desktopTrackRef}
-                style={{
-                  x: horizontalX,
-                }}
+                style={{ x: horizontalX }}
                 className="
                   flex
                   w-max
@@ -205,24 +139,23 @@ export default function AddonServices() {
                   lg:pr-[max(24px,calc((100vw-1240px)/2+32px))]
                 "
               >
-                {services.map((service, index) => (
-                  <DesktopCard
-                    key={service.number}
-                    service={service}
-                    index={index}
-                    progress={scrollYProgress}
-                  />
-                ))}
+                {addonServicesContent.services.map(
+                  (service, index) => (
+                    <DesktopCard
+                      key={service.number}
+                      service={service}
+                      index={index}
+                      progress={scrollYProgress}
+                    />
+                  )
+                )}
               </motion.div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* =====================================================
-          MOBILE
-      ====================================================== */}
-
+      {/* MOBILE */}
       <MobileServices />
     </>
   );
@@ -237,7 +170,7 @@ function DesktopCard({
   index,
   progress,
 }: {
-  service: Service;
+  service: AddonService;
   index: number;
   progress: MotionValue<number>;
 }) {
@@ -245,13 +178,21 @@ function DesktopCard({
 
   const scale = useTransform(
     progress,
-    [start, start + 0.12, Math.min(start + 0.35, 1)],
+    [
+      start,
+      start + 0.12,
+      Math.min(start + 0.35, 1),
+    ],
     [0.96, 1, 0.98]
   );
 
   const opacity = useTransform(
     progress,
-    [start, start + 0.1, Math.min(start + 0.35, 1)],
+    [
+      start,
+      start + 0.1,
+      Math.min(start + 0.35, 1),
+    ],
     [0.7, 1, 0.94]
   );
 
@@ -274,7 +215,6 @@ function DesktopCard({
         lg:w-[360px]
       "
     >
-      {/* Image */}
       <div className="relative aspect-[4/3] overflow-hidden">
         <img
           src={service.image}
@@ -290,7 +230,6 @@ function DesktopCard({
           "
         />
 
-        {/* Number */}
         <div
           className="
             absolute
@@ -313,7 +252,6 @@ function DesktopCard({
         </div>
       </div>
 
-      {/* Content */}
       <div className="p-6 lg:p-7">
         <h3
           className="
@@ -350,14 +288,14 @@ function DesktopCard({
 }
 
 /* =========================================================
-   MOBILE SECTION
+   MOBILE
 ========================================================= */
 
 function MobileServices() {
   return (
     <section className="bg-white py-16 sm:py-20 md:hidden">
-     <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8">
-        {/* Section heading */}
+      <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8">
+
         <motion.div
           initial={{
             opacity: 0,
@@ -375,7 +313,7 @@ function MobileServices() {
             duration: 0.65,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="px-2 sm:px-3"
+         className="px-2 text-center sm:px-3"
         >
           <h2
             className="
@@ -387,7 +325,7 @@ function MobileServices() {
               sm:text-[24px]
             "
           >
-            Get 25% Discount on all Add-ons Services 
+            {addonServicesContent.title}
           </h2>
 
           <p
@@ -399,22 +337,20 @@ function MobileServices() {
               sm:text-lg
             "
           >
-            Extend your Mjasiriamali package with professional
-            services designed to strengthen your brand, improve
-            your digital presence, and support your day-to-day
-            business needs.
+            {addonServicesContent.description}
           </p>
         </motion.div>
 
-        {/* Sticky cards */}
         <div className="mt-10 space-y-5">
-          {services.map((service, index) => (
-            <MobileCard
-              key={service.number}
-              service={service}
-              index={index}
-            />
-          ))}
+          {addonServicesContent.services.map(
+            (service, index) => (
+              <MobileCard
+                key={service.number}
+                service={service}
+                index={index}
+              />
+            )
+          )}
 
           <div className="h-[30vh]" />
         </div>
@@ -431,7 +367,7 @@ function MobileCard({
   service,
   index,
 }: {
-  service: Service;
+  service: AddonService;
   index: number;
 }) {
   return (
@@ -470,7 +406,6 @@ function MobileCard({
           shadow-[0_-4px_20px_rgba(0,0,0,0.035)]
         "
       >
-        {/* Image */}
         <div className="relative aspect-[1.35/1] overflow-hidden">
           <img
             src={service.image}
@@ -485,7 +420,6 @@ function MobileCard({
             "
           />
 
-          {/* Number */}
           <div
             className="
               absolute
@@ -508,7 +442,6 @@ function MobileCard({
           </div>
         </div>
 
-        {/* Content */}
         <div className="p-5 sm:p-6">
           <h3
             className="

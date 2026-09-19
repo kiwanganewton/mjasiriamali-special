@@ -1,6 +1,15 @@
+export type AddonService = {
+  number: string;
+  title: string;
+  description: string;
+  image: string;
+};
+
 export const addonServicesContent = {
   eyebrow: "ADDITIONAL SERVICES",
-  title: "Build more with the right digital support.",
+
+  title: "Get 25% Discount on all Add-ons Services",
+
   description:
     "Extend your Mjasiriamali package with professional services designed to strengthen your brand, improve your digital presence, and support your day-to-day business needs.",
 
@@ -40,5 +49,5 @@ export const addonServicesContent = {
         "Keep your social channels active with planned content, creative designs, publishing support, and ongoing management.",
       image: "/images/addon-services/social-media.webp",
     },
-  ],
+  ] satisfies AddonService[],
 };
