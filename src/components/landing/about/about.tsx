@@ -5,7 +5,7 @@ export default function About() {
     <section className="bg-white pb-16 pt-0 sm:pb-20 lg:pb-24">
       <div className="mx-auto grid w-full max-w-[1120px] items-center gap-10 px-8 sm:px-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14 lg:px-10">
         {/* Text content */}
-        <div className="hidden max-w-[540px] px-3 lg:block lg:px-0">
+        <div className=" max-w-[540px] px-3 lg:block lg:px-0">
           <p className="mt-0 text-[16px] leading-[1.55] text-[#737373]">
             {aboutContent.description}
           </p>
