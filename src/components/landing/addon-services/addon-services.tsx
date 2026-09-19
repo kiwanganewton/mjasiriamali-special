@@ -159,11 +159,11 @@ export default function AddonServices() {
                     leading-[1.2]
                     tracking-[-0.025em]
                     text-[#262626]
-                    sm:text-[32px]
-                    lg:text-[34px]
+                    sm:text-[28px]
+                    lg:text-[30px]
                   "
                 >
-                  Build more with the right digital support.
+                  Get 25% Discount on all Add-ons Services with our mjasiriamali special pack.
                 </h2>
 
                 <p
@@ -379,12 +379,12 @@ function MobileServices() {
         >
           <h2
             className="
-              text-[30px]
+              text-[28px]
               font-semibold
               leading-[1.2]
               tracking-[-0.025em]
               text-[#262626]
-              sm:text-[32px]
+              sm:text-[24px]
             "
           >
             Build more with the right digital support.
