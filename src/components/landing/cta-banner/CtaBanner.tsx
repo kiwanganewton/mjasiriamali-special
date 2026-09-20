@@ -7,7 +7,7 @@ export default function CtaBanner() {
       <div className="relative mx-auto h-[200px] max-w-[1200px] overflow-hidden rounded-xl bg-neutral-900 sm:h-[210px] lg:h-[205px]">
         {/* Image */}
         <Image
-  src="/images/cta/cta-banner12.webp"
+  src="/images/cta/cta-banner13.webp"
   alt="Customer support representative"
   fill
   priority
