@@ -4,6 +4,7 @@ import Newsletter from "@/components/landing/newsletter-tab/newsletter-tab";
 import About from "@/components/landing/about/about";
 import PackFeatures from "@/components/landing/pack-features/pack-features";
 import AddonServices from "@/components/landing/addon-services/addon-services";
+import CtaBanner from "@/components/landing/cta-banner/CtaBanner";
 
 import CookieConsent from "@/components/cookie-consent/CookieConsent";
 import Navbar from "@/components/navigation/Navbar";
@@ -34,6 +35,8 @@ export default function Home() {
       <Newsletter />
 
       <PackFeatures />
+
+<CtaBanner />
 
       <AddonServices />
 

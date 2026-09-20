@@ -277,11 +277,7 @@ function DesktopCard({
           {service.description}
         </p>
 
-        <div className="mt-6 h-px w-full bg-[#e3e3e3]" />
-
-        <div className="mt-4 text-sm font-medium text-[#c8102e]">
-          Available as an add-on
-        </div>
+       
       </div>
     </motion.article>
   );
@@ -466,9 +462,7 @@ function MobileCard({
             {service.description}
           </p>
 
-          <div className="mt-5 text-sm font-medium text-[#c8102e]">
-            Available as an add-on
-          </div>
+          
         </div>
       </motion.article>
     </div>
