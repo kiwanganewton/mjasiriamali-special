@@ -7,14 +7,13 @@ export default function CtaBanner() {
       <div className="relative mx-auto h-[200px] max-w-[1200px] overflow-hidden rounded-xl bg-neutral-900 sm:h-[210px] lg:h-[205px]">
         {/* Image */}
         <Image
-          src="/images/cta/cta-banner04.webp"
-          alt="Customer support representative"
-          fill
-          priority
-          className="object-cover object-[62%_center] sm:object-[60%_center]"
-          sizes="(max-width: 768px) 100vw, 1200px"
-        />
-
+  src="/images/cta/cta-banner04.webp"
+  alt="Customer support representative"
+  fill
+  priority
+  className="scale-[1.4] object-cover object-[72%_center] sm:scale-100 sm:object-[60%_center]"
+  sizes="(max-width: 768px) 100vw, 1200px"
+/>
         {/* Content */}
         <div className="relative z-10 flex h-full items-center">
           <div className="w-[64%] px-6 sm:w-[55%] sm:px-8 lg:w-[48%] lg:px-10">
