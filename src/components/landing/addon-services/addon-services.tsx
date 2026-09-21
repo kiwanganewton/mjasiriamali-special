@@ -259,7 +259,7 @@ function DesktopCard({
             font-semibold
             leading-[1.25]
             tracking-[-0.02em]
-            text-[#262626]
+            text-neutral-600
           "
         >
           {service.title}
@@ -445,7 +445,7 @@ function MobileCard({
               font-semibold
               leading-[1.25]
               tracking-[-0.02em]
-              text-[#262626]
+              text-neutral-600
             "
           >
             {service.title}
