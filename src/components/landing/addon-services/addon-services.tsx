@@ -97,7 +97,7 @@ export default function AddonServices() {
                     font-semibold
                     leading-[1.2]
                     tracking-[-0.025em]
-                    text-neutral-600
+                    text-neutral-700
                     sm:text-[28px]
                     lg:text-[30px]
                   "
@@ -259,7 +259,7 @@ function DesktopCard({
             font-semibold
             leading-[1.25]
             tracking-[-0.02em]
-            text-neutral-600
+            text-neutral-700
           "
         >
           {service.title}
@@ -317,7 +317,7 @@ function MobileServices() {
               font-semibold
               leading-[1.2]
               tracking-[-0.025em]
-              text-neutral-600
+              text-neutral-700
               sm:text-[24px]
             "
           >
@@ -445,7 +445,7 @@ function MobileCard({
               font-semibold
               leading-[1.25]
               tracking-[-0.02em]
-              text-neutral-600
+              text-neutral-700
             "
           >
             {service.title}
