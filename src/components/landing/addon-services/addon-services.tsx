@@ -309,7 +309,7 @@ function MobileServices() {
             duration: 0.65,
             ease: [0.22, 1, 0.36, 1],
           }}
-         className="px-2 text-center sm:px-3"
+         className="px-2 text-left sm:px-3"
         >
           <h2
             className="
