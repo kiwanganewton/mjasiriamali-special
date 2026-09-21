@@ -16,9 +16,9 @@ export default function CtaBanner() {
 />
         {/* Content */}
         <div className="relative z-10 flex h-full items-center">
-          <div className="w-[76%] px-6 sm:w-[55%] sm:px-8 lg:w-[48%] lg:px-10">
+          <div className="w-[96%] px-6 sm:w-[55%] sm:px-8 lg:w-[48%] lg:px-10">
             <h2 className="max-w-[430px] text-[25px] font-medium leading-[1.12] tracking-[-0.02em] text-white sm:text-[30px] lg:text-[34px]">
-              Get Started Today With Only 190,000
+              Get Started Today With Only 190,000 TZS
             </h2>
 
             <Button
