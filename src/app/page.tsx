@@ -6,6 +6,8 @@ import PackFeatures from "@/components/landing/pack-features/pack-features";
 import AddonServices from "@/components/landing/addon-services/addon-services";
 import CtaBanner from "@/components/landing/cta-banner/CtaBanner";
 
+import Footer from "@/components/footer/footer";
+
 import CookieConsent from "@/components/cookie-consent/CookieConsent";
 import Navbar from "@/components/navigation/Navbar";
 
@@ -41,6 +43,9 @@ export default function Home() {
       <AddonServices />
 
       <CookieConsent />
+
+      <Footer />
+
     </main>
   );
 }
