@@ -40,7 +40,7 @@ export default function PackFeatureCard({
             font-semibold
             leading-[1.12]
             tracking-[-0.025em]
-            text-neutral-800
+            text-neutral-600
             sm:text-[25px]
           "
         >

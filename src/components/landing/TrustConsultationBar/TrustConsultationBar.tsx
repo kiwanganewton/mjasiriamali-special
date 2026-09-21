@@ -48,7 +48,7 @@ export default function TrustConsultationBar({
                 font-semibold
                 leading-[1.15]
                 tracking-[-0.02em]
-                text-[#262626]
+            text-neutral-600
                 sm:text-[24px]
               "
             >

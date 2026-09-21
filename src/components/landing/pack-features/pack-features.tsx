@@ -25,7 +25,7 @@ export default function PackFeatures() {
               font-semibold
               leading-[1.2]
               tracking-[-0.025em]
-              text-[#262626]
+              text-neutral-600
               sm:text-[28px]
               lg:text-[30px]
             "
