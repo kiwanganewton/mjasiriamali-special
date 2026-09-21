@@ -21,7 +21,7 @@ export default function PackFeatures() {
           <h2
             className="
               max-w-[680px]
-              text-[28px]
+              text-[24px]
               font-semibold
               leading-[1.2]
               tracking-[-0.025em]
@@ -43,9 +43,9 @@ export default function PackFeatures() {
               sm:text-lg
             "
           >
-            A package built to help your business stay
-            visible, communicate clearly, and grow without the cost of
-            building a full in-house team.
+            A package built to help your business stay visible, communicate
+            clearly, and grow without the cost of building a full in-house
+            team.
           </p>
         </div>
 

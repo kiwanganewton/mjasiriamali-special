@@ -313,7 +313,7 @@ function MobileServices() {
         >
           <h2
             className="
-              text-[28px]
+              text-[24px]
               font-semibold
               leading-[1.2]
               tracking-[-0.025em]

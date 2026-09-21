@@ -36,7 +36,7 @@ export default function PackFeatureCard({
         <h3
           className="
             max-w-[420px]
-            text-[23px]
+            text-[20px]
             font-semibold
             leading-[1.12]
             tracking-[-0.025em]
