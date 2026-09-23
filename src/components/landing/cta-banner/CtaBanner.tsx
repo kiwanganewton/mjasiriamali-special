@@ -24,36 +24,33 @@ export default function CtaBanner() {
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
         >
-          {/* Large donut */}
-          <div className="absolute -right-24 -top-32 h-[430px] w-[430px] rounded-full border-[3px] border-white/25" />
-          <div className="absolute -right-8 -top-16 h-[300px] w-[300px] rounded-full border-[3px] border-white/20" />
+          {/* Large focused donut */}
+          <div className="absolute -right-28 -top-36 h-[460px] w-[460px] rounded-full border-[4px] border-white/25" />
+          <div className="absolute -right-4 -top-12 h-[330px] w-[330px] rounded-full border-[3px] border-white/20" />
 
-          {/* Medium donut */}
-          <div className="absolute -bottom-[150px] right-[17%] h-[360px] w-[360px] rounded-full border-[3px] border-white/22" />
-          <div className="absolute -bottom-[105px] right-[21%] h-[270px] w-[270px] rounded-full border-[2px] border-white/18" />
+          {/* Lower-right donut */}
+          <div className="absolute -bottom-[190px] right-[18%] h-[410px] w-[410px] rounded-full border-[4px] border-white/22" />
+          <div className="absolute -bottom-[130px] right-[22%] h-[290px] w-[290px] rounded-full border-[3px] border-white/17" />
 
-          {/* Left donut */}
-          <div className="absolute -bottom-[190px] -left-[150px] h-[420px] w-[420px] rounded-full border-[3px] border-white/22" />
-          <div className="absolute -bottom-[140px] -left-[100px] h-[320px] w-[320px] rounded-full border-[2px] border-white/17" />
-
-          {/* Small precision circles */}
-          <div className="absolute left-[44%] top-[18%] h-16 w-16 rounded-full border-[2px] border-white/20" />
-          <div className="absolute left-[46%] top-[24%] h-5 w-5 rounded-full border-[2px] border-white/25" />
-
-          {/* Technical lines */}
-          <div className="absolute right-[8%] top-[42%] h-[2px] w-32 bg-white/22" />
-          <div className="absolute right-[10%] top-[58%] h-[2px] w-20 bg-white/18" />
-          <div className="absolute bottom-[25%] left-[8%] h-[2px] w-28 bg-white/18" />
+          {/* Lower-left donut */}
+          <div className="absolute -bottom-[220px] -left-[170px] h-[450px] w-[450px] rounded-full border-[4px] border-white/20" />
+          <div className="absolute -bottom-[150px] -left-[100px] h-[310px] w-[310px] rounded-full border-[3px] border-white/15" />
         </div>
 
-        <div className="relative flex min-h-[180px] flex-col justify-center px-5 py-8 sm:px-8 sm:py-9 lg:min-h-[175px] lg:flex-row lg:items-center lg:justify-between lg:px-10">
+        <div className="relative flex min-h-[180px] flex-col justify-center px-5 py-8 sm:min-h-[190px] sm:px-8 sm:py-9 lg:min-h-[175px] lg:flex-row lg:items-center lg:justify-between lg:px-10">
           {/* Content */}
           <div className="max-w-[780px] lg:flex-1">
             <h2 className="max-w-[700px] text-[25px] font-semibold leading-[1.12] tracking-[-0.02em] text-white sm:text-[30px] lg:text-[34px]">
-             Start Today With Only TZS 190,000/Month.
+              Start Today With Only TZS 190,000/Month.
             </h2>
 
-            <p className="mt-3 max-w-[680px] text-[14px] leading-[1.6] text-white/85 sm:text-[15px]">
+            {/* Mobile */}
+            <p className="mt-3 max-w-[680px] text-[14px] leading-[1.6] text-white/85 sm:hidden">
+              Professional marketing support designed for growing businesses.
+            </p>
+
+            {/* Tablet + Desktop */}
+            <p className="mt-3 hidden max-w-[720px] text-[15px] leading-[1.6] text-white/85 sm:block lg:text-[16px]">
               Professional marketing support designed for growing businesses.
             </p>
           </div>
