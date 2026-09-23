@@ -50,7 +50,7 @@ export default function CtaBanner() {
           {/* Content */}
           <div className="max-w-[780px] lg:flex-1">
             <h2 className="max-w-[700px] text-[25px] font-semibold leading-[1.12] tracking-[-0.02em] text-white sm:text-[30px] lg:text-[34px]">
-              4 In One. Only TZS 190,000/Month.
+             Start Today With Only TZS 190,000/Month.
             </h2>
 
             <p className="mt-3 max-w-[680px] text-[14px] leading-[1.6] text-white/85 sm:text-[15px]">
