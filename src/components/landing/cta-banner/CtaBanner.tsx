@@ -91,7 +91,7 @@ export default function CtaBanner() {
         <div className="order-2 w-full rounded-lg border border-neutral-200 bg-white p-6 shadow-[0_8px_25px_rgba(0,0,0,0.06)] sm:p-8 lg:w-[58%] lg:p-8">
           <div className="mb-6">
             <h2 className="text-[24px] font-semibold leading-[1.15] tracking-[-0.02em] text-neutral-600 sm:text-[28px]">
-              Start With Only TZS 190,000/Month.
+              Start Today With Only TZS 190,000/Month.
             </h2>
           </div>
 
