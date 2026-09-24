@@ -40,20 +40,24 @@ export default function CtaBanner() {
             aria-hidden="true"
             className="pointer-events-none absolute inset-0"
           >
-            <div className="absolute -right-32 -top-32 h-[350px] w-[350px] rounded-full border-[3px] border-white/20" />
+            {/* Large focused donut */}
+            <div className="absolute -right-28 -top-36 h-[460px] w-[460px] rounded-full border-[4px] border-white/25" />
+            <div className="absolute -right-4 -top-12 h-[330px] w-[330px] rounded-full border-[3px] border-white/20" />
 
-            <div className="absolute -right-5 -top-10 h-[245px] w-[245px] rounded-full border-[2px] border-white/15" />
+            {/* Lower-right donut */}
+            <div className="absolute -bottom-[190px] right-[18%] h-[410px] w-[410px] rounded-full border-[4px] border-white/22" />
+            <div className="absolute -bottom-[130px] right-[22%] h-[290px] w-[290px] rounded-full border-[3px] border-white/17" />
 
-            <div className="absolute -bottom-[150px] right-[8%] h-[300px] w-[300px] rounded-full border-[3px] border-white/17" />
-
-            <div className="absolute -bottom-[125px] -left-[125px] h-[300px] w-[300px] rounded-full border-[3px] border-white/16" />
+            {/* Lower-left donut */}
+            <div className="absolute -bottom-[220px] -left-[170px] h-[450px] w-[450px] rounded-full border-[4px] border-white/20" />
+            <div className="absolute -bottom-[150px] -left-[100px] h-[310px] w-[310px] rounded-full border-[3px] border-white/15" />
           </div>
 
+          {/* CTA Content */}
           <div className="relative flex min-h-[225px] flex-col justify-between px-6 py-7 sm:min-h-[240px] sm:px-7 sm:py-8 lg:min-h-[300px] lg:px-8 lg:py-8">
-
             <div>
               <h2 className="max-w-[390px] text-[25px] font-semibold leading-[1.12] tracking-[-0.02em] text-white sm:text-[28px] lg:text-[30px]">
-                Check if Mjasiriamali is right for your business
+                Check if Mjasiriamali Pack is right for you
               </h2>
 
               <p className="mt-3 max-w-[390px] text-[14px] leading-[1.6] text-white/85 sm:text-[15px]">
@@ -86,8 +90,8 @@ export default function CtaBanner() {
         {/* CONTACT FORM */}
         <div className="order-2 w-full rounded-lg border border-neutral-200 bg-white p-6 shadow-[0_8px_25px_rgba(0,0,0,0.06)] sm:p-8 lg:w-[58%] lg:p-8">
           <div className="mb-6">
-            <h2 className="text-[27px] font-semibold leading-[1.15] tracking-[-0.02em] text-neutral-900 sm:text-[30px]">
-              Start Today With Only TZS 190,000/Month.
+            <h2 className="text-[24px] font-semibold leading-[1.15] tracking-[-0.02em] text-neutral-600 sm:text-[28px]">
+              Start With Only TZS 190,000/Month.
             </h2>
           </div>
 
@@ -98,7 +102,7 @@ export default function CtaBanner() {
               type="text"
               name="name"
               placeholder="Your Full Name"
-              className="h-[52px] w-full rounded-md border border-neutral-200 bg-white px-4 text-[16px] text-neutral-800 outline-none transition-colors placeholder:text-neutral-500 focus:border-[#b80f2b]"
+              className="h-[52px] w-full rounded-md border border-neutral-200 bg-white px-4 text-[16px] text-neutral-800 outline-none transition-colors placeholder:text-neutral-500 focus:border-[#c8102e]"
             />
 
             {/* Email + Phone */}
@@ -107,42 +111,14 @@ export default function CtaBanner() {
                 type="email"
                 name="email"
                 placeholder="Email"
-                className="h-[52px] w-full rounded-md border border-neutral-200 bg-white px-4 text-[16px] text-neutral-800 outline-none transition-colors placeholder:text-neutral-500 focus:border-[#b80f2b]"
+                className="h-[52px] w-full rounded-md border border-neutral-200 bg-white px-4 text-[16px] text-neutral-800 outline-none transition-colors placeholder:text-neutral-500 focus:border-[#c8102e]"
               />
 
               <input
                 type="tel"
                 name="phone"
                 placeholder="Phone Number"
-                className="h-[52px] w-full rounded-md border border-neutral-200 bg-white px-4 text-[16px] text-neutral-800 outline-none transition-colors placeholder:text-neutral-500 focus:border-[#b80f2b]"
-              />
-            </div>
-
-            {/* Select Service */}
-            <div className="relative">
-              <select
-                name="service"
-                value={service}
-                onChange={(e) => setService(e.target.value)}
-                className={`h-[52px] w-full appearance-none rounded-md border border-neutral-200 bg-white px-4 pr-11 text-[16px] outline-none transition-colors focus:border-[#b80f2b] ${
-                  service ? "text-neutral-800" : "text-neutral-500"
-                }`}
-              >
-                <option value="" disabled>
-                  Select Service
-                </option>
-
-                {services.map((item) => (
-                  <option key={item} value={item}>
-                    {item}
-                  </option>
-                ))}
-              </select>
-
-              <ChevronDown
-                size={19}
-                strokeWidth={1.6}
-                className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500"
+                className="h-[52px] w-full rounded-md border border-neutral-200 bg-white px-4 text-[16px] text-neutral-800 outline-none transition-colors placeholder:text-neutral-500 focus:border-[#c8102e]"
               />
             </div>
 
@@ -151,13 +127,13 @@ export default function CtaBanner() {
               name="message"
               placeholder="Optional Message"
               rows={4}
-              className="min-h-[115px] w-full resize-none rounded-md border border-neutral-200 bg-white px-4 py-3 text-[16px] leading-6 text-neutral-800 outline-none transition-colors placeholder:text-neutral-500 focus:border-[#b80f2b]"
+              className="min-h-[115px] w-full resize-none rounded-md border border-neutral-200 bg-white px-4 py-3 text-[16px] leading-6 text-neutral-800 outline-none transition-colors placeholder:text-neutral-500 focus:border-[#c8102e]"
             />
 
             {/* Submit */}
             <button
               type="submit"
-              className="h-[52px] w-full rounded-md bg-[#c8102e] px-6 text-[16px] font-semibold text-white transition-colors duration-300 hover:bg-[#c8102e]"
+              className="h-[52px] w-full rounded-md bg-[#c8102e] px-6 text-[16px] font-semibold text-white transition-colors duration-300 hover:bg-[#a70d26]"
             >
               Submit Inquiry
             </button>
