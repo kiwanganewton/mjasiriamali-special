@@ -20,7 +20,7 @@ export default function CtaBanner() {
 
   return (
     <section className="w-full px-4 pt-7 sm:px-6 lg:px-8">
-      <div className="mx-auto flex max-w-[1200px] flex-col gap-6 lg:flex-row lg:items-center lg:gap-8">
+      <div className="mx-auto flex max-w-[1200px] flex-col gap-6 lg:flex-row lg:items-stretch lg:gap-8">
 
         {/* CTA BANNER */}
         <motion.div
@@ -33,7 +33,7 @@ export default function CtaBanner() {
             repeat: Infinity,
             repeatDelay: 5,
           }}
-          className="relative order-1 w-full overflow-hidden rounded-lg bg-[#c8102e] lg:w-[42%]"
+          className="relative order-1 flex w-full overflow-hidden rounded-lg bg-[#d70900] lg:h-auto lg:w-[42%]"
         >
           {/* Corporate donut pattern */}
           <div
@@ -54,7 +54,7 @@ export default function CtaBanner() {
           </div>
 
           {/* CTA Content */}
-          <div className="relative flex min-h-[225px] flex-col justify-between px-6 py-7 sm:min-h-[240px] sm:px-7 sm:py-8 lg:min-h-[300px] lg:px-8 lg:py-8">
+          <div className="relative flex min-h-[225px] w-full flex-col justify-between px-6 py-7 sm:min-h-[240px] sm:px-7 sm:py-8 lg:min-h-0 lg:px-8 lg:py-8">
             <div>
               <h2 className="max-w-[390px] text-[25px] font-semibold leading-[1.12] tracking-[-0.02em] text-white sm:text-[28px] lg:text-[30px]">
                 Check if Mjasiriamali Pack is right for you
@@ -133,7 +133,7 @@ export default function CtaBanner() {
             {/* Submit */}
             <button
               type="submit"
-              className="h-[52px] w-full rounded-md bg-[#c8102e] px-6 text-[16px] font-semibold text-white transition-colors duration-300 hover:bg-[#a70d26]"
+              className="h-[52px] w-full rounded-md bg-[#d70900] px-6 text-[16px] font-semibold text-white transition-colors duration-300 hover:bg-[#a70d26]"
             >
               Submit Inquiry
             </button>

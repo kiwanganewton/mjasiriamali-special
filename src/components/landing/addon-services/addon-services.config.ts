@@ -42,12 +42,12 @@ export const addonServicesContent = {
         "From logos and business cards to letterheads and other branded materials, keep your business identity consistent.",
       image: "/images/addon-services/branding-items.webp",
     },
-    {
+   /*  {
       number: "05",
       title: "Social Media Management",
       description:
         "Keep your social channels active with planned content, creative designs, publishing support, and ongoing management.",
       image: "/images/addon-services/social-media.webp",
-    },
+    }, */
   ] satisfies AddonService[],
 };
