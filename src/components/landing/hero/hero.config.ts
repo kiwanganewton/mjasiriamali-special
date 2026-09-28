@@ -7,6 +7,8 @@ export type HeroSlidePosition = {
 export type HeroSlideColors = {
   heading: string;
   paragraph: string;
+  mobileHeading?: string;
+  mobileParagraph?: string;
 };
 
 export type HeroSlideData = {
@@ -99,6 +101,8 @@ export const heroSlides: HeroSlideData[] = [
     colors: {
       heading: "#C62828",
       paragraph: "#363a3e",
+      mobileHeading: "#D70900",
+     mobileParagraph: "#363a3e",
     },
   },
 
@@ -132,7 +136,7 @@ export const heroSlides: HeroSlideData[] = [
     },
 
     colors: {
-      heading: "#d70900",
+      heading: "#C62828",
       paragraph: "#363a3e",
     },
   },
