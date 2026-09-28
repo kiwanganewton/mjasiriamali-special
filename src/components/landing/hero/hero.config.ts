@@ -132,7 +132,7 @@ export const heroSlides: HeroSlideData[] = [
     },
 
     colors: {
-      heading: "#C62828",
+      heading: "#d70900",
       paragraph: "#363a3e",
     },
   },
