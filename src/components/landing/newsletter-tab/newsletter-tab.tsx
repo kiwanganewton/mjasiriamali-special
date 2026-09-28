@@ -85,7 +85,7 @@ export default function NewsletterTab() {
           border-y
           border-l
           border-white/20
-          bg-[#c8102e]
+          bg-[#d70900]
           px-2.5
           py-3
           text-[11px]
