@@ -7,8 +7,6 @@ export type HeroSlidePosition = {
 export type HeroSlideColors = {
   heading: string;
   paragraph: string;
-  mobileHeading?: string;
-  mobileParagraph?: string;
 };
 
 export type HeroSlideData = {
@@ -62,7 +60,7 @@ export const heroSlides: HeroSlideData[] = [
       },
     },
 
-    colors: {
+     colors: {
       heading: "#f5f2f2",
       paragraph: "#eef1f4",
     },
@@ -99,10 +97,8 @@ export const heroSlides: HeroSlideData[] = [
     },
 
     colors: {
-      heading: "#C62828",
+      heading: "#D70900",
       paragraph: "#363a3e",
-      mobileHeading: "#D70900",
-      mobileParagraph: "#363a3e",
     },
   },
 
@@ -115,7 +111,7 @@ export const heroSlides: HeroSlideData[] = [
 
     image: "/images/hero/slide-0000003.webp",
 
-    /* cta: {
+/*     cta: {
       label: "Discover More",
       variant: "solid",
       tone: "brand",

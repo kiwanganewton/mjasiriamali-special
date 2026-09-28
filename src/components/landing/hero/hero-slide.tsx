@@ -49,38 +49,36 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
           group-hover:scale-[1.025]
         "
       />
+{/* VERY SUBTLE FULL IMAGE OVERLAY */}
+<div
+  className="
+    absolute
+    inset-0
+    bg-black/[0.005]
+    transition-opacity
+    duration-500
+    group-hover:bg-black/[0]
+  "
+/>
 
-      {/* VERY SUBTLE FULL IMAGE OVERLAY */}
-      <div
-        className="
-          absolute
-          inset-0
-          bg-black/[0.005]
-          transition-opacity
-          duration-500
-          group-hover:bg-black/[0]
-        "
-      />
-
-      {/* VERY LIGHT CONTENT OVERLAY */}
-      <div
-        className="
-          pointer-events-none
-          absolute
-          inset-x-0
-          bottom-0
-          z-[5]
-          h-[55%]
-          bg-gradient-to-t
-          from-black/[0.04]
-          via-black/[0.01]
-          to-transparent
-          transition-opacity
-          duration-500
-          group-hover:opacity-85
-        "
-      />
-
+{/* VERY LIGHT CONTENT OVERLAY */}
+<div
+  className="
+    pointer-events-none
+    absolute
+    inset-x-0
+    bottom-0
+    z-[5]
+    h-[55%]
+    bg-gradient-to-t
+    from-black/[0.04]
+    via-black/[0.01]
+    to-transparent
+    transition-opacity
+    duration-500
+    group-hover:opacity-85
+  "
+/>
       {/* DESKTOP / TABLET CONTENT */}
       <div
         className="
@@ -143,11 +141,11 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
           md:hidden
           max-[380px]:-translate-y-[60%]
         "
-        style={{
-          left: mobile.x,
-          top: `calc(${mobile.y} - 1%)`,
-          width: mobile.width,
-        }}
+       style={{
+  left: mobile.x,
+  top: `calc(${mobile.y} - 1%)`,
+  width: mobile.width,
+}}
       >
         <h2
           className="
@@ -158,7 +156,8 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
             max-[380px]:text-[32px]
           "
           style={{
-            color: slide.colors.mobileHeading ?? slide.colors.heading,
+            color: slide.colors.heading,
+           
           }}
         >
           {slide.title}
@@ -173,8 +172,7 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
             max-[380px]:text-[14px]
           "
           style={{
-            color:
-              slide.colors.mobileParagraph ?? slide.colors.paragraph,
+            color: slide.colors.paragraph,
           }}
         >
           {slide.description}
