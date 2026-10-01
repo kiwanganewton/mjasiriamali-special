@@ -17,6 +17,11 @@ import {
 
 type AssessmentStep = "intro" | "questions" | "whatsapp" | "success";
 
+type Recommendation = {
+  heading: string;
+  paragraph: string;
+};
+
 const TOTAL_QUESTIONS = assessmentConfig.questions.length;
 
 function normalizeTanzaniaPhone(value: string) {
@@ -45,6 +50,11 @@ export default function Assessment() {
   const [whatsappNumber, setWhatsappNumber] = useState("");
   const [error, setError] = useState("");
 
+const [recommendation, setRecommendation] =
+  useState<Recommendation | null>(null);
+
+const [isGeneratingRecommendation, setIsGeneratingRecommendation] =
+  useState(false);
   const question = assessmentConfig.questions[currentQuestion];
 
   const progress = useMemo(() => {
@@ -68,6 +78,47 @@ export default function Assessment() {
     }));
   };
 
+
+
+const generateRecommendation = async () => {
+  setError("");
+  setIsGeneratingRecommendation(true);
+
+  try {
+    const response = await fetch("/api/recommendation", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        answers,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to generate recommendation");
+    }
+
+    const data = await response.json();
+
+    setRecommendation(data.recommendation);
+    setStep("whatsapp");
+  } catch (error) {
+    console.error(error);
+
+    setError(
+      "We couldn't prepare your recommendation right now. Please try again."
+    );
+  } finally {
+    setIsGeneratingRecommendation(false);
+  }
+};
+
+
+
+
+
+
   const handleNext = () => {
     if (!answers[question.id]) {
       setError(assessmentConfig.errors.answerRequired);
@@ -76,10 +127,10 @@ export default function Assessment() {
 
     setError("");
 
-    if (currentQuestion === TOTAL_QUESTIONS - 1) {
-      setStep("whatsapp");
-      return;
-    }
+   if (currentQuestion === TOTAL_QUESTIONS - 1) {
+  generateRecommendation();
+  return;
+}
 
     setCurrentQuestion((previous) => previous + 1);
   };
@@ -164,6 +215,43 @@ export default function Assessment() {
             </motion.section>
           )}
 
+
+
+
+
+
+
+
+{isGeneratingRecommendation && (
+  <motion.section
+    key="generating"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    className="flex min-h-[600px] items-center justify-center"
+  >
+    <div className="text-center">
+      <div className="mx-auto h-8 w-8 animate-spin rounded-full border-2 border-neutral-200 border-t-[#c8102e]" />
+
+      <p className="mt-5 text-[15px] font-medium text-neutral-700">
+        Reviewing your answers...
+      </p>
+
+      <p className="mt-2 text-sm text-neutral-500">
+        Preparing your recommendation.
+      </p>
+    </div>
+  </motion.section>
+)}
+
+
+
+
+
+
+
+
+
+
           {/* QUESTIONS */}
           {step === "questions" && (
             <motion.section
@@ -209,7 +297,7 @@ export default function Assessment() {
                       <span
                         className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border ${
                           isSelected
-                            ? "border-neutral-500 bg-neutral-500"
+                             ? "border-[#c8102e] bg-[#c8102e]"
                             : "border-neutral-300 bg-white group-hover:border-neutral-400"
                         }`}
                       >
@@ -282,6 +370,23 @@ export default function Assessment() {
               className="flex min-h-[600px] flex-col justify-center"
             >
               <div className="max-w-2xl">
+
+
+                 {/* AI RECOMMENDATION */}
+  {recommendation && (
+    <div className="mb-10">
+      <h2 className="text-[24px] font-semibold leading-[1.15] tracking-[-0.02em] text-neutral-700 sm:text-[28px]">
+        {recommendation.heading}
+      </h2>
+
+      <p className="mt-4 max-w-xl text-[15px] leading-[1.6] text-neutral-500 sm:text-[16px]">
+        {recommendation.paragraph}
+      </p>
+    </div>
+  )}
+
+
+
                 <div className="mb-8">
                   <div className="h-[2px] w-full bg-neutral-200">
                     <div className="h-full w-full bg-neutral-400" />

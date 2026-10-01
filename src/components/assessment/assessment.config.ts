@@ -76,10 +76,7 @@ export const assessmentConfig = {
           id: "unclear_results",
           label: "We are not sure what is working",
         },
-        {
-          id: "stronger_online_presence",
-          label: "We need a stronger online presence",
-        },
+   
       ],
     },
 
@@ -107,14 +104,7 @@ export const assessmentConfig = {
           id: "stronger_brand",
           label: "Build a stronger brand",
         },
-        {
-          id: "consistent_marketing",
-          label: "Create consistent marketing",
-        },
-        {
-          id: "increase_sales",
-          label: "Increase sales",
-        },
+    
       ],
     },
 
@@ -169,10 +159,7 @@ export const assessmentConfig = {
           id: "agency",
           label: "We work with an agency",
         },
-        {
-          id: "no_consistent_support",
-          label: "We don't have anyone handling it consistently",
-        },
+  
       ],
     },
 
@@ -229,10 +216,7 @@ export const assessmentConfig = {
           id: "above_500k",
           label: "Above TSh 500,000",
         },
-        {
-          id: "not_sure",
-          label: "I'm not sure yet",
-        },
+   
       ],
     },
   ] satisfies AssessmentQuestion[],
