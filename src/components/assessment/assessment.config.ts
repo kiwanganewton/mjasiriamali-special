@@ -27,7 +27,7 @@ export const assessmentConfig = {
   questions: [
     {
       id: "business_stage",
-      question: "What best describes your business right now?",
+      question: "Which best describes where your business is right now?",
       options: [
         {
           id: "just_starting",
@@ -54,7 +54,7 @@ export const assessmentConfig = {
 
     {
       id: "marketing_challenge",
-      question: "What is your biggest marketing challenge right now?",
+      question: "What is happening with your marketing right now?",
       options: [
         {
           id: "not_enough_awareness",
@@ -70,19 +70,19 @@ export const assessmentConfig = {
         },
         {
           id: "inconsistent_marketing",
-          label: "Our marketing is inconsistent",
+          label: "We get customers, but growth is inconsistent ",
         },
         {
           id: "unclear_results",
           label: "We are not sure what is working",
         },
-   
       ],
     },
 
     {
       id: "marketing_goal",
-      question: "What would you most like your marketing to achieve?",
+      question:
+        "What would make the biggest difference to your business right now?",
       options: [
         {
           id: "more_enquiries",
@@ -102,15 +102,14 @@ export const assessmentConfig = {
         },
         {
           id: "stronger_brand",
-          label: "Build a stronger brand",
+          label: "Growing the business more consistently ",
         },
-    
       ],
     },
 
     {
-      id: "marketing_activity",
-      question: "How would you describe your current marketing activity?",
+      id: "marketing_structure",
+      question: "How does your business currently approach marketing?",
       options: [
         {
           id: "rarely_marketing",
@@ -118,19 +117,20 @@ export const assessmentConfig = {
         },
         {
           id: "occasionally",
-          label: "We do it occasionally",
+          label: "We market when needed, without a fixed plan",
         },
         {
           id: "regularly_no_plan",
-          label: "We post regularly but without a clear plan",
+          label: "We do marketing regularly, but without a clear strategy ",
         },
         {
           id: "planned_approach",
-          label: "We have a planned approach",
+          label: "We have a planned marketing approach",
         },
         {
           id: "team_or_agency",
-          label: "We have a team or agency handling it",
+          label:
+            "We have an established marketing system with defined processes",
         },
       ],
     },
@@ -144,57 +144,55 @@ export const assessmentConfig = {
           label: "I handle everything myself",
         },
         {
-          id: "business_support",
-          label: "Someone in the business helps with marketing",
+          id: "shared_employee",
+          label: "An employee handles it alongside other responsibilities",
         },
         {
-          id: "dedicated_team",
-          label: "We have a dedicated marketing person/team",
+          id: "marketing_team",
+          label: "We have a internal marketing team ",
         },
         {
-          id: "freelancer",
-          label: "We work with a freelancer",
+          id: "dedicated_person",
+          label: "We have a dedicated marketing person",
         },
         {
           id: "agency",
-          label: "We work with an agency",
+          label: "We work with an agency or established marketing partner",
         },
-  
       ],
     },
 
     {
-      id: "timing",
-      question:
-        "How soon are you looking to get consistent marketing support for your business?",
+      id: "marketing_friction",
+      question: "What usually makes marketing difficult for your business?",
       options: [
         {
-          id: "exploring",
-          label: "I'm just exploring my options",
+          id: "limited_time_resources",
+          label: "We don't have enough time ",
         },
         {
-          id: "three_to_six_months",
-          label: "Within the next 3–6 months",
+          id: "unclear_focus",
+          label: "We don't know what to communicate ",
         },
         {
-          id: "one_to_three_months",
-          label: "Within the next 1–3 months",
+          id: "content_consistency",
+          label: "Creating Marketing content regularly is difficult ",
         },
         {
-          id: "next_few_weeks",
-          label: "Within the next few weeks",
+          id: "competing_priorities",
+          label: "Other business priorities take over ",
         },
         {
-          id: "as_soon_as_possible",
-          label: "I need support as soon as possible",
+          id: "improve_existing_system",
+          label: "We already have a system but want to improve it ",
         },
       ],
     },
 
     {
-      id: "budget",
+      id: "Investment_capacity",
       question:
-        "What monthly amount would you be comfortable setting aside for marketing support?",
+        "What monthly budget could your business comfortably set aside for marketing?",
       options: [
         {
           id: "below_100k",
@@ -205,18 +203,17 @@ export const assessmentConfig = {
           label: "TSh 100,000–200,000",
         },
         {
-          id: "200_350k",
-          label: "TSh 200,000–350,000",
+          id: "200_500k",
+          label: "TSh 200,000–500,000",
         },
         {
-          id: "350_500k",
-          label: "TSh 350,000–500,000",
+          id: "500k_1M",
+          label: "TSh 500,000–1,000,000",
         },
         {
-          id: "above_500k",
-          label: "Above TSh 500,000",
+          id: "above_1M",
+          label: "Above TSh 1,000,000",
         },
-   
       ],
     },
   ] satisfies AssessmentQuestion[],
@@ -253,8 +250,7 @@ export const assessmentConfig = {
 
   errors: {
     answerRequired: "Please select an answer to continue.",
-    invalidPhone:
-      "Please enter a valid Tanzanian WhatsApp number.",
+    invalidPhone: "Please enter a valid Tanzanian WhatsApp number.",
     submission:
       "We couldn't send your recommendation right now. Please check your number and try again.",
   },

@@ -15,7 +15,12 @@ import {
   type AssessmentAnswers,
 } from "./assessment.config";
 
-type AssessmentStep = "intro" | "questions" | "whatsapp" | "success";
+type AssessmentStep =
+  | "intro"
+  | "questions"
+  | "generating"
+  | "whatsapp"
+  | "success";
 
 type Recommendation = {
   heading: string;
@@ -50,16 +55,24 @@ export default function Assessment() {
   const [whatsappNumber, setWhatsappNumber] = useState("");
   const [error, setError] = useState("");
 
-const [recommendation, setRecommendation] =
-  useState<Recommendation | null>(null);
+  const [recommendation, setRecommendation] =
+    useState<Recommendation | null>(null);
 
-const [isGeneratingRecommendation, setIsGeneratingRecommendation] =
-  useState(false);
+  const [isGeneratingRecommendation, setIsGeneratingRecommendation] =
+    useState(false);
+
   const question = assessmentConfig.questions[currentQuestion];
 
   const progress = useMemo(() => {
     if (step === "intro") return 0;
-    if (step === "whatsapp" || step === "success") return 100;
+
+    if (
+      step === "generating" ||
+      step === "whatsapp" ||
+      step === "success"
+    ) {
+      return 100;
+    }
 
     return ((currentQuestion + 1) / TOTAL_QUESTIONS) * 100;
   }, [step, currentQuestion]);
@@ -78,46 +91,42 @@ const [isGeneratingRecommendation, setIsGeneratingRecommendation] =
     }));
   };
 
+  const generateRecommendation = async () => {
+    setError("");
+    setIsGeneratingRecommendation(true);
+    setStep("generating");
 
+    try {
+      const response = await fetch("/api/recommendation", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          answers,
+        }),
+      });
 
-const generateRecommendation = async () => {
-  setError("");
-  setIsGeneratingRecommendation(true);
+      if (!response.ok) {
+        throw new Error("Failed to generate recommendation");
+      }
 
-  try {
-    const response = await fetch("/api/recommendation", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        answers,
-      }),
-    });
+      const data = await response.json();
 
-    if (!response.ok) {
-      throw new Error("Failed to generate recommendation");
+      setRecommendation(data.recommendation);
+      setStep("whatsapp");
+    } catch (error) {
+      console.error("Recommendation error:", error);
+
+      setError(
+        "We couldn't prepare your recommendation right now. Please try again."
+      );
+
+      setStep("questions");
+    } finally {
+      setIsGeneratingRecommendation(false);
     }
-
-    const data = await response.json();
-
-    setRecommendation(data.recommendation);
-    setStep("whatsapp");
-  } catch (error) {
-    console.error(error);
-
-    setError(
-      "We couldn't prepare your recommendation right now. Please try again."
-    );
-  } finally {
-    setIsGeneratingRecommendation(false);
-  }
-};
-
-
-
-
-
+  };
 
   const handleNext = () => {
     if (!answers[question.id]) {
@@ -127,10 +136,10 @@ const generateRecommendation = async () => {
 
     setError("");
 
-   if (currentQuestion === TOTAL_QUESTIONS - 1) {
-  generateRecommendation();
-  return;
-}
+    if (currentQuestion === TOTAL_QUESTIONS - 1) {
+      generateRecommendation();
+      return;
+    }
 
     setCurrentQuestion((previous) => previous + 1);
   };
@@ -159,6 +168,7 @@ const generateRecommendation = async () => {
     console.log({
       answers,
       whatsappNumber: normalizedNumber,
+      recommendation,
     });
 
     setStep("success");
@@ -173,6 +183,7 @@ const generateRecommendation = async () => {
     <div className="min-h-full bg-white">
       <div className="mx-auto w-full max-w-3xl px-5 py-8 sm:px-8 sm:py-10 lg:px-10 lg:py-12">
         <AnimatePresence mode="wait">
+
           {/* INTRO */}
           {step === "intro" && (
             <motion.section
@@ -215,42 +226,54 @@ const generateRecommendation = async () => {
             </motion.section>
           )}
 
+          {/* GENERATING RECOMMENDATION */}
+          {step === "generating" && (
+            <motion.section
+              key="generating"
+              initial={{ opacity: 0, x: 12 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -12 }}
+              transition={{ duration: 0.2 }}
+              className="flex min-h-[600px] flex-col justify-center"
+            >
+              <div className="max-w-2xl">
 
+                {/* Progress */}
+                <div className="mb-8">
+                  <div className="h-[2px] w-full bg-neutral-200">
+                    <motion.div
+                      className="h-full bg-[#c8102e]"
+                      initial={{ width: "0%" }}
+                      animate={{ width: "100%" }}
+                      transition={{
+                        duration: 1.2,
+                        ease: "easeOut",
+                      }}
+                    />
+                  </div>
+                </div>
 
+                <div className="max-w-xl">
 
+                  {/* Loading icon */}
+                  <div className="mb-6 flex h-10 w-10 items-center justify-center border border-neutral-200 bg-neutral-50">
+                    <div className="h-5 w-5 animate-spin rounded-full border-2 border-neutral-200 border-t-[#c8102e]" />
+                  </div>
 
+                  <h2 className="text-[24px] font-semibold leading-[1.15] tracking-[-0.02em] text-neutral-600 sm:text-[28px]">
+                    Reviewing your answers
+                  </h2>
 
+                  <p className="mt-4 text-[15px] leading-[1.6] text-neutral-500 sm:text-[16px]">
+                    We’re looking at your answers to understand your current
+                    marketing situation and prepare a recommendation for your
+                    business.
+                  </p>
 
-
-{isGeneratingRecommendation && (
-  <motion.section
-    key="generating"
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    className="flex min-h-[600px] items-center justify-center"
-  >
-    <div className="text-center">
-      <div className="mx-auto h-8 w-8 animate-spin rounded-full border-2 border-neutral-200 border-t-[#c8102e]" />
-
-      <p className="mt-5 text-[15px] font-medium text-neutral-700">
-        Reviewing your answers...
-      </p>
-
-      <p className="mt-2 text-sm text-neutral-500">
-        Preparing your recommendation.
-      </p>
-    </div>
-  </motion.section>
-)}
-
-
-
-
-
-
-
-
-
+                </div>
+              </div>
+            </motion.section>
+          )}
 
           {/* QUESTIONS */}
           {step === "questions" && (
@@ -261,6 +284,7 @@ const generateRecommendation = async () => {
               exit={{ opacity: 0, x: -12 }}
               transition={{ duration: 0.2 }}
             >
+              {/* Progress */}
               <div className="mb-8">
                 <div className="h-[2px] w-full bg-neutral-200">
                   <motion.div
@@ -275,13 +299,16 @@ const generateRecommendation = async () => {
                 </div>
               </div>
 
+              {/* Question */}
               <h2 className="max-w-2xl text-[24px] font-semibold leading-[1.15] tracking-[-0.02em] text-neutral-600 sm:text-[28px]">
                 {question.question}
               </h2>
 
+              {/* Options */}
               <div className="mt-7 space-y-3">
                 {question.options.map((option) => {
-                  const isSelected = answers[question.id] === option.id;
+                  const isSelected =
+                    answers[question.id] === option.id;
 
                   return (
                     <button
@@ -294,10 +321,11 @@ const generateRecommendation = async () => {
                           : "border-neutral-200 bg-white hover:border-neutral-300 hover:bg-neutral-50"
                       }`}
                     >
+                      {/* Selection indicator */}
                       <span
                         className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border ${
                           isSelected
-                             ? "border-[#c8102e] bg-[#c8102e]"
+                            ? "border-[#c8102e] bg-[#c8102e]"
                             : "border-neutral-300 bg-white group-hover:border-neutral-400"
                         }`}
                       >
@@ -310,6 +338,7 @@ const generateRecommendation = async () => {
                         )}
                       </span>
 
+                      {/* Option label */}
                       <span className="text-[15px] font-medium leading-6 text-neutral-700">
                         {option.label}
                       </span>
@@ -318,10 +347,14 @@ const generateRecommendation = async () => {
                 })}
               </div>
 
+              {/* Error */}
               {error && (
-                <p className="mt-4 text-sm text-red-600">{error}</p>
+                <p className="mt-4 text-sm text-red-600">
+                  {error}
+                </p>
               )}
 
+              {/* Navigation */}
               <div className="mt-8 flex items-center justify-between border-t border-neutral-200 pt-6">
                 <button
                   type="button"
@@ -359,7 +392,7 @@ const generateRecommendation = async () => {
             </motion.section>
           )}
 
-          {/* WHATSAPP */}
+          {/* WHATSAPP / RESULT */}
           {step === "whatsapp" && (
             <motion.section
               key="whatsapp"
@@ -371,28 +404,27 @@ const generateRecommendation = async () => {
             >
               <div className="max-w-2xl">
 
+                {/* AI RECOMMENDATION */}
+                {recommendation && (
+                  <div className="mb-10">
+                    <h2 className="text-[24px] font-semibold leading-[1.15] tracking-[-0.02em] text-neutral-700 sm:text-[28px]">
+                      {recommendation.heading}
+                    </h2>
 
-                 {/* AI RECOMMENDATION */}
-  {recommendation && (
-    <div className="mb-10">
-      <h2 className="text-[24px] font-semibold leading-[1.15] tracking-[-0.02em] text-neutral-700 sm:text-[28px]">
-        {recommendation.heading}
-      </h2>
+                    <p className="mt-4 max-w-xl text-[15px] leading-[1.6] text-neutral-500 sm:text-[16px]">
+                      {recommendation.paragraph}
+                    </p>
+                  </div>
+                )}
 
-      <p className="mt-4 max-w-xl text-[15px] leading-[1.6] text-neutral-500 sm:text-[16px]">
-        {recommendation.paragraph}
-      </p>
-    </div>
-  )}
-
-
-
+                {/* Progress */}
                 <div className="mb-8">
                   <div className="h-[2px] w-full bg-neutral-200">
                     <div className="h-full w-full bg-neutral-400" />
                   </div>
                 </div>
 
+                {/* WhatsApp heading */}
                 <h2 className="text-[24px] font-semibold leading-[1.15] tracking-[-0.02em] text-neutral-600 sm:text-[28px]">
                   {assessmentConfig.whatsapp.title}
                 </h2>
@@ -401,10 +433,15 @@ const generateRecommendation = async () => {
                   {assessmentConfig.whatsapp.description}
                 </p>
 
+                {/* WhatsApp Card */}
                 <div className="mt-8 border border-neutral-200 bg-neutral-50 p-6 sm:p-7">
                   <div className="flex items-start gap-4">
+
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center border border-neutral-200 bg-white text-neutral-600">
-                      <MessageCircle size={19} strokeWidth={1.8} />
+                      <MessageCircle
+                        size={19}
+                        strokeWidth={1.8}
+                      />
                     </div>
 
                     <div>
@@ -413,23 +450,27 @@ const generateRecommendation = async () => {
                       </h3>
 
                       <ul className="mt-4 space-y-2">
-                        {assessmentConfig.whatsapp.benefits.map((benefit) => (
-                          <li
-                            key={benefit}
-                            className="flex items-start gap-2 text-[14px] leading-6 text-neutral-500"
-                          >
-                            <Check
-                              size={15}
-                              strokeWidth={2}
-                              className="mt-1 shrink-0 text-neutral-600"
-                            />
-                            <span>{benefit}</span>
-                          </li>
-                        ))}
+                        {assessmentConfig.whatsapp.benefits.map(
+                          (benefit) => (
+                            <li
+                              key={benefit}
+                              className="flex items-start gap-2 text-[14px] leading-6 text-neutral-500"
+                            >
+                              <Check
+                                size={15}
+                                strokeWidth={2}
+                                className="mt-1 shrink-0 text-neutral-600"
+                              />
+
+                              <span>{benefit}</span>
+                            </li>
+                          )
+                        )}
                       </ul>
                     </div>
                   </div>
 
+                  {/* WhatsApp Number */}
                   <div className="mt-7">
                     <label
                       htmlFor="whatsapp-number"
@@ -447,12 +488,16 @@ const generateRecommendation = async () => {
                         setWhatsappNumber(event.target.value);
                         setError("");
                       }}
-                      placeholder={assessmentConfig.whatsapp.placeholder}
+                      placeholder={
+                        assessmentConfig.whatsapp.placeholder
+                      }
                       className="h-[52px] w-full rounded-md border border-neutral-200 bg-white px-4 text-[16px] text-neutral-800 outline-none transition-colors placeholder:text-neutral-500 focus:border-[#c8102e]"
                     />
 
                     {error && (
-                      <p className="mt-3 text-sm text-red-600">{error}</p>
+                      <p className="mt-3 text-sm text-red-600">
+                        {error}
+                      </p>
                     )}
 
                     <p className="mt-3 text-xs leading-5 text-neutral-500">
@@ -460,6 +505,7 @@ const generateRecommendation = async () => {
                     </p>
                   </div>
 
+                  {/* WhatsApp Actions */}
                   <div className="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
                     <button
                       type="button"
@@ -489,6 +535,7 @@ const generateRecommendation = async () => {
                   </div>
                 </div>
 
+                {/* Back */}
                 <button
                   type="button"
                   onClick={handleBack}
@@ -532,6 +579,7 @@ const generateRecommendation = async () => {
               </p>
             </motion.section>
           )}
+
         </AnimatePresence>
       </div>
     </div>
