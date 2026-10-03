@@ -190,7 +190,7 @@ export const assessmentConfig = {
     },
 
     {
-      id: "Investment_capacity",
+      id: "investment_capacity",
       question:
         "What monthly budget could your business comfortably set aside for marketing?",
       options: [
