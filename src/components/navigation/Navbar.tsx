@@ -82,7 +82,7 @@ export default function Navbar() {
             aria-label="Dilipoint home"
           >
             <img
-              src="/images/Logo01.png"
+              src="/images/Logo02.png"
               alt="Dilipoint"
               className="h-auto w-[145px] sm:w-[150px] lg:w-[165px]"
             />
