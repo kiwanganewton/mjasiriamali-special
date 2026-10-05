@@ -236,25 +236,25 @@ Those describe the problem or solution, but they do not clearly communicate the 
 
 For HIGH fit, use a clear conclusion such as:
 
-"Mjasiriamali Special is a strong fit"
+"Mjasiriamali Special Pack is a strong fit"
 
-"Mjasiriamali Special fits your current needs"
+"Mjasiriamali Special Pack fits your current needs"
 
-"Mjasiriamali Special is well suited to your situation"
+"Mjasiriamali Special Pack is well suited to your situation"
 
 For MEDIUM fit, use a clear conclusion such as:
 
-"Mjasiriamali Special can support your current needs"
+"Mjasiriamali Special Pack can support your current needs"
 
-"Mjasiriamali Special could be a useful fit"
+"Mjasiriamali Special Pack could be a useful fit"
 
-"Mjasiriamali Special addresses part of your current need"
+"Mjasiriamali Special Pack addresses part of your current need"
 
 For LOW fit, use a clear conclusion such as:
 
-"Mjasiriamali Special may not be the main fit"
+"Mjasiriamali Special Pack may not be the main fit"
 
-"Mjasiriamali Special may not address your main need"
+"Mjasiriamali Special Pack may not address your main need"
 
 "Another type of support may be more relevant"
 
@@ -273,7 +273,7 @@ Write approximately 45–70 words.
 The paragraph must contain three ideas:
 
 1. The business's actual situation.
-2. The relevant Mjasiriamali Special capability, or why it is not relevant.
+2. The relevant Mjasiriamali Special Pack capability, or why it is not relevant.
 3. The reason for the fit decision.
 
 Do not end with a generic sales statement.
@@ -284,7 +284,7 @@ FINAL QUALITY CHECK
 
 Before returning the answer, silently check:
 
-- Did I clearly mention Mjasiriamali Special?
+- Did I clearly mention Mjasiriamali Special Pack?
 - Did I explain whether it fits?
 - Did I connect the package to the actual business problem?
 - If low fit, did I explain why it does not fit?
