@@ -1,12 +1,8 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import {
-  ArrowRight,
-  ChevronDown,
-  ChevronUp,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import {
   featuredProduct,
@@ -23,14 +19,53 @@ type MegaMenuProps = {
   onMenuChange: (menu: MegaMenuType) => void;
 };
 
+/*
+|--------------------------------------------------------------------------
+| PRODUCT PROMOTIONS
+|--------------------------------------------------------------------------
+| Add each product here.
+| The banner on the right will change when the product is hovered.
+*/
+
+const productPromotions: Record<
+  string,
+  {
+    image: string;
+    label: string;
+    title: string;
+    description: string;
+    href: string;
+  }
+> = {
+  Mjasiriamali: {
+    image: featuredProduct.image,
+    label: featuredProduct.label,
+    title: featuredProduct.title,
+    description: featuredProduct.description,
+    href: featuredProduct.href,
+  },
+
+  Jiases: {
+    image: "/images/products/jiases.webp",
+    label: "JIASES",
+    title: "Jiases",
+    description:
+      "A practical digital solution designed to help businesses manage and grow more effectively.",
+    href: "/products/jiases",
+  },
+};
+
 function MenuItem({
   item,
+  onHover,
 }: {
   item: MegaMenuItem;
+  onHover: () => void;
 }) {
   return (
     <Link
       href={item.href}
+      onMouseEnter={onHover}
       className="
         group
         block
@@ -40,7 +75,7 @@ function MenuItem({
         last:border-b-0
         focus:outline-none
         focus-visible:ring-2
-        focus-visible:ring-[#E30404]
+        focus-visible:ring-neutral-400
         focus-visible:ring-offset-2
       "
     >
@@ -54,7 +89,7 @@ function MenuItem({
               text-xs
               font-medium
               tracking-wide
-              text-[#E30404]
+              text-neutral-400
             "
           >
             {item.number}
@@ -69,9 +104,10 @@ function MenuItem({
                 font-semibold
                 leading-6
                 text-neutral-900
-                transition-colors
+                transition-all
                 duration-200
-                group-hover:text-[#E30404]
+                group-hover:underline
+                underline-offset-4
               "
             >
               {item.title}
@@ -89,7 +125,7 @@ function MenuItem({
                 transition-all
                 duration-200
                 group-hover:translate-x-1
-                group-hover:text-[#E30404]
+                group-hover:text-neutral-500
                 group-hover:opacity-100
               "
             />
@@ -117,6 +153,9 @@ export default function MegaMenu({
   onMenuChange,
 }: MegaMenuProps) {
   const menuRef = useRef<HTMLDivElement>(null);
+
+  const [hoveredProduct, setHoveredProduct] =
+    useState<string>("Mjasiriamali");
 
   useEffect(() => {
     function handleOutsideClick(event: MouseEvent) {
@@ -157,6 +196,9 @@ export default function MegaMenu({
     return null;
   }
 
+  const activeProduct =
+    productPromotions[hoveredProduct] ?? productPromotions.Mjasiriamali;
+
   return (
     <div
       ref={menuRef}
@@ -182,32 +224,18 @@ export default function MegaMenu({
       {activeMenu === "services" && (
         <div className="px-8 py-8 lg:px-10 lg:py-9">
           <div className="mb-7">
-            <p
-              className="
-                text-xs
-                font-semibold
-                tracking-[0.16em]
-                text-[#E30404]
-              "
-            >
-              SERVICES
-            </p>
-
-            <p
-              className="
-                mt-2
-                text-sm
-                leading-6
-                text-neutral-500
-              "
-            >
+            <p className="text-sm leading-6 text-neutral-500">
               Strategic services designed around business growth.
             </p>
           </div>
 
           <div className="grid grid-cols-2 gap-x-12">
             {servicesMenu.map((item) => (
-              <MenuItem key={item.title} item={item} />
+              <MenuItem
+                key={item.title}
+                item={item}
+                onHover={() => {}}
+              />
             ))}
           </div>
 
@@ -222,11 +250,14 @@ export default function MegaMenu({
                 text-sm
                 font-semibold
                 text-neutral-900
-                transition-colors
-                hover:text-[#E30404]
+                transition-all
+                duration-200
+                hover:underline
+                underline-offset-4
               "
             >
               View all services
+
               <ArrowRight
                 size={16}
                 className="
@@ -245,90 +276,79 @@ export default function MegaMenu({
         <div className="grid grid-cols-[1.9fr_1fr]">
           <div className="px-8 py-8 lg:px-10 lg:py-9">
             <div className="mb-7">
-              <p
-                className="
-                  text-xs
-                  font-semibold
-                  tracking-[0.16em]
-                  text-[#E30404]
-                "
-              >
-                PRODUCTS
-              </p>
-
-              <p
-                className="
-                  mt-2
-                  text-sm
-                  leading-6
-                  text-neutral-500
-                "
-              >
+              <p className="text-sm leading-6 text-neutral-500">
                 Business solutions designed for practical growth.
               </p>
             </div>
 
             <div>
               {productsMenu.map((item) => (
-                <MenuItem key={item.title} item={item} />
+                <MenuItem
+                  key={item.title}
+                  item={item}
+                  onHover={() => {
+                    setHoveredProduct(item.title);
+                  }}
+                />
               ))}
             </div>
           </div>
 
-          {/* FEATURED PRODUCT */}
+          {/* DYNAMIC FEATURED PRODUCT */}
           <div className="border-l border-neutral-200 bg-[#F7F7F7] p-5">
             <div className="flex h-full flex-col border border-neutral-200 bg-white">
               <div className="relative aspect-[1.35/1] overflow-hidden bg-neutral-100">
                 <img
-                  src={featuredProduct.image}
-                  alt={featuredProduct.title}
+                  key={activeProduct.image}
+                  src={activeProduct.image}
+                  alt={activeProduct.title}
                   className="
                     h-full
                     w-full
                     object-cover
-                    transition-transform
-                    duration-500
-                    hover:scale-[1.02]
+                    transition-all
+                    duration-300
                   "
                 />
               </div>
 
               <div className="flex flex-1 flex-col p-5">
-                <p
-                  className="
-                    text-[10px]
-                    font-semibold
-                    tracking-[0.16em]
-                    text-[#E30404]
-                  "
-                >
-                  {featuredProduct.label}
+                <p className="text-[10px] font-semibold tracking-[0.16em] text-neutral-500">
+                  {activeProduct.label}
                 </p>
 
                 <h3
+                  key={activeProduct.title}
                   className="
                     mt-2
                     text-base
                     font-semibold
                     text-neutral-900
+                    animate-in
+                    fade-in
+                    duration-200
                   "
                 >
-                  {featuredProduct.title}
+                  {activeProduct.title}
                 </h3>
 
                 <p
+                  key={activeProduct.description}
                   className="
                     mt-2
                     text-sm
                     leading-[1.7]
                     text-neutral-500
+                    animate-in
+                    fade-in
+                    duration-200
                   "
                 >
-                  {featuredProduct.description}
+                  {activeProduct.description}
                 </p>
 
                 <Link
-                  href={featuredProduct.href}
+                  href={activeProduct.href}
                   className="
                     group
                     mt-auto
@@ -339,10 +359,14 @@ export default function MegaMenu({
                     text-sm
                     font-semibold
                     text-neutral-900
-                    hover:text-[#E30404]
+                    transition-all
+                    duration-200
+                    hover:underline
+                    underline-offset-4
                   "
                 >
                   Explore
+
                   <ArrowRight
                     size={16}
                     className="
@@ -357,50 +381,19 @@ export default function MegaMenu({
           </div>
         </div>
       )}
+      
 
       {/* KNOWLEDGE */}
       {activeMenu === "knowledge" && (
         <div className="px-8 py-8 lg:px-10 lg:py-9">
           <div className="mb-7">
-            <p
-              className="
-                text-xs
-                font-semibold
-                tracking-[0.16em]
-                text-[#E30404]
-              "
-            >
-              KNOWLEDGE
-            </p>
-
-            <p
-              className="
-                mt-2
-                text-sm
-                leading-6
-                text-neutral-500
-              "
-            >
+            <p className="text-sm leading-6 text-neutral-500">
               Practical insights for building and growing better businesses.
             </p>
           </div>
 
-          <div
-            className="
-              max-w-[720px]
-              border-t
-              border-neutral-200
-              pt-6
-            "
-          >
-            <p
-              className="
-                text-[11px]
-                font-semibold
-                tracking-[0.15em]
-                text-neutral-400
-              "
-            >
+          <div className="max-w-[720px] border-t border-neutral-200 pt-6">
+            <p className="text-[11px] font-semibold tracking-[0.15em] text-neutral-400">
               BUSINESS GROWTH CENTER
             </p>
 
@@ -415,22 +408,16 @@ export default function MegaMenu({
                       text-lg
                       font-semibold
                       text-neutral-900
-                      transition-colors
-                      group-hover:text-[#E30404]
+                      transition-all
+                      duration-200
+                      group-hover:underline
+                      underline-offset-4
                     "
                   >
                     {knowledgeMenu.title}
                   </h3>
 
-                  <p
-                    className="
-                      mt-2
-                      max-w-[650px]
-                      text-sm
-                      leading-[1.7]
-                      text-neutral-500
-                    "
-                  >
+                  <p className="mt-2 max-w-[650px] text-sm leading-[1.7] text-neutral-500">
                     {knowledgeMenu.description}
                   </p>
                 </div>
@@ -441,10 +428,9 @@ export default function MegaMenu({
                     mt-1
                     shrink-0
                     text-neutral-400
-                    transition-all
+                    transition-transform
                     duration-200
                     group-hover:translate-x-1
-                    group-hover:text-[#E30404]
                   "
                 />
               </div>
@@ -452,14 +438,7 @@ export default function MegaMenu({
           </div>
 
           <div className="mt-7 border-t border-neutral-200 pt-6">
-            <p
-              className="
-                text-[11px]
-                font-semibold
-                tracking-[0.15em]
-                text-neutral-400
-              "
-            >
+            <p className="text-[11px] font-semibold tracking-[0.15em] text-neutral-400">
               EXPLORE
             </p>
 
@@ -474,10 +453,14 @@ export default function MegaMenu({
                 text-sm
                 font-semibold
                 text-neutral-900
-                hover:text-[#E30404]
+                transition-all
+                duration-200
+                hover:underline
+                underline-offset-4
               "
             >
               Explore Business Growth Center
+
               <ArrowRight
                 size={16}
                 className="

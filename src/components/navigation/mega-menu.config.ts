@@ -7,27 +7,27 @@ export type MegaMenuItem = {
 
 export const servicesMenu: MegaMenuItem[] = [
   {
-    number: "01",
+    /* number: "01", */
     title: "Consultation & Digital Strategy",
     description: "Clear direction before execution.",
     href: "/services/consultation-digital-strategy",
   },
   {
-    number: "02",
+   
     title: "Content Marketing & Copywriting",
     description:
       "Content that communicates clearly, builds trust and moves audiences to action.",
     href: "/services/content-marketing-copywriting",
   },
   {
-    number: "03",
+   
     title: "Performance Marketing",
     description:
       "Paid Ads Strategy & Management focused on reaching the right audience and improving performance.",
     href: "/services/performance-marketing",
   },
   {
-    number: "04",
+    
     title: "Hyper-Personalization Architecture & Integration",
     description:
       "Connect customer data, systems and automation to create more relevant experiences at scale.",
@@ -37,14 +37,14 @@ export const servicesMenu: MegaMenuItem[] = [
 
 export const productsMenu: MegaMenuItem[] = [
   {
-    number: "01",
+    
     title: "Mjasiriamali Special Pack",
     description:
       "A practical marketing solution for businesses that need consistent marketing without building an internal marketing team.",
     href: "/products/mjasiriamali-special-pack",
   },
   {
-    number: "02",
+    
     title: "Jiases",
     description:
       "Practical business and marketing guidance designed to help identify areas that need attention.",
