@@ -518,7 +518,7 @@ export default function Navbar() {
                   }
                 `}
               >
-                <div className="pb-4">
+                <div className="pb-4 pl-3">
                   <Link
                     href="/services/consultation-digital-strategy"
                     onClick={closeMobileMenu}
@@ -528,7 +528,7 @@ export default function Navbar() {
                       Consultation & Digital Strategy
                     </span>
                     <span className="mt-1 block text-[13px] leading-5 text-neutral-500">
-                      Clear direction before execution.
+                      Clear digital strategy to guide your business growth.
                     </span>
                   </Link>
 
@@ -538,11 +538,10 @@ export default function Navbar() {
                     className="block border-t border-neutral-100 py-4"
                   >
                     <span className="block text-[14px] font-medium text-neutral-900">
-                      Content Marketing & Copywriting
+                      Generative Engine Optimization (GEO)
                     </span>
                     <span className="mt-1 block text-[13px] leading-5 text-neutral-500">
-                      Content that communicates clearly,
-                      builds trust and moves audiences to action.
+                      Get discovered and recommended across AI-powered search.
                     </span>
                   </Link>
 
@@ -552,10 +551,10 @@ export default function Navbar() {
                     className="block border-t border-neutral-100 py-4"
                   >
                     <span className="block text-[14px] font-medium text-neutral-900">
-                      Performance Marketing
+                      Campaigns & Performance Marketing
                     </span>
                     <span className="mt-1 block text-[13px] leading-5 text-neutral-500">
-                      Paid Ads Strategy & Management.
+                      Reach the right customers with targeted ads.
                     </span>
                   </Link>
 
@@ -565,11 +564,10 @@ export default function Navbar() {
                     className="block border-t border-neutral-100 py-4"
                   >
                     <span className="block text-[14px] font-medium text-neutral-900">
-                      Hyper-Personalization Architecture &
-                      Integration
+                      Revenue Operations & Marketing Automation
                     </span>
                     <span className="mt-1 block text-[13px] leading-5 text-neutral-500">
-                      Connect customer data, systems and automation.
+                      Turn more leads into customers with smarter systems and automation.
                     </span>
                   </Link>
 
@@ -642,7 +640,7 @@ export default function Navbar() {
                   }
                 `}
               >
-                <div className="pb-4">
+                <div className="pb-4 pl-3">
                   <Link
                     href="/products/mjasiriamali-special-pack"
                     onClick={closeMobileMenu}
@@ -741,7 +739,7 @@ export default function Navbar() {
                   }
                 `}
               >
-                <div className="pb-5">
+                <div className="pb-4 pl-3">
                   <p className="border-t border-neutral-100 pt-4 text-[13px] leading-5 text-neutral-500">
                     Practical marketing, business and growth
                     insights designed to help business owners

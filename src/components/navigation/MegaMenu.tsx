@@ -225,7 +225,7 @@ export default function MegaMenu({
         <div className="px-8 py-8 lg:px-10 lg:py-9">
           <div className="mb-7">
             <p className="text-sm leading-6 text-neutral-500">
-              Strategic services designed around business growth.
+              Digital services built to help your business grow.
             </p>
           </div>
 

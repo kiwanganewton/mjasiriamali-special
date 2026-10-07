@@ -9,28 +9,28 @@ export const servicesMenu: MegaMenuItem[] = [
   {
     /* number: "01", */
     title: "Consultation & Digital Strategy",
-    description: "Clear direction before execution.",
+    description: "Turn your business goals into a clear, practical digital growth strategy.",
     href: "/services/consultation-digital-strategy",
   },
   {
    
-    title: "Content Marketing & Copywriting",
+    title: "Generative Engine Optimization (GEO)",
     description:
-      "Content that communicates clearly, builds trust and moves audiences to action.",
+      "Improve how your business is discovered and represented across AI-powered search and answer engines.",
     href: "/services/content-marketing-copywriting",
   },
   {
    
-    title: "Performance Marketing",
+    title: "Campaigns & Performance Marketing",
     description:
-      "Paid Ads Strategy & Management focused on reaching the right audience and improving performance.",
+      "Reach the right customers with targeted advertising campaigns that generate leads, sales and measurable growth.",
     href: "/services/performance-marketing",
   },
   {
     
-    title: "Hyper-Personalization Architecture & Integration",
+    title: "Revenue Operations & Marketing Automation",
     description:
-      "Connect customer data, systems and automation to create more relevant experiences at scale.",
+      "Connect your marketing, sales and customer data into systems that capture, qualify, nurture and convert leads more efficiently.",
     href: "/services/hyper-personalization",
   },
 ];
