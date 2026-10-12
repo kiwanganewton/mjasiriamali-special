@@ -1,10 +1,19 @@
+"use client";
+
+import { useState } from "react";
+import AssessmentModal from "@/components/assessment/AssessmentModal";
 import PackFeatureCard from "./pack-feature-card";
-import { packFeatures } from "./pack-features.config";
+import FeatureDetailModal from "./FeatureDetailModal";
+import { packFeatures, type PackFeature } from "./pack-features.config";
 
 export default function PackFeatures() {
+  const [activeFeature, setActiveFeature] = useState<PackFeature | null>(null);
+  const [isAssessmentOpen, setIsAssessmentOpen] = useState(false);
+
   return (
-    <section
-      className="
+    <>
+      <section
+        className="
         w-full
         bg-surface-muted
         pt-10
@@ -14,8 +23,8 @@ export default function PackFeatures() {
         lg:pt-14
         lg:pb-24
       "
-    >
-      <div className="mx-auto w-full max-w-content px-5 sm:px-8 lg:px-10">
+      >
+        <div className="mx-auto w-full max-w-content px-5 sm:px-8 lg:px-10">
         {/* Section introduction */}
         <div className="max-w-[720px] px-2 sm:px-0">
           <h2
@@ -61,11 +70,30 @@ export default function PackFeatures() {
             lg:mt-14
           "
         >
-          {packFeatures.map((feature) => (
-            <PackFeatureCard key={feature.id} feature={feature} />
-          ))}
+            {packFeatures.map((feature) => (
+              <PackFeatureCard
+                key={feature.id}
+                feature={feature}
+                onReadMore={setActiveFeature}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <FeatureDetailModal
+        feature={activeFeature}
+        onClose={() => setActiveFeature(null)}
+        onExploreFit={() => {
+          setActiveFeature(null);
+          setIsAssessmentOpen(true);
+        }}
+      />
+
+      <AssessmentModal
+        isOpen={isAssessmentOpen}
+        onClose={() => setIsAssessmentOpen(false)}
+      />
+    </>
   );
 }

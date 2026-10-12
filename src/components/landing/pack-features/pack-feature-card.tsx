@@ -3,10 +3,12 @@ import type { PackFeature } from "./pack-features.config";
 
 type PackFeatureCardProps = {
   feature: PackFeature;
+  onReadMore: (feature: PackFeature) => void;
 };
 
 export default function PackFeatureCard({
   feature,
+  onReadMore,
 }: PackFeatureCardProps) {
   return (
     <article
@@ -63,6 +65,8 @@ export default function PackFeatureCard({
         {feature.showReadMore && (
           <button
             type="button"
+            onClick={() => onReadMore(feature)}
+            data-feature-interest={feature.interestKey}
             className="
               mt-5
               text-[15px]
@@ -71,6 +75,8 @@ export default function PackFeatureCard({
               transition-colors
               duration-200
               hover:text-[#a80000]
+              focus-visible:outline-none
+              focus-visible:underline
             "
           >
             Read More...

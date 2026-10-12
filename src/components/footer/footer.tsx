@@ -9,13 +9,6 @@ const footerLinks = {
     { label: "Contact", href: "/contact" },
   ],
 
-  services: [
-    { label: "Branding", href: "/services/branding" },
-    { label: "Website Development", href: "/services/website-development" },
-    { label: "Creative Content", href: "/services/creative-content" },
-    { label: "Business Support", href: "/services/business-support" },
-  ],
-
   resources: [
     { label: "Business Growth Center", href: "/knowledge" },
     { label: "Insights", href: "/insights" },
@@ -27,7 +20,7 @@ export default function Footer() {
   return (
     <footer className="w-full bg-[#2A2A2A] text-white">
       <div className="mx-auto w-full max-w-content px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
-        <div className="grid gap-12 lg:grid-cols-[1.45fr_1fr_1fr_1fr] lg:gap-10">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.45fr_0.8fr_1.1fr_1.2fr] lg:gap-10">
           {/* Introduction */}
           <div className="max-w-[360px]">
             <p className="max-w-[330px] text-sm leading-[1.8] text-neutral-400">
@@ -35,35 +28,18 @@ export default function Footer() {
               brands, improve their presence, and grow with confidence.
             </p>
 
-            <Link
+           {/*  <Link
               href="/contact"
-              className="
-                group
-                mt-7
-                inline-flex
-                items-center
-                gap-2
-                text-sm
-                font-semibold
-                text-white
-                transition-colors
-                duration-200
-                hover:text-[#E30404]
-              "
+              className="group mt-7 inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors duration-200 hover:text-[#E30404]"
             >
               Start a conversation
 
               <ArrowUpRight
                 size={16}
                 strokeWidth={1.8}
-                className="
-                  transition-transform
-                  duration-200
-                  group-hover:translate-x-0.5
-                  group-hover:-translate-y-0.5
-                "
+                className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
-            </Link>
+            </Link> */}
 
             {/* Social Media */}
             <div className="mt-8 flex items-center gap-2">
@@ -96,63 +72,38 @@ export default function Footer() {
             links={footerLinks.company}
           />
 
-          {/* Services */}
-          <FooterColumn
-            title="Services"
-            links={footerLinks.services}
-          />
-
           {/* Resources */}
           <FooterColumn
             title="Resources"
             links={footerLinks.resources}
           />
-        </div>
 
-        {/* Contact Information */}
-        <div className="mt-14 border-t border-white/10 pt-8 sm:mt-16">
-          <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
-            <ContactItem
-              label="Email"
-              value="info@dilipoint.co.tz"
-              href="mailto:info@dilipoint.co.tz"
-            />
+          {/* Contact Information */}
+          <div>
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-neutral-400">
+              Contact
+            </h3>
 
-            <ContactItem
-              label="Phone"
-              value="+255 000 000 000"
-              href="tel:+255000000000"
-            />
+            <div className="mt-5 space-y-5">
+              <ContactItem
+                value="info@dilipoint.co.tz"
+                href="mailto:info@dilipoint.co.tz"
+              />
 
-            <ContactItem
-              label="Location"
-              value="Dar es Salaam, Tanzania"
-            />
+              <ContactItem
+                value="+255 000 000 000"
+                href="tel:+255000000000"
+              />
+
+              <ContactItem value="Dar es Salaam, Tanzania" />
+            </div>
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
-        <div
-          className="
-            mx-auto
-            flex
-            w-full
-            max-w-content
-            flex-col
-            gap-4
-            px-5
-            py-5
-            text-xs
-            text-neutral-500
-            sm:px-8
-            lg:flex-row
-            lg:items-center
-            lg:justify-between
-            lg:px-10
-          "
-        >
+        <div className="mx-auto flex w-full max-w-content flex-col gap-4 px-5 py-5 text-xs text-neutral-500 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-10">
           <p>
             © {new Date().getFullYear()} Dilipoint Co. Ltd. All rights
             reserved.
@@ -179,9 +130,7 @@ export default function Footer() {
   );
 }
 
-/* =========================================================
-   FOOTER COLUMN
-========================================================= */
+/* FOOTER COLUMN */
 
 function FooterColumn({
   title,
@@ -195,15 +144,7 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <h3
-        className="
-          text-[11px]
-          font-semibold
-          uppercase
-          tracking-[0.14em]
-          text-neutral-400
-        "
-      >
+      <h3 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-neutral-400">
         {title}
       </h3>
 
@@ -212,14 +153,7 @@ function FooterColumn({
           <Link
             key={link.label}
             href={link.href}
-            className="
-              block
-              text-sm
-              text-neutral-300
-              transition-colors
-              duration-200
-              hover:text-white
-            "
+            className="block text-sm text-neutral-300 transition-colors duration-200 hover:text-white"
           >
             {link.label}
           </Link>
@@ -229,57 +163,25 @@ function FooterColumn({
   );
 }
 
-/* =========================================================
-   CONTACT ITEM
-========================================================= */
+/* CONTACT ITEM */
 
 function ContactItem({
-  label,
   value,
   href,
 }: {
-  label: string;
   value: string;
   href?: string;
 }) {
   const content = (
-    <span
-      className="
-        mt-2
-        block
-        text-sm
-        text-neutral-300
-        transition-colors
-        duration-200
-        hover:text-white
-      "
-    >
+    <span className="block text-sm leading-relaxed text-neutral-300 transition-colors duration-200 hover:text-white">
       {value}
     </span>
   );
 
-  return (
-    <div>
-      <p
-        className="
-          text-[11px]
-          font-semibold
-          uppercase
-          tracking-[0.14em]
-          text-neutral-500
-        "
-      >
-        {label}
-      </p>
-
-      {href ? <a href={href}>{content}</a> : content}
-    </div>
-  );
+  return href ? <a href={href}>{content}</a> : content;
 }
 
-/* =========================================================
-   SOCIAL LINK
-========================================================= */
+/* SOCIAL LINK */
 
 function SocialLink({
   href,
@@ -296,30 +198,14 @@ function SocialLink({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="
-        flex
-        h-9
-        w-9
-        items-center
-        justify-center
-        border
-        border-white/15
-        text-neutral-300
-        transition-all
-        duration-200
-        hover:border-[#E30404]
-        hover:bg-[#E30404]
-        hover:text-white
-      "
+      className="flex h-9 w-9 items-center justify-center border border-white/15 text-neutral-300 transition-all duration-200 hover:border-[#E30404] hover:bg-[#E30404] hover:text-white"
     >
       {children}
     </a>
   );
 }
 
-/* =========================================================
-   SOCIAL ICONS
-========================================================= */
+/* SOCIAL ICONS */
 
 function LinkedInIcon() {
   return (
