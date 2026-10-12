@@ -40,7 +40,7 @@ export const heroSlides: HeroSlideData[] = [
     description:
       "Running your business is already a full-time job, and you miss doing  ",
 
-    image: "/images/hero/slide-000000000001.webp",
+    image: "/images/hero/slide-0000000000001.webp",
 
     cta: {
       label: "Dicover More",
@@ -56,9 +56,9 @@ export const heroSlides: HeroSlideData[] = [
       },
 
       mobile: {
-        x: "7%",
+        x: "12%",
         y: "28%",
-        width: "86%",
+        width: "76%",
       },
     },
 
@@ -92,9 +92,9 @@ export const heroSlides: HeroSlideData[] = [
       },
 
       mobile: {
-        x: "7%",
+        x: "12%",
         y: "33%",
-        width: "86%",
+        width: "76%",
       },
     },
 
@@ -127,9 +127,9 @@ export const heroSlides: HeroSlideData[] = [
       },
 
       mobile: {
-        x: "7%",
+        x: "12%",
         y: "55%",
-        width: "86%",
+        width: "76%",
       },
     },
 

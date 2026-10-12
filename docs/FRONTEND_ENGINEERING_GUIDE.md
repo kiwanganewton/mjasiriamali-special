@@ -16,7 +16,7 @@ For future layouts, start with one column and add a wider layout only when the c
 
 The hero arrows stay vertically centered at every viewport, with the center of each control placed on its corresponding hero edge. Their touch circles are smaller on narrow screens and grow at larger breakpoints. Test their edge alignment and ensure the parent has enough page gutter so they remain reachable.
 
-The requested newsletter section did not exist in this checkout: there is a fixed newsletter tab that opens a modal. Its form already used a vertical stack. Identify actual DOM structure first; do not add CSS for a layout that is not present. If the deployed page differs, compare its commit and embed before changing this component.
+The newsletter feature is a fixed tab that opens a modal, not an in-flow signup section. Its form uses a vertical stack. The production screenshot showed the tab label rendering horizontally and overflowing on a phone; the button now has explicit narrow physical dimensions and a rotated, no-wrap label, so its width does not depend on the label's intrinsic width or vertical writing-mode support. Verify on the device/browser that showed the bug.
 
 ### Flexbox and grid
 

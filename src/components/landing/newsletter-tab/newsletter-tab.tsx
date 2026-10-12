@@ -81,14 +81,18 @@ export default function NewsletterTab() {
           right-0
           top-1/2
           z-50
+          flex
+          h-[220px]
+          w-11
+          items-center
+          justify-center
+          overflow-hidden
           -translate-y-1/2
           rounded-l-md
           border-y
           border-l
           border-white/20
           bg-[#d70900]
-          px-2.5
-          py-3
           text-[11px]
           font-semibold
           tracking-[0.08em]
@@ -98,23 +102,21 @@ export default function NewsletterTab() {
           duration-500
           ease-out
           hover:bg-[#a70d26]
-          hover:px-3
           focus-visible:outline-none
           focus-visible:ring-2
           focus-visible:ring-[#c8102e]
           focus-visible:ring-offset-2
           motion-reduce:transition-none
 
-          sm:px-3
-          sm:py-4
+          sm:h-[236px]
+          sm:w-12
           sm:text-xs
 
           lg:top-[60%]
-          lg:px-3
-          lg:py-5
+          lg:h-[256px]
+          lg:w-14
           lg:text-[13px]
           lg:tracking-wide
-          lg:hover:px-4
 
           ${
             isTabVisible
@@ -122,12 +124,10 @@ export default function NewsletterTab() {
               : "translate-x-full opacity-0 pointer-events-none"
           }
         `}
-        style={{
-          writingMode: "vertical-rl",
-          textOrientation: "mixed",
-        }}
       >
-        {newsletterTabContent.label}
+        <span className="inline-block rotate-90 whitespace-nowrap">
+          {newsletterTabContent.label}
+        </span>
       </button>
 
       {/* NEWSLETTER MODAL */}
