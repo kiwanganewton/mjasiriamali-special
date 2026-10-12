@@ -125,7 +125,10 @@ export default function NewsletterTab() {
           }
         `}
       >
-        <span className="inline-block rotate-90 whitespace-nowrap">
+        <span
+          className="inline-block whitespace-nowrap"
+          style={{ transform: "rotate(90deg)" }}
+        >
           {newsletterTabContent.label}
         </span>
       </button>
