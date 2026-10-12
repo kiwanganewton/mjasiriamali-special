@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { newsletterTabContent } from "./newsletter-tab.config";
+import Button from "@/components/ui/button";
 
 const MODAL_TRANSITION_DURATION = 280;
 
@@ -205,13 +206,16 @@ export default function NewsletterTab() {
               className="mt-6 space-y-4"
               onSubmit={(event) => event.preventDefault()}
             >
-              <input
+              <label className="block min-w-0">
+                <span className="sr-only">Email address</span>
+                <input
                 type="email"
                 required
                 placeholder={newsletterTabContent.emailPlaceholder}
-                aria-label="Email address"
+                autoComplete="email"
                 className="
                   w-full
+                  min-w-0
                   rounded-md
                   border
                   border-neutral-300
@@ -227,30 +231,15 @@ export default function NewsletterTab() {
                   focus:ring-2
                   focus:ring-[#c8102e]/15
                 "
-              />
+                />
+              </label>
 
-              <button
+              <Button
                 type="submit"
-                className="
-                  w-full
-                  rounded-md
-                  bg-[#c8102e]
-                  px-5
-                  py-3
-                  text-sm
-                  font-semibold
-                  text-white
-                  transition
-                  duration-200
-                  hover:bg-[#a70d26]
-                  focus-visible:outline-none
-                  focus-visible:ring-2
-                  focus-visible:ring-[#c8102e]
-                  focus-visible:ring-offset-2
-                "
+                className="w-full whitespace-normal rounded-md px-5 py-3 text-sm"
               >
                 {newsletterTabContent.buttonText}
-              </button>
+              </Button>
             </form>
 
             {/* CLOSE */}

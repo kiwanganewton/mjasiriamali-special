@@ -34,3 +34,11 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Project structure and frontend notes
+
+- `src/app/` contains the App Router page, root layout, global stylesheet, and API route.
+- `src/components/` contains shared navigation, landing-page sections, assessment, and UI components.
+- `src/app/globals.css` is the home for global font, color, and layout tokens. The shared button is `src/components/ui/button.tsx`.
+- Run `npm run dev` for local development, `npm run lint` for ESLint, `npx tsc --noEmit` for TypeScript, and `npm run build` for a production build.
+- See `docs/UI_UX_AUDIT.md`, `docs/DESIGN_SYSTEM.md`, `docs/FRONTEND_ENGINEERING_GUIDE.md`, and `docs/RESPONSIVE_TESTING_CHECKLIST.md` for the audit, token usage, engineering notes, and responsive QA matrix.

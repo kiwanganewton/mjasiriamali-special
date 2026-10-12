@@ -7,7 +7,7 @@ export default function About() {
 
         {/* Text content */}
         <div className="max-w-[540px] text-left">
-          <p className="mt-0 text-left text-[16px] leading-[1.55] text-[#737373] [text-align:justify] [hyphens:auto]">
+          <p className="mt-0 text-left text-[16px] leading-[1.55] text-muted [text-align:justify] [hyphens:auto]">
             {aboutContent.description}
           </p>
         </div>

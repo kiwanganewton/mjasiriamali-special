@@ -15,7 +15,7 @@ export default function CtaBanner() {
   return (
     <>
       <section className="w-full px-4 pt-7 sm:px-6 lg:px-8">
-        <div className="mx-auto flex max-w-[1200px] flex-col gap-6 lg:flex-row lg:items-stretch lg:gap-8">
+        <div className="mx-auto flex max-w-[1200px] flex-col gap-6 lg:grid lg:grid-cols-[minmax(0,0.42fr)_minmax(0,0.58fr)] lg:items-stretch lg:gap-8">
 
           {/* CTA BANNER */}
           <motion.div
@@ -28,7 +28,7 @@ export default function CtaBanner() {
               repeat: Infinity,
               repeatDelay: 5,
             }}
-            className="relative order-1 flex w-full overflow-hidden rounded-lg bg-[#d70900] lg:h-auto lg:w-[42%]"
+            className="relative order-1 flex w-full min-w-0 overflow-hidden rounded-lg bg-[#d70900]"
           >
             {/* Corporate donut pattern */}
             <div
@@ -83,7 +83,7 @@ export default function CtaBanner() {
           </motion.div>
 
           {/* CONTACT FORM */}
-          <div className="order-2 w-full rounded-lg border border-neutral-200 bg-white p-6 shadow-[0_8px_25px_rgba(0,0,0,0.06)] sm:p-8 lg:w-[58%] lg:p-8">
+          <div className="order-2 w-full min-w-0 rounded-lg border border-neutral-200 bg-white p-6 shadow-[0_8px_25px_rgba(0,0,0,0.06)] sm:p-8 lg:p-8">
             <div className="mb-6">
               <h2 className="text-[24px] font-semibold leading-[1.15] tracking-[-0.02em] text-neutral-600 sm:text-[28px]">
                 {form.title}
@@ -91,42 +91,57 @@ export default function CtaBanner() {
             </div>
 
             <form className="space-y-4">
-              <input
-                type={form.fields.name.type}
-                name={form.fields.name.name}
-                placeholder={form.fields.name.placeholder}
-                className="h-[52px] w-full rounded-md border border-neutral-200 bg-white px-4 text-[16px] text-neutral-800 outline-none transition-colors placeholder:text-neutral-500 focus:border-[#c8102e]"
-              />
+              <label className="block">
+                <span className="sr-only">{form.fields.name.placeholder}</span>
+                <input
+                  type={form.fields.name.type}
+                  name={form.fields.name.name}
+                  autoComplete="name"
+                  placeholder={form.fields.name.placeholder}
+                  className="h-[52px] w-full min-w-0 rounded-md border border-neutral-200 bg-white px-4 text-[16px] text-neutral-800 outline-none transition-colors placeholder:text-neutral-500 focus:border-brand focus-visible:ring-2 focus-visible:ring-brand/20"
+                />
+              </label>
 
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <input
+                <label className="block min-w-0">
+                  <span className="sr-only">{form.fields.email.placeholder}</span>
+                  <input
                   type={form.fields.email.type}
                   name={form.fields.email.name}
+                  autoComplete="email"
                   placeholder={form.fields.email.placeholder}
-                  className="h-[52px] w-full rounded-md border border-neutral-200 bg-white px-4 text-[16px] text-neutral-800 outline-none transition-colors placeholder:text-neutral-500 focus:border-[#c8102e]"
-                />
+                  className="h-[52px] w-full min-w-0 rounded-md border border-neutral-200 bg-white px-4 text-[16px] text-neutral-800 outline-none transition-colors placeholder:text-neutral-500 focus:border-brand focus-visible:ring-2 focus-visible:ring-brand/20"
+                  />
+                </label>
 
-                <input
+                <label className="block min-w-0">
+                  <span className="sr-only">{form.fields.phone.placeholder}</span>
+                  <input
                   type={form.fields.phone.type}
                   name={form.fields.phone.name}
+                  autoComplete="tel"
                   placeholder={form.fields.phone.placeholder}
-                  className="h-[52px] w-full rounded-md border border-neutral-200 bg-white px-4 text-[16px] text-neutral-800 outline-none transition-colors placeholder:text-neutral-500 focus:border-[#c8102e]"
-                />
+                  className="h-[52px] w-full min-w-0 rounded-md border border-neutral-200 bg-white px-4 text-[16px] text-neutral-800 outline-none transition-colors placeholder:text-neutral-500 focus:border-brand focus-visible:ring-2 focus-visible:ring-brand/20"
+                  />
+                </label>
               </div>
 
-              <textarea
-                name={form.fields.message.name}
-                placeholder={form.fields.message.placeholder}
-                rows={4}
-                className="min-h-[115px] w-full resize-none rounded-md border border-neutral-200 bg-white px-4 py-3 text-[16px] leading-6 text-neutral-800 outline-none transition-colors placeholder:text-neutral-500 focus:border-[#c8102e]"
-              />
+              <label className="block">
+                <span className="sr-only">{form.fields.message.placeholder}</span>
+                <textarea
+                  name={form.fields.message.name}
+                  placeholder={form.fields.message.placeholder}
+                  rows={4}
+                  className="min-h-[115px] w-full min-w-0 resize-y rounded-md border border-neutral-200 bg-white px-4 py-3 text-[16px] leading-6 text-neutral-800 outline-none transition-colors placeholder:text-neutral-500 focus:border-brand focus-visible:ring-2 focus-visible:ring-brand/20"
+                />
+              </label>
 
-              <button
+              <Button
                 type="submit"
-                className="h-[52px] w-full rounded-md bg-[#d70900] px-6 text-[16px] font-semibold text-white transition-colors duration-300 hover:bg-[#a70d26]"
+                className="h-[52px] w-full rounded-md border-brand-bright bg-brand-bright px-6 text-[16px] hover:bg-brand-strong"
               >
                 {form.submitButton}
-              </button>
+              </Button>
             </form>
           </div>
         </div>

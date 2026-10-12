@@ -17,7 +17,7 @@ export default function PackFeatureCard({
         min-h-[420px]
         flex-col
         overflow-hidden
-        rounded-[20px]
+        rounded-card
         border
         border-neutral-200
         bg-white

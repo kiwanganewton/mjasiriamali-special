@@ -39,10 +39,10 @@ export default function Hero() {
 
   return (
     <section
-    className="w-full overflow-hidden bg-white pt-3 pb-8 sm:pt-10 sm:pb-10 lg:pt-12 lg:pb-12"
+      className="w-full overflow-hidden bg-white pt-3 pb-8 sm:pt-10 sm:pb-10 lg:pt-12 lg:pb-12"
       aria-roledescription="carousel"
     >
-      <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-10">
+      <div className="mx-auto w-full max-w-content px-5 sm:px-8 lg:px-10">
         <div className="relative">
           {/* Desktop: 3 cards */}
           <div
@@ -108,83 +108,27 @@ export default function Hero() {
             </AnimatePresence>
           </div>
 
-         {/* Previous slide */}
-<button
-  type="button"
-  onClick={previousSlide}
-  aria-label="Previous slide"
-  className="
-    absolute
-    left-0
-    top-1/2
-    z-30
-    flex
-    h-12
-    w-12
-    -translate-x-1/2
-    -translate-y-1/2
-    items-center
-    justify-center
-    rounded-full
-    border
-    border-neutral-200
-    bg-white
-    text-neutral-900      /* text-[#c8102e] */
-    shadow-[0_8px_30px_rgba(0,0,0,0.14)]
-    transition-all
-    duration-300
-    ease-out
-    hover:scale-105
-    hover:text-[#c8102e]
-    active:scale-95
+          {/* Keep both controls vertically centered, with their centers on the
+              left and right edges of the hero at every viewport width. */}
+          <div className="pointer-events-none absolute inset-x-0 top-1/2 z-30 flex -translate-y-1/2 justify-between">
+            <button
+              type="button"
+              onClick={previousSlide}
+              aria-label="Previous slide"
+              className="pointer-events-auto flex h-11 w-11 -translate-x-1/2 items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-900 shadow-[0_8px_30px_rgba(0,0,0,0.14)] transition-transform duration-300 hover:scale-105 hover:text-brand active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand sm:h-12 sm:w-12 md:h-14 md:w-14"
+            >
+              <ChevronLeft size={28} strokeWidth={1.8} aria-hidden="true" />
+            </button>
 
-    md:left-[-22px]
-    md:h-14
-    md:w-14
-    md:translate-x-0
-  "
->
-  <ChevronLeft size={28} strokeWidth={1.8} />
-</button>
-
-{/* Next slide */}
-<button
-  type="button"
-  onClick={nextSlide}
-  aria-label="Next slide"
-  className="
-    absolute
-    right-0
-    top-1/2
-    z-30
-    flex
-    h-12
-    w-12
-    translate-x-1/2
-    -translate-y-1/2
-    items-center
-    justify-center
-    rounded-full
-    border
-    border-neutral-200
-    bg-white
-    text-neutral-900
-    shadow-[0_8px_30px_rgba(0,0,0,0.14)]
-    transition-all
-    duration-300
-    ease-out
-    hover:scale-105
-    hover:bg-neutral-50
-    active:scale-95
-
-    md:right-[-22px]
-    md:h-14
-    md:w-14
-    md:translate-x-0
-  "
->
-  <ChevronRight size={28} strokeWidth={1.8} />
-</button>
+            <button
+              type="button"
+              onClick={nextSlide}
+              aria-label="Next slide"
+              className="pointer-events-auto flex h-11 w-11 translate-x-1/2 items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-900 shadow-[0_8px_30px_rgba(0,0,0,0.14)] transition-transform duration-300 hover:scale-105 hover:text-brand active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand sm:h-12 sm:w-12 md:h-14 md:w-14"
+            >
+              <ChevronRight size={28} strokeWidth={1.8} aria-hidden="true" />
+            </button>
+          </div>
 
         </div>
       </div>

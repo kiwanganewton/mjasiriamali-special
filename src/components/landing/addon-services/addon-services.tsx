@@ -111,7 +111,7 @@ export default function AddonServices() {
                     max-w-[660px]
                     text-base
                     leading-[1.7]
-                    text-[#737373]
+                    text-muted
                     sm:text-lg
                   "
                 >
@@ -270,7 +270,7 @@ function DesktopCard({
             mt-3
             text-[15px]
             leading-[1.7]
-            text-[#737373]
+            text-muted
             sm:text-base
           "
         >
@@ -290,7 +290,7 @@ function DesktopCard({
 function MobileServices() {
   return (
     <section className="bg-white py-16 sm:py-20 md:hidden">
-      <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8">
+      <div className="mx-auto w-full max-w-content px-5 sm:px-8">
 
         <motion.div
           initial={{
@@ -329,7 +329,7 @@ function MobileServices() {
               mt-4
               text-base
               leading-[1.7]
-              text-[#737373]
+              text-muted
               sm:text-lg
             "
           >
@@ -456,7 +456,7 @@ function MobileCard({
               mt-3
               text-[15px]
               leading-[1.7]
-              text-[#737373]
+            text-muted
             "
           >
             {service.description}

@@ -26,7 +26,7 @@ const footerLinks = {
 export default function Footer() {
   return (
     <footer className="w-full bg-[#2A2A2A] text-white">
-      <div className="mx-auto w-full max-w-[1280px] px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
+      <div className="mx-auto w-full max-w-content px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.45fr_1fr_1fr_1fr] lg:gap-10">
           {/* Introduction */}
           <div className="max-w-[360px]">
@@ -139,7 +139,7 @@ export default function Footer() {
             mx-auto
             flex
             w-full
-            max-w-[1280px]
+            max-w-content
             flex-col
             gap-4
             px-5

@@ -35,6 +35,9 @@ export default function CookieConsent() {
             inset-x-0
             bottom-0
             z-[90]
+            max-h-[80dvh]
+            overflow-y-auto
+            overscroll-contain
             border-t
             border-neutral-200
             bg-white/96
@@ -124,6 +127,7 @@ export default function CookieConsent() {
                 onClick={handleClose}
                 className="
                   rounded-md
+                  min-h-11
                   border
                   border-neutral-300
                   bg-white
@@ -136,6 +140,9 @@ export default function CookieConsent() {
                   duration-200
                   hover:border-neutral-400
                   hover:bg-neutral-50
+                  focus-visible:outline-none
+                  focus-visible:ring-2
+                  focus-visible:ring-brand
                 "
               >
                 {cookieConsentContent.declineText}
@@ -146,6 +153,7 @@ export default function CookieConsent() {
                 onClick={handleClose}
                 className="
                   rounded-md
+                  min-h-11
                   bg-[#c8102e]
                   px-5
                   py-2.5
@@ -155,6 +163,10 @@ export default function CookieConsent() {
                   transition-all
                   duration-200
                   hover:bg-[#a70d26]
+                  focus-visible:outline-none
+                  focus-visible:ring-2
+                  focus-visible:ring-brand
+                  focus-visible:ring-offset-2
                 "
               >
                 {cookieConsentContent.acceptText}

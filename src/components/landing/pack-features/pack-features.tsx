@@ -6,7 +6,7 @@ export default function PackFeatures() {
     <section
       className="
         w-full
-        bg-[#f7f7f7]
+        bg-surface-muted
         pt-10
         pb-16
         sm:pt-12
@@ -15,7 +15,7 @@ export default function PackFeatures() {
         lg:pb-24
       "
     >
-      <div className="mx-auto w-full max-w-[1280px] px-5 sm:px-8 lg:px-10">
+      <div className="mx-auto w-full max-w-content px-5 sm:px-8 lg:px-10">
         {/* Section introduction */}
         <div className="max-w-[720px] px-2 sm:px-0">
           <h2
@@ -24,10 +24,10 @@ export default function PackFeatures() {
               text-[24px]
               font-semibold
               leading-[1.2]
-              tracking-[-0.025em]
+              tracking-heading
               text-neutral-700
               sm:text-[28px]
-              lg:text-[30px]
+              lg:text-section-heading
             "
           >
             Your Entry To Result Driven Marketing
@@ -37,9 +37,8 @@ export default function PackFeatures() {
             className="
               mt-4
               max-w-[660px]
-              text-base
-              leading-[1.7]
-              text-[#737373]
+              text-body
+              text-muted
               sm:text-lg
             "
           >

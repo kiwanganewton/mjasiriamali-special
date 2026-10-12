@@ -1,26 +1,70 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Global design tokens: retain the site's existing Arial typography and palette. */
+  --font-family-base: Arial, Helvetica, sans-serif;
+  --font-size-body-base: 1rem;
+  --line-height-body-base: 1.7;
+  --font-size-section-heading: 1.875rem;
+  --line-height-section-heading: 1.2;
+  --font-weight-regular-value: 400;
+  --font-weight-semibold-value: 600;
+  --tracking-heading-value: -0.025em;
+  --brand-primary-value: #c8102e;
+  --brand-strong-value: #a70d26;
+  --brand-bright-value: #d70900;
+  --site-background: #ffffff;
+  --site-foreground: #171717;
+  --surface-muted: #f7f7f7;
+  --text-muted: #737373;
+  --border-default: #e3e3e3;
+  --layout-content-width: 1280px;
+  --radius-card-value: 1.25rem;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--site-background);
+  --color-foreground: var(--site-foreground);
+  --color-brand: var(--brand-primary-value);
+  --color-brand-strong: var(--brand-strong-value);
+  --color-brand-bright: var(--brand-bright-value);
+  --color-surface-muted: var(--surface-muted);
+  --color-muted: var(--text-muted);
+  --color-border: var(--border-default);
+  --container-content: var(--layout-content-width);
+  --radius-card: var(--radius-card-value);
+  --font-sans: var(--font-family-base);
+  --text-body: var(--font-size-body-base);
+  --text-body--line-height: var(--line-height-body-base);
+  --text-section-heading: var(--font-size-section-heading);
+  --text-section-heading--line-height: var(--line-height-section-heading);
+  --font-weight-regular: var(--font-weight-regular-value);
+  --font-weight-semibold: var(--font-weight-semibold-value);
+  --tracking-heading: var(--tracking-heading-value);
 }
 
 html {
-  background: #ffffff;
+  background: var(--site-background);
   color-scheme: light;
+  font-family: var(--font-family-base);
 }
 
 body {
   min-height: 100vh;
   margin: 0;
-  background: #ffffff;
-  color: #171717;
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--site-background);
+  color: var(--site-foreground);
+  font-family: var(--font-family-base);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+iframe,
+video {
+  max-width: 100%;
 }

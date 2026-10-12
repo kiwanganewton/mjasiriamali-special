@@ -26,7 +26,7 @@ export default function TrustConsultationBar({
         className="
           grid overflow-hidden
           rounded-md
-          border border-[#e3e3e3]
+          border border-border
           bg-white
           lg:grid-cols-[minmax(0,1fr)_300px]
         "
@@ -61,7 +61,7 @@ export default function TrustConsultationBar({
                 max-w-[680px]
                 text-[15px]
                 leading-[1.55]
-                text-[#737373]
+                text-muted
                 sm:text-[16px]
               "
             >
@@ -73,7 +73,7 @@ export default function TrustConsultationBar({
         <div
           className="
             flex items-center
-            border-t border-[#e3e3e3]
+            border-t border-border
             bg-[#fafafa]
             px-7 py-6
             sm:px-10 sm:py-7
