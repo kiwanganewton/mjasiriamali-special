@@ -7,7 +7,7 @@ export default function Faq() {
 
   return (
     <section className="bg-surface-muted pt-8 pb-16 sm:pt-10 sm:pb-20 lg:pt-12 lg:pb-24">
-      <div className="mx-auto w-full max-w-content px-5 sm:px-8 lg:px-10">
+      <div className="mx-auto w-full max-w-content px-6 sm:px-9 lg:px-10">
         <div className="max-w-[720px]">
           <h2 className="text-[24px] font-semibold leading-[1.2] tracking-heading text-neutral-700 sm:text-[28px] lg:text-section-heading">
             {faqContent.title}
@@ -33,7 +33,7 @@ export default function Faq() {
                   <ChevronDown
                     aria-hidden="true"
                     size={20}
-                    className="shrink-0 text-brand transition-transform duration-200 group-open:rotate-180"
+                    className="shrink-0 text-neutral-700 transition-transform duration-200 group-open:rotate-180 sm:text-brand"
                   />
                 </summary>
 
@@ -57,7 +57,7 @@ export default function Faq() {
                   <ChevronDown
                     aria-hidden="true"
                     size={20}
-                    className="shrink-0 text-brand transition-transform duration-200 group-open:rotate-180"
+                    className="shrink-0 text-neutral-700 transition-transform duration-200 group-open:rotate-180 sm:text-brand"
                   />
                 </summary>
 
