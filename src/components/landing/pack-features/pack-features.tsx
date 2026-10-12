@@ -30,7 +30,7 @@ export default function PackFeatures() {
               lg:text-section-heading
             "
           >
-            Your Entry To Result Driven Marketing
+          Everything You Need under One Special Pack
           </h2>
 
           <p
