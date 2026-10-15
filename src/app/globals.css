@@ -3,10 +3,11 @@
 :root {
   /* Shared modern system font across all devices and text styles. */
   --font-family-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-family-hero: var(--font-inter), Arial, sans-serif;
   --font-size-body-base: 1rem;
   --line-height-body-base: 1.7;
   --font-size-hero-heading-mobile: 1.875rem;
-  --font-size-hero-heading-desktop: 2rem;
+  --font-size-hero-heading-desktop: 1.875rem;
   --font-size-hero-heading-compact: 1.625rem;
   --line-height-hero-heading: 1.16;
   --tracking-hero-heading-value: -0.02em;
@@ -97,6 +98,7 @@ video {
 
 /* Shared interface heading styles. Adjust these tokens to update headings site-wide. */
 .heading-hero {
+  font-family: var(--font-family-hero);
   font-size: var(--font-size-hero-heading-mobile);
   font-weight: var(--font-weight-hero-heading-value);
   line-height: var(--line-height-hero-heading);

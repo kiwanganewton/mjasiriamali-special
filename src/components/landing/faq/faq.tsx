@@ -27,7 +27,7 @@ export default function Faq() {
                 open={index === 0}
                 className="group min-w-0 border-b border-border"
               >
-                <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-4 py-5 text-left text-base font-medium leading-[1.45] text-neutral-700 outline-none transition-colors hover:text-brand focus-visible:text-brand [&::-webkit-details-marker]:hidden sm:py-6 sm:text-lg">
+                <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-4 py-5 text-left text-base font-normal leading-[1.45] text-neutral-700 outline-none transition-colors hover:text-brand focus-visible:text-brand [&::-webkit-details-marker]:hidden sm:py-6 sm:text-lg">
                   <span className="min-w-0">{item.question}</span>
 
                   <ChevronDown
@@ -51,7 +51,7 @@ export default function Faq() {
                 name="mjasiriamali-faq-right"
                 className="group min-w-0 border-b border-border"
               >
-                <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-4 py-5 text-left text-base font-medium leading-[1.45] text-neutral-700 outline-none transition-colors hover:text-brand focus-visible:text-brand [&::-webkit-details-marker]:hidden sm:py-6 sm:text-lg">
+                <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-4 py-5 text-left text-base font-normal leading-[1.45] text-neutral-700 outline-none transition-colors hover:text-brand focus-visible:text-brand [&::-webkit-details-marker]:hidden sm:py-6 sm:text-lg">
                   <span className="min-w-0">{item.question}</span>
 
                   <ChevronDown

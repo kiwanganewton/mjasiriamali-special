@@ -25,7 +25,7 @@ The current project uses Tailwind's standard responsive breakpoints (`sm`, `md`,
 
 ## Fonts and typography
 
-The site uses one native system UI font stack across body text and headings on mobile and desktop (such as Segoe UI on Windows or San Francisco on Apple devices). Shared section, card, and subsection headings become 600 weight from 768px up, while mobile retains its current 500 weight. `font-sans` and body text point to `--font-family-base`; no external font download is needed.
+Body text and non-hero headings use the native system UI font stack on all devices. Hero headings use Inter through `next/font`, which Next.js bundles with the application so the hero typography stays the same locally and in production. Inter is loaded at weights 500 and 600 for the responsive hero heading styles.
 
 ## Shared heading styles
 

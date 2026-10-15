@@ -68,7 +68,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="relative z-[100] border-b border-neutral-200 bg-white">
+      <header className="relative z-[100] border-b border-neutral-200 bg-white [font-family:Arial,Helvetica,sans-serif] lg:border-b-0">
         <div className="mx-auto flex h-[76px] w-full max-w-[1240px] items-center justify-between px-5 sm:px-6 lg:h-[80px] lg:px-8">
 
           {/* LOGO */}
