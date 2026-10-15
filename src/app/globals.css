@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  /* Global design tokens: retain the site's existing Arial typography and palette. */
-  --font-family-base: Arial, Helvetica, sans-serif;
+  /* Shared modern system font across all devices and text styles. */
+  --font-family-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-size-body-base: 1rem;
   --line-height-body-base: 1.7;
   --font-size-hero-heading-mobile: 1.875rem;
@@ -32,6 +32,7 @@
   --line-height-section-heading: 1.25;
   --font-weight-regular-value: 400;
   --font-weight-heading-value: 500;
+  --font-weight-heading-desktop-value: 600;
   --font-weight-semibold-value: 600;
   --font-weight-hero-heading-value: 600;
   --tracking-heading-value: -0.02em;
@@ -156,6 +157,12 @@ video {
 }
 
 @media (min-width: 768px) {
+  .heading-section,
+  .heading-card,
+  .heading-subsection {
+    font-weight: var(--font-weight-heading-desktop-value);
+  }
+
   .heading-hero {
     font-size: var(--font-size-hero-heading-desktop);
   }
