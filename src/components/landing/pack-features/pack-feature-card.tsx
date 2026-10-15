@@ -36,15 +36,7 @@ export default function PackFeatureCard({
       {/* CONTENT */}
       <div className="relative z-10 px-7 pt-7 sm:px-8 sm:pt-8">
         <h3
-          className="
-            max-w-[420px]
-            text-[20px]
-            font-semibold
-            leading-[1.12]
-            tracking-[-0.025em]
-            text-neutral-700
-            sm:text-[25px]
-          "
+          className="heading-card max-w-[420px] text-neutral-700"
         >
           {feature.title}
         </h3>

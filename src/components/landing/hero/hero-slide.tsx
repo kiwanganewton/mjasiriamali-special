@@ -98,15 +98,7 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
         }}
       >
         <h2
-          className="
-            text-[24px]
-            font-semibold
-            leading-[1.15]
-            tracking-[-0.018em]
-            md:text-[26px]
-            lg:text-[28px]
-            xl:text-[32px]
-          "
+          className="heading-hero max-w-[420px]"
           style={{
             color: slide.colors.heading,
             opacity: 0.98,
@@ -150,13 +142,7 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
         }}
       >
         <h2
-          className="
-            text-[34px]
-            font-bold
-            leading-[1.12]
-            tracking-[-0.018em]
-            max-[380px]:text-[32px]
-          "
+          className="heading-hero"
           style={{
             color: slide.colors.mobileHeading ?? slide.colors.heading,
           }}

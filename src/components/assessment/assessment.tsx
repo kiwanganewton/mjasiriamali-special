@@ -195,7 +195,7 @@ export default function Assessment() {
               className="flex min-h-[600px] flex-col justify-center"
             >
               <div className="max-w-2xl">
-                <h1 className="text-[24px] font-semibold leading-[1.15] tracking-[-0.02em] text-neutral-600 sm:text-[28px]">
+                <h1 className="heading-section text-neutral-600">
                   {assessmentConfig.intro.title}
                 </h1>
 
@@ -260,7 +260,7 @@ export default function Assessment() {
                     <div className="h-5 w-5 animate-spin rounded-full border-2 border-neutral-200 border-t-[#c8102e]" />
                   </div>
 
-                  <h2 className="text-[24px] font-semibold leading-[1.15] tracking-[-0.02em] text-neutral-600 sm:text-[28px]">
+                  <h2 className="heading-section text-neutral-600">
                     Reviewing your answers
                   </h2>
 
@@ -300,7 +300,7 @@ export default function Assessment() {
               </div>
 
               {/* Question */}
-              <h2 className="max-w-2xl text-[24px] font-semibold leading-[1.15] tracking-[-0.02em] text-neutral-600 sm:text-[28px]">
+              <h2 className="heading-section max-w-2xl text-neutral-600">
                 {question.question}
               </h2>
 
@@ -407,7 +407,7 @@ export default function Assessment() {
                 {/* AI RECOMMENDATION */}
                 {recommendation && (
                   <div className="mb-10">
-                    <h2 className="text-[24px] font-semibold leading-[1.15] tracking-[-0.02em] text-neutral-700 sm:text-[28px]">
+                    <h2 className="heading-section text-neutral-700">
                       {recommendation.heading}
                     </h2>
 
@@ -425,7 +425,7 @@ export default function Assessment() {
                 </div>
 
                 {/* WhatsApp heading */}
-                <h2 className="text-[24px] font-semibold leading-[1.15] tracking-[-0.02em] text-neutral-600 sm:text-[28px]">
+                <h2 className="heading-section text-neutral-600">
                   {assessmentConfig.whatsapp.title}
                 </h2>
 
@@ -445,7 +445,7 @@ export default function Assessment() {
                     </div>
 
                     <div>
-                      <h3 className="text-[18px] font-semibold leading-[1.25] tracking-[-0.01em] text-neutral-600">
+                      <h3 className="heading-subsection text-neutral-600">
                         {assessmentConfig.whatsapp.heading}
                       </h3>
 
@@ -570,7 +570,7 @@ export default function Assessment() {
                 />
               </div>
 
-              <h2 className="mt-7 text-[24px] font-semibold leading-[1.15] tracking-[-0.02em] text-neutral-600 sm:text-[28px]">
+              <h2 className="heading-section mt-7 text-neutral-600">
                 {assessmentConfig.success.title}
               </h2>
 

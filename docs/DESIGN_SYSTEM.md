@@ -8,9 +8,11 @@ Global tokens live in `src/app/globals.css` under `:root`. Tailwind 4 aliases ar
 |---|---|---|
 | `--font-family-base` | `Arial, Helvetica, sans-serif` | Body and Tailwind sans family; headings inherit this family. |
 | `--font-size-body-base` / `--line-height-body-base` | `1rem` / `1.7` | Shared paragraph utility `text-body`. |
-| `--font-size-section-heading` / `--line-height-section-heading` | `1.875rem` / `1.2` | Shared large section heading utility `text-section-heading`. |
-| `--font-weight-regular-value` / `--font-weight-semibold-value` | `400` / `600` | Tailwind `font-normal` and `font-semibold` weights. |
-| `--tracking-heading-value` | `-0.025em` | Shared `tracking-heading` utility for display headings. |
+| Hero heading size tokens | `1.875rem` mobile / `2rem` desktop | `.heading-hero`; a compact-phone token is also available. |
+| Section heading sizes | `1.375rem` mobile / `1.5rem` tablet / `1.625rem` desktop | `.heading-section` for section, modal and assessment headings. |
+| Card heading sizes | `1.125rem` mobile / `1.25rem` desktop | `.heading-card` for package, service and menu card titles. |
+| Subheading, compact UI, and eyebrow sizes | `1rem`/`1.125rem`; `0.9375rem`/`1rem`; `0.6875rem` | `.heading-subsection`, `.heading-ui`, and `.heading-eyebrow`. |
+| Heading weight and line-height tokens | `500` for headings; hero uses `600` | Shared responsive heading classes centralize weight, line-height, and tracking. |
 | `--brand-primary-value` | `#c8102e` | Primary brand actions and focus color (`bg-brand`, `text-brand`, `border-brand`). |
 | `--brand-strong-value` | `#a70d26` | Darker brand hover color (`bg-brand-strong`). |
 | `--brand-bright-value` | `#d70900` | Existing brighter red accent (`bg-brand-bright`). |
@@ -24,6 +26,10 @@ The current project uses Tailwind's standard responsive breakpoints (`sm`, `md`,
 ## Fonts and typography
 
 The existing rendered font was Arial: `src/app/globals.css` explicitly set it on `body`; headings and paragraphs inherit it. `next/font/google` was loading Geist but the site body did not use Geist. The unused download was removed, and `font-sans` and body text now point to `--font-family-base`. Change that token only when an intentional brand-approved font change is desired. The recurring body and large section-heading sizes/line heights use `text-body` and `text-section-heading`; local sizes remain for the rest of the hierarchy where the design varies.
+
+## Shared heading styles
+
+Use `.heading-hero`, `.heading-section`, `.heading-card`, `.heading-subsection`, `.heading-ui`, and `.heading-eyebrow` for interface headings. These shared classes are applied to the hero, landing sections, cards, menus, footer labels, assessment flow, and dialogs. Their responsive sizes, weights, line heights, and tracking are controlled by the related `--font-*`, `--line-height-*`, and `--tracking-*` tokens in `:root` in `src/app/globals.css`.
 
 ## Changing global colors
 

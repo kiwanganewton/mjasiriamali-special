@@ -30,7 +30,7 @@ export default function FeatureDetailModal({
           className="mx-auto w-full max-w-3xl px-5 py-7 sm:px-8 sm:py-9 lg:px-10 lg:py-10"
         >
           <header>
-            <h2 className="text-[24px] font-semibold leading-[1.15] tracking-[-0.02em] text-neutral-700 sm:text-[28px] lg:text-[30px]">
+            <h2 className="heading-section text-neutral-700">
               {feature.title}
             </h2>
             <p className="mt-4 max-w-2xl text-[15px] leading-[1.7] text-neutral-500 sm:text-base">
@@ -45,7 +45,7 @@ export default function FeatureDetailModal({
                 data-content-section={section.id}
                 className="border-b border-neutral-200 py-5 sm:py-6"
               >
-                <h3 className="text-base font-semibold leading-[1.35] text-neutral-700 sm:text-lg">
+                <h3 className="heading-subsection text-neutral-700">
                   {section.heading}
                 </h3>
                 <p className="mt-2 text-[15px] leading-[1.7] text-neutral-500 sm:text-base">

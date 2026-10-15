@@ -80,7 +80,7 @@ export default function Footer() {
 
           {/* Contact Information */}
           <div>
-            <h3 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-neutral-400">
+            <h3 className="heading-eyebrow uppercase text-neutral-400">
               Contact
             </h3>
 
@@ -144,7 +144,7 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <h3 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-neutral-400">
+      <h3 className="heading-eyebrow uppercase text-neutral-400">
         {title}
       </h3>
 

@@ -28,16 +28,7 @@ export default function PackFeatures() {
         {/* Section introduction */}
         <div className="max-w-[720px] px-2 sm:px-0">
           <h2
-            className="
-              max-w-[680px]
-              text-[24px]
-              font-semibold
-              leading-[1.2]
-              tracking-heading
-              text-neutral-700
-              sm:text-[28px]
-              lg:text-section-heading
-            "
+            className="heading-section max-w-[680px] text-neutral-700"
           >
           Everything You Need under One Special Pack
           </h2>

@@ -42,15 +42,7 @@ export default function TrustConsultationBar({
         >
           <div>
             <h2
-              className="
-                max-w-[500px]
-                text-[23px]
-                font-semibold
-                leading-[1.15]
-                tracking-[-0.02em]
-            text-neutral-700
-                sm:text-[24px]
-              "
+              className="heading-section max-w-[500px] text-neutral-700"
             >
               {content.titlePrefix}
             </h2>

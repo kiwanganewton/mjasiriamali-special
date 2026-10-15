@@ -91,16 +91,7 @@ export default function AddonServices() {
             >
               <div className="max-w-[720px]">
                 <h2
-                  className="
-                    max-w-[680px]
-                    text-[30px]
-                    font-semibold
-                    leading-[1.2]
-                    tracking-[-0.025em]
-                    text-neutral-700
-                    sm:text-[28px]
-                    lg:text-[30px]
-                  "
+                  className="heading-section max-w-[680px] text-neutral-700"
                 >
                   {addonServicesContent.title}
                 </h2>
@@ -254,13 +245,7 @@ function DesktopCard({
 
       <div className="p-6 lg:p-7">
         <h3
-          className="
-            text-xl
-            font-semibold
-            leading-[1.25]
-            tracking-[-0.02em]
-            text-neutral-700
-          "
+          className="heading-card text-neutral-700"
         >
           {service.title}
         </h3>
@@ -312,14 +297,7 @@ function MobileServices() {
          className="px-2 text-left sm:px-3"
         >
           <h2
-            className="
-              text-[24px]
-              font-semibold
-              leading-[1.2]
-              tracking-[-0.025em]
-              text-neutral-700
-              sm:text-[24px]
-            "
+            className="heading-section text-neutral-700"
           >
             {addonServicesContent.title}
           </h2>
@@ -440,13 +418,7 @@ function MobileCard({
 
         <div className="p-5 sm:p-6">
           <h3
-            className="
-              text-xl
-              font-semibold
-              leading-[1.25]
-              tracking-[-0.02em]
-              text-neutral-700
-            "
+            className="heading-card text-neutral-700"
           >
             {service.title}
           </h3>

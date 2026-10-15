@@ -5,11 +5,36 @@
   --font-family-base: Arial, Helvetica, sans-serif;
   --font-size-body-base: 1rem;
   --line-height-body-base: 1.7;
-  --font-size-section-heading: 1.875rem;
-  --line-height-section-heading: 1.2;
+  --font-size-hero-heading-mobile: 1.875rem;
+  --font-size-hero-heading-desktop: 2rem;
+  --font-size-hero-heading-compact: 1.625rem;
+  --line-height-hero-heading: 1.16;
+  --tracking-hero-heading-value: -0.02em;
+  --font-size-section-heading-mobile: 1.375rem;
+  --font-size-section-heading-tablet: 1.5rem;
+  --font-size-card-heading-mobile: 1.125rem;
+  --font-size-card-heading-desktop: 1.25rem;
+  --line-height-card-heading: 1.3;
+  --tracking-card-heading-value: -0.01em;
+  --font-size-subheading-mobile: 1rem;
+  --font-size-subheading-desktop: 1.125rem;
+  --line-height-subheading: 1.35;
+  --tracking-subheading-value: -0.005em;
+  --font-size-ui-heading-mobile: 0.9375rem;
+  --font-size-ui-heading-desktop: 1rem;
+  --line-height-ui-heading: 1.5;
+  --tracking-ui-heading-value: -0.005em;
+  --font-size-eyebrow-heading: 0.6875rem;
+  --font-weight-eyebrow-heading-value: 600;
+  --line-height-eyebrow-heading: 1.5;
+  --tracking-eyebrow-heading-value: 0.14em;
+  --font-size-section-heading: 1.625rem;
+  --line-height-section-heading: 1.25;
   --font-weight-regular-value: 400;
+  --font-weight-heading-value: 500;
   --font-weight-semibold-value: 600;
-  --tracking-heading-value: -0.025em;
+  --font-weight-hero-heading-value: 600;
+  --tracking-heading-value: -0.02em;
   --brand-primary-value: #c8102e;
   --brand-strong-value: #a70d26;
   --brand-bright-value: #d70900;
@@ -67,4 +92,83 @@ img,
 iframe,
 video {
   max-width: 100%;
+}
+
+/* Shared interface heading styles. Adjust these tokens to update headings site-wide. */
+.heading-hero {
+  font-size: var(--font-size-hero-heading-mobile);
+  font-weight: var(--font-weight-hero-heading-value);
+  line-height: var(--line-height-hero-heading);
+  letter-spacing: var(--tracking-hero-heading-value);
+}
+
+.heading-section {
+  font-size: var(--font-size-section-heading-mobile);
+  font-weight: var(--font-weight-heading-value);
+  line-height: var(--line-height-section-heading);
+  letter-spacing: var(--tracking-heading-value);
+}
+
+.heading-card {
+  font-size: var(--font-size-card-heading-mobile);
+  font-weight: var(--font-weight-heading-value);
+  line-height: var(--line-height-card-heading);
+  letter-spacing: var(--tracking-card-heading-value);
+}
+
+.heading-subsection {
+  font-size: var(--font-size-subheading-mobile);
+  font-weight: var(--font-weight-heading-value);
+  line-height: var(--line-height-subheading);
+  letter-spacing: var(--tracking-subheading-value);
+}
+
+.heading-ui {
+  font-size: var(--font-size-ui-heading-mobile);
+  font-weight: var(--font-weight-heading-value);
+  line-height: var(--line-height-ui-heading);
+  letter-spacing: var(--tracking-ui-heading-value);
+}
+
+.heading-eyebrow {
+  font-size: var(--font-size-eyebrow-heading);
+  font-weight: var(--font-weight-eyebrow-heading-value);
+  line-height: var(--line-height-eyebrow-heading);
+  letter-spacing: var(--tracking-eyebrow-heading-value);
+}
+
+@media (min-width: 640px) {
+  .heading-section {
+    font-size: var(--font-size-section-heading-tablet);
+  }
+
+  .heading-card {
+    font-size: var(--font-size-card-heading-desktop);
+  }
+
+  .heading-subsection {
+    font-size: var(--font-size-subheading-desktop);
+  }
+
+  .heading-ui {
+    font-size: var(--font-size-ui-heading-desktop);
+  }
+}
+
+@media (min-width: 768px) {
+  .heading-hero {
+    font-size: var(--font-size-hero-heading-desktop);
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading-section {
+    font-size: var(--font-size-section-heading);
+  }
+}
+
+@media (max-width: 380px) {
+  .heading-hero {
+    font-size: var(--font-size-hero-heading-compact);
+  }
 }

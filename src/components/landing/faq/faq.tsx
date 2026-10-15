@@ -9,7 +9,7 @@ export default function Faq() {
     <section className="bg-surface-muted pt-8 pb-16 sm:pt-10 sm:pb-20 lg:pt-12 lg:pb-24">
       <div className="mx-auto w-full max-w-content px-6 sm:px-9 lg:px-10">
         <div className="max-w-[720px]">
-          <h2 className="text-[24px] font-semibold leading-[1.2] tracking-heading text-neutral-700 sm:text-[28px] lg:text-section-heading">
+          <h2 className="heading-section text-neutral-700">
             {faqContent.title}
           </h2>
 

@@ -51,7 +51,7 @@ export default function CtaBanner() {
             {/* CTA Content */}
             <div className="relative flex min-h-[225px] w-full flex-col justify-between px-6 py-7 sm:min-h-[240px] sm:px-7 sm:py-8 lg:min-h-0 lg:px-8 lg:py-8">
               <div>
-                <h2 className="max-w-[390px] text-[25px] font-semibold leading-[1.12] tracking-[-0.02em] text-white sm:text-[28px] lg:text-[30px]">
+                <h2 className="heading-section max-w-[390px] text-white">
                   {banner.title}
                 </h2>
 
@@ -85,7 +85,7 @@ export default function CtaBanner() {
           {/* CONTACT FORM */}
           <div className="order-2 w-full min-w-0 rounded-lg border border-neutral-200 bg-white p-6 shadow-[0_8px_25px_rgba(0,0,0,0.06)] sm:p-8 lg:p-8">
             <div className="mb-6">
-              <h2 className="text-[24px] font-semibold leading-[1.15] tracking-[-0.02em] text-neutral-600 sm:text-[28px]">
+              <h2 className="heading-section text-neutral-600">
                 {form.title}
               </h2>
             </div>

@@ -189,12 +189,7 @@ export default function NewsletterTab() {
             {/* HEADING */}
             <h2
               id="newsletter-title"
-              className="
-                text-2xl
-                font-semibold
-                tracking-tight
-                text-neutral-900
-              "
+              className="heading-section text-neutral-900"
             >
               {newsletterTabContent.title}
             </h2>

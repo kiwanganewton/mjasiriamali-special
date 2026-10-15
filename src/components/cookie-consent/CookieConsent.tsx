@@ -64,13 +64,7 @@ export default function CookieConsent() {
             {/* TEXT */}
             <div className="w-full">
               <h2
-                className="
-                  text-lg
-                  font-semibold
-                  tracking-tight
-                  text-neutral-900
-                  sm:text-xl
-                "
+                className="heading-ui text-neutral-900"
               >
                 {cookieConsentContent.title}
               </h2>
