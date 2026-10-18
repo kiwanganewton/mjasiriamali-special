@@ -284,21 +284,6 @@ export default function Assessment() {
               exit={{ opacity: 0, x: -12 }}
               transition={{ duration: 0.2 }}
             >
-              {/* Progress */}
-              <div className="mb-8">
-                <div className="h-[2px] w-full bg-neutral-200">
-                  <motion.div
-                    className="h-full bg-neutral-400"
-                    initial={{ width: 0 }}
-                    animate={{ width: `${progress}%` }}
-                    transition={{
-                      duration: 0.35,
-                      ease: "easeOut",
-                    }}
-                  />
-                </div>
-              </div>
-
               {/* Question */}
               <h2 className="heading-section max-w-2xl text-neutral-600">
                 {question.question}
@@ -355,7 +340,23 @@ export default function Assessment() {
               )}
 
               {/* Navigation */}
-              <div className="mt-8 flex items-center justify-between border-t border-neutral-200 pt-6">
+              <div className="mt-8 border-t border-neutral-200 pt-5">
+                {/* Progress */}
+                <div className="mb-5">
+                  <div className="h-[2px] w-full bg-neutral-200">
+                    <motion.div
+                      className="h-full bg-neutral-400"
+                      initial={{ width: 0 }}
+                      animate={{ width: `${progress}%` }}
+                      transition={{
+                        duration: 0.35,
+                        ease: "easeOut",
+                      }}
+                    />
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between">
                 <button
                   type="button"
                   onClick={handleBack}
@@ -388,6 +389,7 @@ export default function Assessment() {
                     />
                   </span>
                 </Button>
+                </div>
               </div>
             </motion.section>
           )}

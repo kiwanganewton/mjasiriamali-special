@@ -12,13 +12,16 @@ import Footer from "@/components/footer/footer";
 
 import CookieConsent from "@/components/cookie-consent/CookieConsent";
 import Navbar from "@/components/navigation/Navbar";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function Home() {
   return (
     <main>
       <Navbar />
 
-      <Hero />
+      <ScrollReveal>
+        <Hero />
+      </ScrollReveal>
 
      {/* Mobile: About only
     Desktop: TrustConsultationBar → About */}
@@ -26,12 +29,16 @@ export default function Home() {
 
   {/* Trust bar: desktop only */}
   <div className="hidden lg:block">
-    <TrustConsultationBar />
+    <ScrollReveal>
+      <TrustConsultationBar />
+    </ScrollReveal>
   </div>
 
   {/* About: all screen sizes */}
   <div>
-    <About />
+    <ScrollReveal>
+      <About />
+    </ScrollReveal>
   </div>
 
 </div>
@@ -44,12 +51,16 @@ export default function Home() {
 
       <AddonServices />
 
-      <Faq />
+      <ScrollReveal>
+        <Faq />
+      </ScrollReveal>
 
       <CookieConsent />
        
 
-      <Footer />
+      <ScrollReveal>
+        <Footer />
+      </ScrollReveal>
 
     </main>
   );

@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import Button from "@/components/ui/button";
 import { ctaConfig } from "./ctabanner.config";
 import AssessmentModal from "@/components/assessment/AssessmentModal";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function CtaBanner() {
   const { banner, form } = ctaConfig;
@@ -14,10 +15,11 @@ export default function CtaBanner() {
 
   return (
     <>
-      <section className="w-full px-4 pt-7 sm:px-6 lg:px-8">
+      <section id="fit-check" className="scroll-mt-6 w-full px-4 pt-7 sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-[1200px] flex-col gap-6 lg:grid lg:grid-cols-[minmax(0,0.42fr)_minmax(0,0.58fr)] lg:items-stretch lg:gap-8">
 
           {/* CTA BANNER */}
+          <ScrollReveal className="relative order-1 flex w-full min-w-0">
           <motion.div
             animate={{
               x: [0, -2, 2, -2, 2, 0],
@@ -81,9 +83,11 @@ export default function CtaBanner() {
               </div>
             </div>
           </motion.div>
+          </ScrollReveal>
 
           {/* CONTACT FORM */}
-          <div className="order-2 w-full min-w-0 rounded-lg border border-neutral-200 bg-white p-6 shadow-[0_8px_25px_rgba(0,0,0,0.06)] sm:p-8 lg:p-8">
+          <ScrollReveal className="order-2 w-full min-w-0">
+          <div id="contact-form" className="scroll-mt-6 w-full min-w-0 rounded-lg border border-neutral-200 bg-white p-6 shadow-[0_8px_25px_rgba(0,0,0,0.06)] sm:p-8 lg:p-8">
             <div className="mb-6">
               <h2 className="heading-section text-neutral-600">
                 {form.title}
@@ -144,6 +148,7 @@ export default function CtaBanner() {
               </Button>
             </form>
           </div>
+          </ScrollReveal>
         </div>
       </section>
 

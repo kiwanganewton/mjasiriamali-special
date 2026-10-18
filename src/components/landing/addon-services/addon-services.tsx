@@ -72,7 +72,7 @@ export default function AddonServices() {
   );
 
   return (
-    <>
+    <div id="addon-services" className="scroll-mt-6">
       {/* DESKTOP + TABLET */}
       <section
         ref={desktopSectionRef}
@@ -148,7 +148,7 @@ export default function AddonServices() {
 
       {/* MOBILE */}
       <MobileServices />
-    </>
+    </div>
   );
 }
 

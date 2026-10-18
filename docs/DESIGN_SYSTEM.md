@@ -6,11 +6,13 @@ Global tokens live in `src/app/globals.css` under `:root`. Tailwind 4 aliases ar
 
 | Token | Current value | Controls |
 |---|---|---|
-| `--font-family-base` | Native system UI stack (`system-ui`, platform UI fonts, `Segoe UI`) | Body, headings, and Tailwind sans family on all devices. |
+| `--font-family-base` | Native system UI stack (`system-ui`, platform UI fonts, `Segoe UI`) | Body text and Tailwind sans family on all devices. |
+| `--font-family-heading` | Bundled Inter with system UI fallback | Hero, section, card, subsection, and eyebrow headings, including the newsletter form. |
 | `--font-size-body-base` / `--line-height-body-base` | `1rem` / `1.7` | Shared paragraph utility `text-body`. |
 | Hero heading size tokens | `1.875rem` mobile / `2rem` desktop | `.heading-hero`; a compact-phone token is also available. |
 | Section heading sizes | `1.375rem` mobile / `1.5rem` tablet / `1.625rem` desktop | `.heading-section` for section, modal and assessment headings. |
 | Card heading sizes | `1.125rem` mobile / `1.25rem` desktop | `.heading-card` for package, service and menu card titles. |
+| Form heading sizes and weight | `1.125rem` mobile / `1.25rem` desktop at weight `500` | `.heading-form` keeps the newsletter title distinct from larger section headings. |
 | Subheading, compact UI, and eyebrow sizes | `1rem`/`1.125rem`; `0.9375rem`/`1rem`; `0.6875rem` | `.heading-subsection`, `.heading-ui`, and `.heading-eyebrow`. |
 | Heading weight and line-height tokens | `500` on mobile; section, card, and subheading styles use `600` from 768px up; hero uses `600` | Shared responsive heading classes centralize weight, line-height, and tracking while preserving the lighter mobile treatment. |
 | `--brand-primary-value` | `#c8102e` | Primary brand actions and focus color (`bg-brand`, `text-brand`, `border-brand`). |
@@ -25,11 +27,11 @@ The current project uses Tailwind's standard responsive breakpoints (`sm`, `md`,
 
 ## Fonts and typography
 
-Body text and non-hero headings use the native system UI font stack on all devices. Hero headings use Inter through `next/font`, which Next.js bundles with the application so the hero typography stays the same locally and in production. Inter is loaded at weights 500 and 600 for the responsive hero heading styles.
+Body text and compact navigation UI use the native system UI font stack. Hero, section, card, subsection, and eyebrow headings use Inter through `next/font`, which Next.js bundles with the application so those headings stay consistent locally and in production. Inter is loaded at weights 500 and 600 for the shared heading styles.
 
 ## Shared heading styles
 
-Use `.heading-hero`, `.heading-section`, `.heading-card`, `.heading-subsection`, `.heading-ui`, and `.heading-eyebrow` for interface headings. These shared classes are applied to the hero, landing sections, cards, menus, footer labels, assessment flow, and dialogs. Their responsive sizes, weights, line heights, and tracking are controlled by the related `--font-*`, `--line-height-*`, and `--tracking-*` tokens in `:root` in `src/app/globals.css`.
+Use `.heading-hero`, `.heading-section`, `.heading-card`, `.heading-subsection`, `.heading-form`, `.heading-ui`, and `.heading-eyebrow` for interface headings. These shared classes are applied to the hero, landing sections, cards, menus, footer labels, assessment flow, forms, and dialogs. Their responsive sizes, weights, line heights, and tracking are controlled by the related `--font-*`, `--line-height-*`, and `--tracking-*` tokens in `:root` in `src/app/globals.css`.
 
 ## Changing global colors
 

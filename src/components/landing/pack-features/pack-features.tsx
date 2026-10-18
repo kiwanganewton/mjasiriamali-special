@@ -5,6 +5,7 @@ import AssessmentModal from "@/components/assessment/AssessmentModal";
 import PackFeatureCard from "./pack-feature-card";
 import FeatureDetailModal from "./FeatureDetailModal";
 import { packFeatures, type PackFeature } from "./pack-features.config";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function PackFeatures() {
   const [activeFeature, setActiveFeature] = useState<PackFeature | null>(null);
@@ -13,7 +14,9 @@ export default function PackFeatures() {
   return (
     <>
       <section
+        id="pack-features"
         className="
+        scroll-mt-6
         w-full
         bg-surface-muted
         pt-10
@@ -26,7 +29,7 @@ export default function PackFeatures() {
       >
         <div className="mx-auto w-full max-w-content px-5 sm:px-8 lg:px-10">
         {/* Section introduction */}
-        <div className="max-w-[720px] px-2 sm:px-0">
+        <ScrollReveal className="max-w-[720px] px-2 sm:px-0">
           <h2
             className="heading-section max-w-[680px] text-neutral-700"
           >
@@ -46,7 +49,7 @@ export default function PackFeatures() {
             clearly, and grow without the cost of building a full in-house
             team.
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* Feature cards */}
         <div
@@ -61,12 +64,13 @@ export default function PackFeatures() {
             lg:mt-14
           "
         >
-            {packFeatures.map((feature) => (
-              <PackFeatureCard
-                key={feature.id}
-                feature={feature}
-                onReadMore={setActiveFeature}
-              />
+            {packFeatures.map((feature, index) => (
+              <ScrollReveal key={feature.id} delay={index * 0.07}>
+                <PackFeatureCard
+                  feature={feature}
+                  onReadMore={setActiveFeature}
+                />
+              </ScrollReveal>
             ))}
           </div>
         </div>
