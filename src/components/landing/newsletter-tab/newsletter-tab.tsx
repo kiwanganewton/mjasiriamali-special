@@ -57,23 +57,21 @@ export default function NewsletterTab() {
         tabIndex={isTabVisible ? 0 : -1}
         className={`
           fixed
-          left-1/2
-          bottom-[calc(env(safe-area-inset-bottom)_+_22px)]
+          right-0
+          top-auto
+          bottom-[calc(env(safe-area-inset-bottom)_+_152px)]
           z-50
           flex
-          h-14
-          w-[min(220px,calc(100vw_-_152px))]
+          h-[200px]
+          w-12
           items-center
           justify-center
-          -translate-x-1/2
-          gap-2
-          rounded-md
-          border
-          border-[#b80900]
+          rounded-l-md
+          border-y
+          border-l
+          border-white/20
           bg-[#d70900]
-          px-3
-          text-center
-          whitespace-normal
+          whitespace-nowrap
           text-[11px]
           font-semibold
           tracking-[0.08em]
@@ -89,7 +87,10 @@ export default function NewsletterTab() {
           focus-visible:ring-offset-2
           motion-reduce:transition-none
 
-          lg:left-auto
+          max-[360px]:right-2
+          max-[360px]:h-[184px]
+          max-[360px]:text-[10px]
+
           lg:right-0
           lg:top-[60%]
           lg:bottom-auto
@@ -101,7 +102,6 @@ export default function NewsletterTab() {
           lg:border-y
           lg:border-l
           lg:border-r-0
-          lg:px-0
           lg:text-[11px]
           lg:h-[256px]
           lg:w-14
@@ -111,18 +111,12 @@ export default function NewsletterTab() {
 
           ${
             isTabVisible
-              ? "translate-y-0 opacity-100 lg:translate-x-0"
-              : "translate-y-full opacity-0 pointer-events-none lg:translate-x-full"
+              ? "translate-x-0 opacity-100"
+              : "translate-x-full opacity-0 pointer-events-none"
           }
         `}
       >
-        <span className="px-1 leading-tight lg:hidden">
-          {newsletterTabContent.label}
-        </span>
-        <span
-          className="hidden whitespace-nowrap lg:inline-block"
-          style={{ transform: "rotate(90deg)" }}
-        >
+        <span className="inline-block whitespace-nowrap" style={{ transform: "rotate(90deg)" }}>
           {newsletterTabContent.label}
         </span>
       </button>

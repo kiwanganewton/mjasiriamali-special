@@ -13,10 +13,10 @@ export default function ChatbotFloatingButton() {
       aria-hidden={!isVisible}
       tabIndex={isVisible ? 0 : -1}
       title="Chatbot coming soon"
-      className={`fixed bottom-[calc(env(safe-area-inset-bottom)_+_22px)] left-4 z-[60] inline-flex h-14 w-14 items-center justify-center rounded-[50%_14%_50%_50%] bg-[#d70900] text-white shadow-lg transition-[translate,opacity] duration-1000 ease-in-out motion-reduce:transition-none lg:bottom-[92px] lg:left-auto lg:right-0 ${
+      className={`fixed bottom-[calc(env(safe-area-inset-bottom)_+_84px)] right-0 z-[60] inline-flex h-14 w-14 items-center justify-center rounded-[50%_14%_50%_50%] bg-[#d70900] text-white shadow-lg transition-[translate,opacity] duration-1000 ease-in-out motion-reduce:transition-none max-[360px]:right-2 lg:bottom-[92px] lg:right-0 ${
         isVisible
-          ? "translate-y-0 opacity-100 lg:translate-x-0"
-          : "pointer-events-none translate-y-full opacity-0 lg:translate-y-0 lg:translate-x-full"
+          ? "translate-x-0 opacity-100"
+          : "pointer-events-none translate-x-full opacity-0"
       }`}
     >
       <svg
