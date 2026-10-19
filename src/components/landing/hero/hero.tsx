@@ -39,6 +39,7 @@ export default function Hero() {
 
   return (
     <section
+      id="hero"
       className="w-full overflow-hidden bg-white pt-3 pb-8 sm:pt-10 sm:pb-10 lg:pt-12 lg:pb-12"
       aria-roledescription="carousel"
     >

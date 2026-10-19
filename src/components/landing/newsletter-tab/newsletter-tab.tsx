@@ -3,37 +3,16 @@
 import { useEffect, useRef, useState } from "react";
 import { newsletterTabContent } from "./newsletter-tab.config";
 import Button from "@/components/ui/button";
+import { useAfterHero } from "@/components/landing/use-after-hero";
 
 const MODAL_TRANSITION_DURATION = 280;
 
 export default function NewsletterTab() {
-  const [isTabVisible, setIsTabVisible] = useState(false);
+  const isTabVisible = useAfterHero();
   const [isModalMounted, setIsModalMounted] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(() => {
-    const updateNewsletterTabVisibility = () => {
-      const isDesktop = window.innerWidth >= 1024;
-      const hasScrolledTwice = window.scrollY >= window.innerHeight * 2;
-
-      setIsTabVisible(isDesktop || hasScrolledTwice);
-    };
-
-    updateNewsletterTabVisibility();
-
-    window.addEventListener("scroll", updateNewsletterTabVisibility, {
-      passive: true,
-    });
-
-    window.addEventListener("resize", updateNewsletterTabVisibility);
-
-    return () => {
-      window.removeEventListener("scroll", updateNewsletterTabVisibility);
-      window.removeEventListener("resize", updateNewsletterTabVisibility);
-    };
-  }, []);
 
   useEffect(() => {
     return () => {
@@ -98,9 +77,9 @@ export default function NewsletterTab() {
           tracking-[0.08em]
           text-white
           shadow-md
-          transition-[transform,opacity]
-          duration-500
-          ease-out
+          transition-[translate,opacity]
+          duration-1000
+          ease-in-out
           hover:bg-[#a70d26]
           focus-visible:outline-none
           focus-visible:ring-2
