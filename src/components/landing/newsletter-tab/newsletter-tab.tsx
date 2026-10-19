@@ -61,7 +61,7 @@ export default function NewsletterTab() {
           top-auto
           bottom-[calc(env(safe-area-inset-bottom)_+_152px)]
           z-50
-          flex
+          hidden
           h-[200px]
           w-12
           items-center
@@ -92,6 +92,7 @@ export default function NewsletterTab() {
           max-[360px]:text-[10px]
 
           lg:right-0
+          lg:flex
           lg:top-[60%]
           lg:bottom-auto
           lg:-translate-y-1/2
@@ -112,7 +113,7 @@ export default function NewsletterTab() {
           ${
             isTabVisible
               ? "translate-x-0"
-              : "translate-x-full pointer-events-none"
+              : "translate-x-[calc(100%_+_40px)] pointer-events-none"
           }
         `}
       >
