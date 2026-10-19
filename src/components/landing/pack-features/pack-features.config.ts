@@ -8,6 +8,16 @@ export type PackFeature = {
   detail: {
     introduction: string;
     interestSignals: string[];
+    comparison?: {
+      title: string;
+      firstColumn: string;
+      secondColumn: string;
+      rows: {
+        topic: string;
+        first: string;
+        second: string;
+      }[];
+    };
     sections: {
       id: string;
       heading: string;
@@ -29,6 +39,28 @@ export const packFeatures: PackFeature[] = [
       introduction:
         "Many businesses know they need to communicate regularly, but choosing what to say can become another last-minute task. When ideas are scattered, marketing can lose momentum and feel disconnected from what the business is trying to achieve. Monthly content planning gives that communication a clearer direction, shaped around your business, customers, and priorities.",
       interestSignals: ["planning", "audience", "consistency", "time"],
+      comparison: {
+        title: "A clearer way to plan your marketing",
+        firstColumn: "Other agency arrangements",
+        secondColumn: "Mjasiriamali Special",
+        rows: [
+          {
+            topic: "Planning scope",
+            first: "Scope and planning support can vary by provider and package.",
+            second: "Monthly content planning is part of the package.",
+          },
+          {
+            topic: "Business context",
+            first: "The approach depends on the agency’s process and the information shared.",
+            second: "Ideas are shaped around your business, customers, and priorities.",
+          },
+          {
+            topic: "Connection to content",
+            first: "Planning and creative production may be handled separately, depending on the agreement.",
+            second: "Planning gives the recurring marketing content a clearer direction.",
+          },
+        ],
+      },
       sections: [
         {
           id: "planning-purpose",
@@ -64,6 +96,28 @@ export const packFeatures: PackFeature[] = [
       introduction:
         "Many business owners have worthwhile offers and useful information to share, but limited time or design capacity can make every graphic feel like a new challenge. Inconsistent visuals can also make it harder for customers to recognize the business or quickly understand its message. Professional recurring graphic design helps present planned communications more clearly and consistently.",
       interestSignals: ["visual-identity", "creative-production", "credibility", "communication"],
+      comparison: {
+        title: "Design support that fits your business",
+        firstColumn: "In-house designer",
+        secondColumn: "Mjasiriamali Special",
+        rows: [
+          {
+            topic: "Resourcing",
+            first: "Your business recruits and manages a dedicated employee.",
+            second: "Access recurring design support through the package.",
+          },
+          {
+            topic: "Ongoing commitment",
+            first: "Plan for the responsibilities and costs of an in-house role.",
+            second: "Use the design support included in your monthly package.",
+          },
+          {
+            topic: "Marketing context",
+            first: "The designer works from the priorities and direction you provide.",
+            second: "Design can follow the communication planned for your business.",
+          },
+        ],
+      },
       sections: [
         {
           id: "design-role",

@@ -38,6 +38,55 @@ export default function FeatureDetailModal({
             </p>
           </header>
 
+          {feature.detail.comparison && (
+            <section
+              className="mt-6"
+              aria-labelledby={`${feature.interestKey}-comparison-title`}
+            >
+              <h3
+                id={`${feature.interestKey}-comparison-title`}
+                className="heading-subsection mb-3 text-neutral-700"
+              >
+                {feature.detail.comparison.title}
+              </h3>
+              <div className="overflow-hidden rounded-lg border border-neutral-200">
+                <table className="w-full table-fixed border-collapse text-left text-[12px] leading-[1.55] sm:text-sm">
+                  <caption className="sr-only">
+                    Comparison for {feature.title}
+                  </caption>
+                  <thead className="bg-neutral-50 text-neutral-700">
+                    <tr>
+                      <th scope="col" className="w-[23%] px-2.5 py-3 font-semibold sm:px-4">
+                        Area
+                      </th>
+                      <th scope="col" className="w-[38.5%] px-2.5 py-3 font-semibold sm:px-4">
+                        {feature.detail.comparison.firstColumn}
+                      </th>
+                      <th scope="col" className="w-[38.5%] px-2.5 py-3 font-semibold sm:px-4">
+                        {feature.detail.comparison.secondColumn}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {feature.detail.comparison.rows.map((row) => (
+                      <tr key={row.topic} className="border-t border-neutral-200 align-top">
+                        <th scope="row" className="break-words px-2.5 py-3 font-medium text-neutral-700 sm:px-4 sm:py-3.5">
+                          {row.topic}
+                        </th>
+                        <td className="break-words px-2.5 py-3 text-neutral-500 sm:px-4 sm:py-3.5">
+                          {row.first}
+                        </td>
+                        <td className="break-words px-2.5 py-3 text-neutral-700 sm:px-4 sm:py-3.5">
+                          {row.second}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          )}
+
           <div className="mt-7 border-t border-neutral-200">
             {feature.detail.sections.map((section) => (
               <section
@@ -57,7 +106,7 @@ export default function FeatureDetailModal({
 
           <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <p className="max-w-md text-sm leading-[1.6] text-neutral-500">
-              Want to see how the package could fit your business?
+              {/* Want to see how the package could fit your business? */}
             </p>
             <Button
               type="button"
