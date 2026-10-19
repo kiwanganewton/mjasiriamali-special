@@ -8,18 +8,31 @@ export function useAfterHero() {
   useEffect(() => {
     const hero = document.getElementById("hero");
 
-    if (!hero || !("IntersectionObserver" in window)) {
+    if (!hero) {
       setHasPassedHero(true);
       return;
     }
 
-    const observer = new IntersectionObserver(
-      ([entry]) => setHasPassedHero(!entry.isIntersecting),
-      { threshold: 0 },
-    );
+    let previousScrollY = window.scrollY;
+    const heroDocumentBottom = () =>
+      hero.getBoundingClientRect().bottom + window.scrollY;
 
-    observer.observe(hero);
-    return () => observer.disconnect();
+    setHasPassedHero(previousScrollY > heroDocumentBottom());
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > previousScrollY) {
+        setHasPassedHero(currentScrollY > heroDocumentBottom());
+      } else if (currentScrollY < previousScrollY) {
+        setHasPassedHero(false);
+      }
+
+      previousScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return hasPassedHero;

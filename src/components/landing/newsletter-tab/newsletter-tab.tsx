@@ -77,7 +77,7 @@ export default function NewsletterTab() {
           tracking-[0.08em]
           text-white
           shadow-md
-          transition-[translate,opacity]
+          transition-[translate]
           duration-1000
           ease-in-out
           hover:bg-[#a70d26]
@@ -111,8 +111,8 @@ export default function NewsletterTab() {
 
           ${
             isTabVisible
-              ? "translate-x-0 opacity-100"
-              : "translate-x-full opacity-0 pointer-events-none"
+              ? "translate-x-0"
+              : "translate-x-full pointer-events-none"
           }
         `}
       >
