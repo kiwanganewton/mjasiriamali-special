@@ -45,7 +45,7 @@ export default function Navbar() {
   return (
     <>
       <header className="relative z-[100] bg-white [font-family:Arial,Helvetica,sans-serif]">
-        <div className="mx-auto flex h-[76px] w-full max-w-[1240px] items-center justify-between px-5 sm:px-6 lg:h-[80px] lg:px-8">
+        <div className="relative mx-auto flex h-[76px] w-full max-w-[1240px] items-center justify-between px-5 sm:px-6 lg:h-[80px] lg:px-8">
           <Link
             href="/"
             onClick={closeMobileMenu}
@@ -60,7 +60,7 @@ export default function Navbar() {
           </Link>
 
           <nav
-            className="hidden items-center gap-8 lg:ml-10 lg:flex xl:ml-14"
+            className="absolute left-[44%] hidden -translate-x-1/2 items-center gap-8 lg:flex"
             aria-label="Main navigation"
           >
             {sectionLinks.map((link) => (
