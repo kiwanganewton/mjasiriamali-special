@@ -57,21 +57,23 @@ export default function NewsletterTab() {
         tabIndex={isTabVisible ? 0 : -1}
         className={`
           fixed
-          right-0
-          top-1/2
+          left-1/2
+          bottom-[calc(env(safe-area-inset-bottom)_+_22px)]
           z-50
           flex
-          h-[220px]
-          w-11
+          h-14
+          w-[min(220px,calc(100vw_-_152px))]
           items-center
           justify-center
-          overflow-hidden
-          -translate-y-1/2
-          rounded-l-md
-          border-y
-          border-l
-          border-white/20
+          -translate-x-1/2
+          gap-2
+          rounded-md
+          border
+          border-[#b80900]
           bg-[#d70900]
+          px-3
+          text-center
+          whitespace-normal
           text-[11px]
           font-semibold
           tracking-[0.08em]
@@ -87,10 +89,20 @@ export default function NewsletterTab() {
           focus-visible:ring-offset-2
           motion-reduce:transition-none
 
-          sm:h-[236px]
-          sm:w-12
-          sm:text-xs
-
+          lg:left-auto
+          lg:right-0
+          lg:top-[60%]
+          lg:bottom-auto
+          lg:-translate-y-1/2
+          lg:overflow-hidden
+          lg:gap-0
+          lg:rounded-l-md
+          lg:rounded-r-none
+          lg:border-y
+          lg:border-l
+          lg:border-r-0
+          lg:px-0
+          lg:text-[11px]
           lg:h-[256px]
           lg:w-14
           lg:text-[13px]
@@ -99,13 +111,16 @@ export default function NewsletterTab() {
 
           ${
             isTabVisible
-              ? "translate-x-0 opacity-100"
-              : "translate-x-full opacity-0 pointer-events-none"
+              ? "translate-y-0 opacity-100 lg:translate-x-0"
+              : "translate-y-full opacity-0 pointer-events-none lg:translate-x-full"
           }
         `}
       >
+        <span className="px-1 leading-tight lg:hidden">
+          {newsletterTabContent.label}
+        </span>
         <span
-          className="inline-block whitespace-nowrap"
+          className="hidden whitespace-nowrap lg:inline-block"
           style={{ transform: "rotate(90deg)" }}
         >
           {newsletterTabContent.label}

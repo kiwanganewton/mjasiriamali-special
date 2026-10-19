@@ -28,10 +28,10 @@ export default function WhatsAppFloatingCta({
       aria-label="Chat with us on WhatsApp"
       aria-hidden={!isVisible}
       tabIndex={isVisible ? 0 : -1}
-      className={`fixed bottom-6 right-0 z-[60] inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-[translate,opacity] duration-1000 ease-in-out hover:bg-[#128C7E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 motion-reduce:transition-none ${
+      className={`fixed bottom-[calc(env(safe-area-inset-bottom)_+_22px)] right-4 z-[60] inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-[translate,opacity] duration-1000 ease-in-out hover:bg-[#128C7E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 motion-reduce:transition-none lg:bottom-6 lg:right-0 ${
         isVisible
-          ? "translate-x-0 opacity-100"
-          : "pointer-events-none translate-x-full opacity-0"
+          ? "translate-y-0 opacity-100 lg:translate-x-0"
+          : "pointer-events-none translate-y-full opacity-0 lg:translate-y-0 lg:translate-x-full"
       }`}
     >
       <svg
