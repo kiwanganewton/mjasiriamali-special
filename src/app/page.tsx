@@ -2,6 +2,7 @@ import Hero from "@/components/landing/hero/hero";
 import TrustConsultationBar from "@/components/landing/TrustConsultationBar/TrustConsultationBar";
 import Newsletter from "@/components/landing/newsletter-tab/newsletter-tab";
 import WhatsAppFloatingCta from "@/components/landing/whatsapp-floating-cta/whatsapp-floating-cta";
+import ChatbotFloatingButton from "@/components/chatbot/ChatbotFloatingButton";
 import About from "@/components/landing/about/about";
 import PackFeatures from "@/components/landing/pack-features/pack-features";
 import AddonServices from "@/components/landing/addon-services/addon-services";
@@ -46,6 +47,7 @@ export default function Home() {
 
       <Newsletter />
       <WhatsAppFloatingCta />
+      <ChatbotFloatingButton />
 
       <PackFeatures />
 

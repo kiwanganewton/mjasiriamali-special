@@ -91,11 +91,11 @@ export default function NewsletterTab() {
           sm:w-12
           sm:text-xs
 
-          lg:top-[60%]
           lg:h-[256px]
           lg:w-14
           lg:text-[13px]
           lg:tracking-wide
+          lg:top-[60%]
 
           ${
             isTabVisible
