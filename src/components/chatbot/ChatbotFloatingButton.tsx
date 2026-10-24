@@ -13,7 +13,7 @@ export default function ChatbotFloatingButton() {
       aria-hidden={!isVisible}
       tabIndex={isVisible ? 0 : -1}
       title="Chatbot coming soon"
-      className={`fixed bottom-[calc(env(safe-area-inset-bottom)_+_84px)] right-4 z-[60] inline-flex h-14 w-14 items-center justify-center rounded-[50%_14%_50%_50%] bg-[#d70900] text-white shadow-lg transition-[translate] duration-1000 ease-in-out motion-reduce:transition-none max-[360px]:right-3 lg:bottom-[92px] lg:right-0 ${
+      className={`fixed bottom-[calc(env(safe-area-inset-bottom)_+_84px)] right-4 z-[60] inline-flex h-14 w-14 items-center justify-center rounded-[50%_14%_50%_50%] bg-[#d70900] text-white shadow-lg transition-[translate] duration-1000 ease-in-out motion-reduce:transition-none max-[360px]:right-3 lg:bottom-[92px] lg:right-6 ${
         isVisible
           ? "translate-x-0"
           : "pointer-events-none translate-x-[calc(100%_+_40px)]"

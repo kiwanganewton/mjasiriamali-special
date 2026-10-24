@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import AssessmentModal from "@/components/assessment/AssessmentModal";
 
 import HeroSlide from "./hero-slide";
 import { heroSlides } from "./hero.config";
@@ -12,6 +13,7 @@ const AUTO_PLAY_DURATION = 5000;
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDesktopPaused, setIsDesktopPaused] = useState(false);
+  const [isAssessmentOpen, setIsAssessmentOpen] = useState(false);
 
   const nextSlide = useCallback(() => {
     setCurrentIndex((current) => (current + 1) % heroSlides.length);
@@ -24,12 +26,24 @@ export default function Hero() {
   }, []);
 
   useEffect(() => {
-    if (isDesktopPaused) return;
+    if (isDesktopPaused || isAssessmentOpen) return;
 
     const interval = window.setInterval(nextSlide, AUTO_PLAY_DURATION);
 
     return () => window.clearInterval(interval);
-  }, [isDesktopPaused, nextSlide]);
+  }, [isDesktopPaused, isAssessmentOpen, nextSlide]);
+
+  const openAssessment = () => setIsAssessmentOpen(true);
+  const scrollToAddonServices = () => {
+    document
+      .getElementById("addon-services")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const handleSlideCta = (slideId: number) => {
+    if (slideId === 1) openAssessment();
+    if (slideId === 2) scrollToAddonServices();
+  };
 
   const getSlides = (numberOfSlides: number) =>
     Array.from(
@@ -64,7 +78,10 @@ export default function Hero() {
                     ease: [0.22, 1, 0.36, 1],
                   }}
                 >
-                  <HeroSlide slide={slide} />
+                  <HeroSlide
+                    slide={slide}
+                    onCtaClick={() => handleSlideCta(slide.id)}
+                  />
                 </motion.div>
               ))}
             </AnimatePresence>
@@ -85,7 +102,10 @@ export default function Hero() {
                     ease: [0.22, 1, 0.36, 1],
                   }}
                 >
-                  <HeroSlide slide={slide} />
+                  <HeroSlide
+                    slide={slide}
+                    onCtaClick={() => handleSlideCta(slide.id)}
+                  />
                 </motion.div>
               ))}
             </AnimatePresence>
@@ -104,7 +124,10 @@ export default function Hero() {
                   ease: [0.22, 1, 0.36, 1],
                 }}
               >
-                <HeroSlide slide={heroSlides[currentIndex]} />
+                <HeroSlide
+                  slide={heroSlides[currentIndex]}
+                  onCtaClick={() => handleSlideCta(heroSlides[currentIndex].id)}
+                />
               </motion.div>
             </AnimatePresence>
           </div>
@@ -133,6 +156,10 @@ export default function Hero() {
 
         </div>
       </div>
+      <AssessmentModal
+        isOpen={isAssessmentOpen}
+        onClose={() => setIsAssessmentOpen(false)}
+      />
     </section>
   );
 } 

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, Search, X } from "lucide-react";
 import SearchOverlay from "./SearchOverlay";
+import AssessmentModal from "@/components/assessment/AssessmentModal";
 
 const sectionLinks = [
   { label: "About", href: "#about" },
@@ -18,6 +19,7 @@ const navLinkClass =
 export default function Navbar() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAssessmentOpen, setIsAssessmentOpen] = useState(false);
 
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
@@ -64,7 +66,18 @@ export default function Navbar() {
             aria-label="Main navigation"
           >
             {sectionLinks.map((link) => (
-              <Link key={link.href} href={link.href} className={navLinkClass}>
+              <Link
+                key={link.href}
+                href={link.href}
+                className={navLinkClass}
+                onClick={(event) => {
+                  if (link.href === "#fit-check") {
+                    event.preventDefault();
+                    setIsAssessmentOpen(true);
+                  }
+                  closeMobileMenu();
+                }}
+              >
                 {link.label}
               </Link>
             ))}
@@ -139,7 +152,13 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                onClick={closeMobileMenu}
+                onClick={(event) => {
+                  if (link.href === "#fit-check") {
+                    event.preventDefault();
+                    setIsAssessmentOpen(true);
+                  }
+                  closeMobileMenu();
+                }}
                 className="block border-b border-neutral-200 py-5 text-[15px] font-medium text-neutral-900"
               >
                 {link.label}
@@ -160,6 +179,10 @@ export default function Navbar() {
       <SearchOverlay
         isOpen={isSearchOpen}
         onClose={() => setIsSearchOpen(false)}
+      />
+      <AssessmentModal
+        isOpen={isAssessmentOpen}
+        onClose={() => setIsAssessmentOpen(false)}
       />
     </>
   );

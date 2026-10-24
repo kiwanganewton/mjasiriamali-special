@@ -4,9 +4,10 @@ import Button from "../../ui/button";
 
 type HeroSlideProps = {
   slide: HeroSlideData;
+  onCtaClick?: () => void;
 };
 
-export default function HeroSlide({ slide }: HeroSlideProps) {
+export default function HeroSlide({ slide, onCtaClick }: HeroSlideProps) {
   const desktop = slide.position.desktop;
   const mobile = slide.position.mobile;
 
@@ -189,6 +190,7 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
           <Button
             variant={slide.cta.variant}
             tone={slide.cta.tone}
+            onClick={onCtaClick}
           >
             {slide.cta.label}
           </Button>
@@ -210,6 +212,7 @@ export default function HeroSlide({ slide }: HeroSlideProps) {
           <Button
             variant={slide.cta.variant}
             tone={slide.cta.tone}
+            onClick={onCtaClick}
           >
             {slide.cta.label}
           </Button>
