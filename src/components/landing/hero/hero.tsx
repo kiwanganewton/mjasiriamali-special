@@ -13,6 +13,7 @@ const AUTO_PLAY_DURATION = 5000;
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDesktopPaused, setIsDesktopPaused] = useState(false);
+  const [isMobileTouching, setIsMobileTouching] = useState(false);
   const [isAssessmentOpen, setIsAssessmentOpen] = useState(false);
 
   const nextSlide = useCallback(() => {
@@ -26,12 +27,12 @@ export default function Hero() {
   }, []);
 
   useEffect(() => {
-    if (isDesktopPaused || isAssessmentOpen) return;
+    if (isDesktopPaused || isMobileTouching || isAssessmentOpen) return;
 
     const interval = window.setInterval(nextSlide, AUTO_PLAY_DURATION);
 
     return () => window.clearInterval(interval);
-  }, [isDesktopPaused, isAssessmentOpen, nextSlide]);
+  }, [isDesktopPaused, isMobileTouching, isAssessmentOpen, nextSlide]);
 
   const openAssessment = () => setIsAssessmentOpen(true);
   const scrollToAddonServices = () => {
@@ -112,7 +113,12 @@ export default function Hero() {
           </div>
 
           {/* Mobile: 1 card */}
-          <div className="md:hidden">
+          <div
+            className="md:hidden"
+            onTouchStart={() => setIsMobileTouching(true)}
+            onTouchEnd={() => setIsMobileTouching(false)}
+            onTouchCancel={() => setIsMobileTouching(false)}
+          >
             <AnimatePresence initial={false} mode="wait">
               <motion.div
                 key={heroSlides[currentIndex].id}
