@@ -32,7 +32,7 @@ export default function AddonServiceModal({
             <h2 className="heading-section mt-2 text-neutral-700">
               {service.title}
             </h2>
-            <p className="mt-4 text-[15px] leading-[1.7] text-neutral-600 sm:text-base">
+            <p className="mt-4 text-[15px] leading-[1.7] text-neutral-600 sm:text-base [hyphens:auto] [overflow-wrap:break-word]">
               {detail.introduction}
             </p>
           </header>
@@ -40,7 +40,7 @@ export default function AddonServiceModal({
           <section className="mt-6 rounded-lg border border-neutral-200 bg-neutral-50/70 p-4 sm:p-5">
             <div className="mb-4">
               <h3 className="heading-subsection text-neutral-700">Pricing</h3>
-              <p className="mt-1 text-sm leading-relaxed text-neutral-500">
+              <p className="mt-1 text-sm leading-relaxed text-neutral-500 [hyphens:auto] [overflow-wrap:break-word]">
                 Mjasiriamali Special members receive 25% off eligible add-on services.
               </p>
             </div>
@@ -57,18 +57,18 @@ export default function AddonServiceModal({
                     </h4>
                     <div className="mt-3 grid grid-cols-2 gap-3">
                       <div className="min-w-0">
-                        <p className="text-[11px] leading-tight text-neutral-500 sm:text-xs">
+                        <p className="text-[11px] leading-tight text-neutral-500 sm:text-xs [hyphens:auto] [overflow-wrap:break-word]">
                           Regular client
                         </p>
-                        <p className="mt-1 break-words text-sm font-medium text-neutral-700 sm:text-base">
+                        <p className="mt-1 break-words text-sm font-medium text-neutral-700 sm:text-base [hyphens:auto] [overflow-wrap:break-word]">
                           TSh {price.regular}
                         </p>
                       </div>
                       <div className="min-w-0 border-l border-neutral-200 pl-3">
-                        <p className="text-[11px] leading-tight text-neutral-500 sm:text-xs">
+                        <p className="text-[11px] leading-tight text-neutral-500 sm:text-xs [hyphens:auto] [overflow-wrap:break-word]">
                           Mjasiriamali Special member
                         </p>
-                        <p className="mt-1 break-words text-sm font-semibold text-[#b80900] sm:text-base">
+                        <p className="mt-1 break-words text-sm font-semibold text-[#b80900] sm:text-base [hyphens:auto] [overflow-wrap:break-word]">
                           TSh {price.member}
                         </p>
                       </div>
@@ -77,7 +77,7 @@ export default function AddonServiceModal({
                 ))}
               </div>
             ) : (
-              <p className="text-[15px] leading-[1.7] text-neutral-600 sm:text-base">
+              <p className="text-[15px] leading-[1.7] text-neutral-600 sm:text-base [hyphens:auto] [overflow-wrap:break-word]">
                 {detail.quoteOffer}
               </p>
             )}
@@ -87,7 +87,7 @@ export default function AddonServiceModal({
             <h3 className="heading-subsection text-neutral-700">
               How this service helps
             </h3>
-            <p className="mt-2 text-[15px] leading-[1.7] text-neutral-500 sm:text-base">
+            <p className="mt-2 text-[15px] leading-[1.7] text-neutral-500 sm:text-base [hyphens:auto] [overflow-wrap:break-word]">
               {detail.solution}
             </p>
           </section>
@@ -96,13 +96,13 @@ export default function AddonServiceModal({
             <h3 className="heading-subsection text-neutral-700">
               Agreeing on the scope
             </h3>
-            <p className="mt-2 text-[15px] leading-[1.7] text-neutral-500 sm:text-base">
+            <p className="mt-2 text-[15px] leading-[1.7] text-neutral-500 sm:text-base [hyphens:auto] [overflow-wrap:break-word]">
               {detail.scope}
             </p>
           </section>
 
           <div className="mt-6 flex flex-col gap-3 border-t border-neutral-200 pt-5 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-sm leading-relaxed text-neutral-500">
+            <p className="text-sm leading-relaxed text-neutral-500 [hyphens:auto] [overflow-wrap:break-word]">
               Need this for your business? Let’s discuss the right scope.
             </p>
             <Button

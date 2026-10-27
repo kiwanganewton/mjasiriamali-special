@@ -33,7 +33,7 @@ export default function FeatureDetailModal({
             <h2 className="heading-section text-neutral-700">
               {feature.title}
             </h2>
-            <p className="mt-4 max-w-2xl text-[15px] leading-[1.7] text-neutral-500 sm:text-base">
+            <p className="mt-4 max-w-2xl text-[15px] leading-[1.7] text-neutral-500 sm:text-base [hyphens:auto] [overflow-wrap:break-word]">
               {feature.detail.introduction}
             </p>
           </header>
@@ -97,7 +97,7 @@ export default function FeatureDetailModal({
                 <h3 className="heading-subsection text-neutral-700">
                   {section.heading}
                 </h3>
-                <p className="mt-2 text-[15px] leading-[1.7] text-neutral-500 sm:text-base">
+                <p className="mt-2 text-[15px] leading-[1.7] text-neutral-500 sm:text-base [hyphens:auto] [overflow-wrap:break-word]">
                   {section.body}
                 </p>
               </section>
@@ -105,7 +105,7 @@ export default function FeatureDetailModal({
           </div>
 
           <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <p className="max-w-md text-sm leading-[1.6] text-neutral-500">
+            <p className="max-w-md text-sm leading-[1.6] text-neutral-500 [hyphens:auto] [overflow-wrap:break-word]">
               {/* Want to see how the package could fit your business? */}
             </p>
             <Button

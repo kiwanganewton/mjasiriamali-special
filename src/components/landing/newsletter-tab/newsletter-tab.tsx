@@ -184,7 +184,7 @@ export default function NewsletterTab() {
             </h2>
 
             {/* DESCRIPTION */}
-            <p className="mt-3 text-base leading-[1.7] text-neutral-500">
+            <p className="mt-3 text-base leading-[1.7] text-neutral-500 [hyphens:auto] [overflow-wrap:break-word]">
               {newsletterTabContent.description}
             </p>
 

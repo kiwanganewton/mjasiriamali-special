@@ -199,7 +199,7 @@ export default function Assessment() {
                   {assessmentConfig.intro.title}
                 </h1>
 
-                <p className="mt-4 max-w-xl text-[15px] leading-[1.6] text-neutral-500 sm:text-[16px]">
+                <p className="mt-4 max-w-xl text-[15px] leading-[1.6] text-neutral-500 sm:text-[16px] [hyphens:auto] [overflow-wrap:break-word]">
                   {assessmentConfig.intro.description}
                 </p>
 
@@ -264,7 +264,7 @@ export default function Assessment() {
                     Reviewing your answers
                   </h2>
 
-                  <p className="mt-4 text-[15px] leading-[1.6] text-neutral-500 sm:text-[16px]">
+                  <p className="mt-4 text-[15px] leading-[1.6] text-neutral-500 sm:text-[16px] [hyphens:auto] [overflow-wrap:break-word]">
                     We’re looking at your answers to understand your current
                     marketing situation and prepare a recommendation for your
                     business.
@@ -334,7 +334,7 @@ export default function Assessment() {
 
               {/* Error */}
               {error && (
-                <p className="mt-4 text-sm text-red-600">
+                <p className="mt-4 text-sm text-red-600 [hyphens:auto] [overflow-wrap:break-word]">
                   {error}
                 </p>
               )}
@@ -413,7 +413,7 @@ export default function Assessment() {
                       {recommendation.heading}
                     </h2>
 
-                    <p className="mt-4 max-w-xl text-[15px] leading-[1.6] text-neutral-500 sm:text-[16px]">
+                    <p className="mt-4 max-w-xl text-[15px] leading-[1.6] text-neutral-500 sm:text-[16px] [hyphens:auto] [overflow-wrap:break-word]">
                       {recommendation.paragraph}
                     </p>
                   </div>
@@ -431,7 +431,7 @@ export default function Assessment() {
                   {assessmentConfig.whatsapp.title}
                 </h2>
 
-                <p className="mt-4 max-w-xl text-[15px] leading-[1.6] text-neutral-500 sm:text-[16px]">
+                <p className="mt-4 max-w-xl text-[15px] leading-[1.6] text-neutral-500 sm:text-[16px] [hyphens:auto] [overflow-wrap:break-word]">
                   {assessmentConfig.whatsapp.description}
                 </p>
 
@@ -497,12 +497,12 @@ export default function Assessment() {
                     />
 
                     {error && (
-                      <p className="mt-3 text-sm text-red-600">
+                      <p className="mt-3 text-sm text-red-600 [hyphens:auto] [overflow-wrap:break-word]">
                         {error}
                       </p>
                     )}
 
-                    <p className="mt-3 text-xs leading-5 text-neutral-500">
+                    <p className="mt-3 text-xs leading-5 text-neutral-500 [hyphens:auto] [overflow-wrap:break-word]">
                       {assessmentConfig.whatsapp.consent}
                     </p>
                   </div>
@@ -576,7 +576,7 @@ export default function Assessment() {
                 {assessmentConfig.success.title}
               </h2>
 
-              <p className="mt-4 max-w-lg text-[15px] leading-[1.6] text-neutral-500 sm:text-[16px]">
+              <p className="mt-4 max-w-lg text-[15px] leading-[1.6] text-neutral-500 sm:text-[16px] [hyphens:auto] [overflow-wrap:break-word]">
                 {assessmentConfig.success.description}
               </p>
             </motion.section>
