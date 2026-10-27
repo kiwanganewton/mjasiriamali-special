@@ -97,31 +97,36 @@ export const packFeatures: PackFeature[] = [
         "Many business owners have worthwhile offers and useful information to share, but limited time or design capacity can make every graphic feel like a new challenge. Inconsistent visuals can also make it harder for customers to recognize the business or quickly understand its message. Professional recurring graphic design helps present planned communications more clearly and consistently.",
       interestSignals: ["visual-identity", "creative-production", "credibility", "communication"],
       comparison: {
-        title: "Design support that fits your business",
+        title: "Hiring a Designer vs. Mjasiriamali Special Pack",
         firstColumn: "In-house designer",
-        secondColumn: "Mjasiriamali Special",
+        secondColumn: "Mjasiriamali Special Pack",
         rows: [
           {
-            topic: "Resourcing",
-            first: "Your business recruits and manages a dedicated employee.",
-            second: "Access recurring design support through the package.",
+            topic: "Cost",
+            first: "A monthly salary, plus software and equipment",
+            second: "Design support included in one flat monthly package: TZS 190,000",
           },
           {
-            topic: "Ongoing commitment",
-            first: "Plan for the responsibilities and costs of an in-house role.",
-            second: "Use the design support included in your monthly package.",
+            topic: "Workload",
+            first: "Paid full-time, even in months with little to design",
+            second: "Design matched to what your content plan needs each month",
           },
           {
-            topic: "Marketing context",
-            first: "The designer works from the priorities and direction you provide.",
-            second: "Design can follow the communication planned for your business.",
+            topic: "Skills",
+            first: "One person’s style and skill set",
+            second: "A team that designs for social media: posts, promotions, announcements",
+          },
+              {
+            topic: "Consistency	",
+            first: "Depends on one person and your time to guide them",
+            second: "Your brand look stays consistent across all your posts",
           },
         ],
       },
       sections: [
         {
           id: "design-role",
-          heading: "When the message is there but the presentation is difficult",
+          heading: "",
           body:
             "A crowded graphic, changing styles, or a rushed design can distract from the offer itself. Customers need to notice the important information and understand who is speaking to them. Clear visual hierarchy and consistent creative choices help keep attention on the message and make communications feel connected over time.",
         },
@@ -129,11 +134,11 @@ export const packFeatures: PackFeature[] = [
           id: "design-content",
           heading: "How the package supports your creative output",
           body:
-            "The package includes professional recurring marketing graphics such as promotional or informational posters and carousel content. The format and message can follow the communication planned for your business, helping your content look more considered without asking you to create every asset on your own.",
+            "The package includes 3 pieces of content every week, featuring professional promotional or informational posters and carousel content. Each piece follows your monthly content plan, keeping your brand consistent and your marketing messages aligned with your business goals.",
         },
         {
           id: "design-fit",
-          heading: "The benefit of a more consistent visual presence",
+          heading: "",
           body:
             "This support can be useful when you have important offers to explain, want customers to recognize your communications, or do not have dedicated design capacity in-house. It helps make professional presentation part of your recurring marketing activity rather than an occasional scramble.",
         },
@@ -156,7 +161,7 @@ export const packFeatures: PackFeature[] = [
       sections: [
         {
           id: "addons-options",
-          heading: "When your business needs more than content",
+          heading: "",
           body:
             "Different stages of business bring different communication needs. You might need a website to give customers a place to learn about your services, a company profile to introduce your business professionally, email on your own domain, or branded and printed materials. These are examples of additional services available to discuss.",
         },
@@ -166,12 +171,7 @@ export const packFeatures: PackFeature[] = [
           body:
             "Mjasiriamali Special clients receive a 25% discount on add-on services. Because these services are separate from the core monthly package, you can first discuss your specific need, the scope of work, and whether the service is relevant before deciding how to proceed.",
         },
-        {
-          id: "addons-fit",
-          heading: "Choose support around the need you have now",
-          body:
-            "This option is useful when a particular business priority calls for a specific service. It lets you consider that need alongside your ongoing marketing, rather than assuming every business needs the same additional work at the same time.",
-        },
+        
       ],
     },
   },
@@ -189,24 +189,14 @@ export const packFeatures: PackFeature[] = [
         "Running a business often brings marketing questions that do not fit neatly into a content calendar. You may see an opportunity or face a new challenge without having an in-house marketing colleague to help work out what to do next. Agency support gives Mjasiriamali Special clients a way to discuss additional needs with a professional team.",
       interestSignals: ["expert-guidance", "additional-needs", "capacity", "business-growth"],
       sections: [
-        {
-          id: "agency-scope",
-          heading: "When the need goes beyond the monthly plan",
-          body:
-            "The core package focuses on structured planning and recurring creative content. When a new requirement falls outside that work, it can be difficult to know whether it calls for a different service, a new approach, or more information first.",
-        },
+    
         {
           id: "agency-context",
-          heading: "How professional support can help",
+          heading: "How Agency support can help",
           body:
-            "A conversation about the outcome you want, the people you need to reach, and the challenge in your way can help clarify what support may be relevant. Starting with your business context helps keep any next step connected to the actual need, rather than choosing a service simply because it is available.",
+            "Get access to more advanced marketing support and marketing systems by discussing the results you want, the people you need to reach, and the challenges you're facing. Understanding your business helps us identify the right solutions for your needs, from specialized marketing services to systems that improve how your business attracts and manages customers. As your business grows, your marketing needs may also change. Whether you need a more advanced strategy, better customer follow-up, or marketing automation to reduce repetitive work, we help you explore the right next steps based on your goals and budget.",
         },
-        {
-          id: "agency-fit",
-          heading: "A practical next step when things change",
-          body:
-            "Agency support can be useful when your priorities change, an additional marketing need emerges, or you need guidance to understand the next practical step. It provides a way to raise that need and discuss whether further support is appropriate.",
-        },
+        
       ],
     },
   },
