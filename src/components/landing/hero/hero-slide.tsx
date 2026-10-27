@@ -134,7 +134,7 @@ export default function HeroSlide({ slide, onCtaClick }: HeroSlideProps) {
     -translate-y-1/2
     flex-col
     md:hidden
-    max-[380px]:-translate-y-[58%]
+    max-[380px]:-translate-y-[62%]
   "
   style={{
     left: mobile.x,
