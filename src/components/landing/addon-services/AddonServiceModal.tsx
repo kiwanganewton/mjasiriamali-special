@@ -55,20 +55,20 @@ export default function AddonServiceModal({
                     <h4 className="text-sm font-semibold text-neutral-800 sm:text-base">
                       {price.item}
                     </h4>
-                    <div className="mt-3 grid grid-cols-2 gap-3">
-                      <div className="min-w-0">
+                    <div className="mt-3 grid grid-cols-2 gap-2 sm:gap-3">
+                      <div className="min-w-0 rounded-md bg-neutral-50 p-3">
                         <p className="text-[11px] leading-tight text-neutral-500 sm:text-xs [hyphens:auto] [overflow-wrap:break-word]">
                           Regular client
                         </p>
-                        <p className="mt-1 break-words text-sm font-medium text-neutral-700 sm:text-base [hyphens:auto] [overflow-wrap:break-word]">
+                        <p className="mt-1 break-words text-sm font-semibold text-neutral-800 sm:text-base [hyphens:auto] [overflow-wrap:break-word]">
                           TSh {price.regular}
                         </p>
                       </div>
-                      <div className="min-w-0 border-l border-neutral-200 pl-3">
-                        <p className="text-[11px] leading-tight text-neutral-500 sm:text-xs [hyphens:auto] [overflow-wrap:break-word]">
+                      <div className="min-w-0 rounded-md bg-[#c8102e] p-3 text-white">
+                        <p className="text-[11px] leading-tight text-white/85 sm:text-xs [hyphens:auto] [overflow-wrap:break-word]">
                           Mjasiriamali Special member
                         </p>
-                        <p className="mt-1 break-words text-sm font-semibold text-[#b80900] sm:text-base [hyphens:auto] [overflow-wrap:break-word]">
+                        <p className="mt-1 break-words text-sm font-bold text-white sm:text-base [hyphens:auto] [overflow-wrap:break-word]">
                           TSh {price.member}
                         </p>
                       </div>
@@ -77,9 +77,11 @@ export default function AddonServiceModal({
                 ))}
               </div>
             ) : (
-              <p className="text-[15px] leading-[1.7] text-neutral-600 sm:text-base [hyphens:auto] [overflow-wrap:break-word]">
-                {detail.quoteOffer}
-              </p>
+              <div className="rounded-md border border-[#c8102e]/20 bg-[#c8102e]/5 p-4">
+                <p className="text-[15px] font-medium leading-[1.7] text-neutral-700 sm:text-base [hyphens:auto] [overflow-wrap:break-word]">
+                  {detail.quoteOffer}
+                </p>
+              </div>
             )}
           </section>
 

@@ -1,45 +1,33 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import AssessmentModal from "@/components/assessment/AssessmentModal";
 
 const footerLinks = {
-  company: [
-    { label: "About Us", href: "/about" },
-    { label: "Services", href: "/services" },
-    { label: "Products", href: "/products" },
-    { label: "Contact", href: "/contact" },
+  quick: [
+    { label: "About", href: "#about" },
+    { label: "Pack Features", href: "#pack-features" },
+    { label: "Add-on Services", href: "#addon-services" },
   ],
-
-  resources: [
-    { label: "Business Growth Center", href: "/knowledge" },
-    { label: "Insights", href: "/insights" },
-    { label: "FAQs", href: "/faqs" },
-  ],
+  resources: [{ label: "Fit Check", action: "assessment" as const }],
 };
 
 export default function Footer() {
+  const [isAssessmentOpen, setIsAssessmentOpen] = useState(false);
+
   return (
+    <>
     <footer className="w-full bg-[#2A2A2A] text-white">
       <div className="mx-auto w-full max-w-content px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.45fr_0.8fr_1.1fr_1.2fr] lg:gap-10">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.45fr_0.8fr_0.8fr_1.2fr] lg:gap-10">
           {/* Introduction */}
           <div className="max-w-[360px]">
             <p className="max-w-[330px] text-sm leading-[1.8] text-neutral-400">
-              Practical digital solutions that help businesses build stronger
-              brands, improve their presence, and grow with confidence.
+              Mjasiriamali Special brings marketing, design, and digital
+              services together in one affordable package, helping Tanzanian
+              small businesses build their brand, reach more customers, and grow.
             </p>
-
-           {/*  <Link
-              href="/contact"
-              className="group mt-7 inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors duration-200 hover:text-[#E30404]"
-            >
-              Start a conversation
-
-              <ArrowUpRight
-                size={16}
-                strokeWidth={1.8}
-                className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              />
-            </Link> */}
 
             {/* Social Media */}
             <div className="mt-8 flex items-center gap-2">
@@ -66,16 +54,14 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Company */}
-          <FooterColumn
-            title="Company"
-            links={footerLinks.company}
-          />
+          {/* Quick Links */}
+          <FooterColumn title="Quick Links" links={footerLinks.quick} />
 
           {/* Resources */}
           <FooterColumn
             title="Resources"
             links={footerLinks.resources}
+            onOpenAssessment={() => setIsAssessmentOpen(true)}
           />
 
           {/* Contact Information */}
@@ -86,13 +72,13 @@ export default function Footer() {
 
             <div className="mt-5 space-y-5">
               <ContactItem
-                value="info@dilipoint.co.tz"
-                href="mailto:info@dilipoint.co.tz"
+                value="msp@dilipoint.com"
+                href="mailto:msp@dilipoint.com"
               />
 
               <ContactItem
-                value="+255 000 000 000"
-                href="tel:+255000000000"
+                value="+255 756 121 995"
+                href="tel:+255756121995"
               />
 
               <ContactItem value="Dar es Salaam, Tanzania" />
@@ -127,6 +113,11 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+    <AssessmentModal
+      isOpen={isAssessmentOpen}
+      onClose={() => setIsAssessmentOpen(false)}
+    />
+    </>
   );
 }
 
@@ -135,12 +126,15 @@ export default function Footer() {
 function FooterColumn({
   title,
   links,
+  onOpenAssessment,
 }: {
   title: string;
   links: {
     label: string;
-    href: string;
+    href?: string;
+    action?: "assessment";
   }[];
+  onOpenAssessment?: () => void;
 }) {
   return (
     <div>
@@ -149,15 +143,26 @@ function FooterColumn({
       </h3>
 
       <nav className="mt-5 space-y-3" aria-label={title}>
-        {links.map((link) => (
-          <Link
-            key={link.label}
-            href={link.href}
-            className="block text-sm text-neutral-300 transition-colors duration-200 hover:text-white"
-          >
-            {link.label}
-          </Link>
-        ))}
+        {links.map((link) =>
+          link.action === "assessment" ? (
+            <button
+              key={link.label}
+              type="button"
+              onClick={onOpenAssessment}
+              className="block w-full text-left text-sm text-neutral-300 transition-colors duration-200 hover:text-white"
+            >
+              {link.label}
+            </button>
+          ) : (
+            <Link
+              key={link.label}
+              href={link.href ?? "#"}
+              className="block text-sm text-neutral-300 transition-colors duration-200 hover:text-white"
+            >
+              {link.label}
+            </Link>
+          ),
+        )}
       </nav>
     </div>
   );
