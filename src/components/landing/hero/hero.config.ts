@@ -38,12 +38,12 @@ export const heroSlides: HeroSlideData[] = [
     title: "Just Skip the Cost. Keep Growing",
 
     description:
-      "Running your business is already a full-time job, and you miss doing  ",
+      "All-in-one marketing support for just 190,000/= per month. ",
 
     image: "/images/hero/slide-0000000000001.webp",
 
     cta: {
-      label: "See If It Fits",
+      label: "Check If It Fits",
       variant: "solid",
       tone: "brand",
     },
@@ -74,7 +74,7 @@ export const heroSlides: HeroSlideData[] = [
     title: "",
 
     description:
-      "Running your business is already a full-time job, and you miss doingtime job, and you miss doing",
+      "Save 25% on websites, company profiles, professional emails, and branding items when subscribed.",
 
     image: "/images/hero/slide-000000000000000002.webp",
 
