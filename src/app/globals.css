@@ -201,7 +201,7 @@ video {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 380px) {
   .heading-hero {
     font-size: var(--font-size-hero-heading-compact);
   }
@@ -213,7 +213,7 @@ video {
   top: calc(var(--hero-mobile-copy-y) - 1%);
 }
 
-@media (max-width: 400px) {
+@media (max-width: 380px) {
   .hero-mobile-copy {
     top: calc(var(--hero-mobile-copy-y) - 6%);
   }

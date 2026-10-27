@@ -159,7 +159,7 @@ export default function HeroSlide({ slide, onCtaClick }: HeroSlideProps) {
             text-[15px]
             font-normal
             leading-[1.55]
-            max-[400px]:text-[14px]
+            max-[380px]:text-[14px]
           "
           style={{
             color: slide.colors.mobileParagraph ?? slide.colors.paragraph,
