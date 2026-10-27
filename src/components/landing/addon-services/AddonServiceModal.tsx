@@ -18,7 +18,7 @@ export default function AddonServiceModal({
   const serviceTitle = service?.title ?? "the selected service";
   const emailSubject = encodeURIComponent(`Question about ${serviceTitle}`);
   const emailBody = encodeURIComponent(
-    `Hello Dilipoint,\n\nI would like to learn more about ${serviceTitle} for my business.\n\nPlease contact me with the next steps.\n\nName:\nBusiness name:\nPhone:`,
+    `Hello,\n\nI would like to learn more about ${serviceTitle} for my business.\n\nPlease contact me with the next steps.\n\nName:\nBusiness name:\nPhone:`,
   );
   const emailHref = `mailto:msp@dilipoint.com?subject=${emailSubject}&body=${emailBody}`;
 
@@ -106,7 +106,7 @@ export default function AddonServiceModal({
 
           <div className="mt-6 flex flex-col gap-3 border-t border-neutral-200 pt-5 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm leading-relaxed text-neutral-500 [hyphens:auto] [overflow-wrap:break-word]">
-              Need this for your business? Let’s discuss the right scope.
+              
             </p>
             <a
               href={emailHref}
@@ -127,7 +127,7 @@ export default function AddonServiceModal({
               aria-label="Call about this service at +255 756 121 995"
               className="group inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-sm border border-brand bg-brand px-5 py-2.5 text-[13px] font-semibold text-white shadow-none transition-[transform,background-color,border-color,color,box-shadow] duration-300 ease-out hover:-translate-y-0.5 hover:bg-brand-strong hover:shadow-[0_8px_18px_rgba(0,0,0,0.14)] active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 md:hidden"
             >
-              Call about this service
+              Ask about this service
               <ArrowRight
                 size={15}
                 strokeWidth={1.8}
