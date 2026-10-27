@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import type { HeroSlideData } from "./hero.config";
 import Button from "../../ui/button";
 
@@ -125,47 +126,48 @@ export default function HeroSlide({ slide, onCtaClick }: HeroSlideProps) {
         </p>
       </div>
 
-{/* MOBILE CONTENT */}
-<div
-  className="
-    absolute
-    z-10
-    flex
-    -translate-y-1/2
-    flex-col
-    md:hidden
-    max-[380px]:-translate-y-[82%]
-  "
-  style={{
-    left: mobile.x,
-    top: `calc(${mobile.y} - 1%)`,
-    width: mobile.width,
-  }}
->
-  <h2
-    className="heading-hero"
-    style={{
-      color: slide.colors.mobileHeading ?? slide.colors.heading,
-    }}
-  >
-    {slide.title}
-  </h2>
+      {/* MOBILE CONTENT */}
+      <div
+        className="
+          hero-mobile-copy
+          absolute
+          z-10
+          flex
+          -translate-y-1/2
+          flex-col
+          md:hidden
+          max-[380px]:-translate-y-[82%]
+        "
+        style={{
+          "--hero-mobile-copy-y": mobile.y,
+          left: mobile.x,
+          width: mobile.width,
+        } as CSSProperties}
+      >
+        <h2
+          className="heading-hero"
+          style={{
+            color: slide.colors.mobileHeading ?? slide.colors.heading,
+          }}
+        >
+          {slide.title}
+        </h2>
 
-  <p
-    className="
-      mt-4
-      text-[15px]
-      font-normal
-      leading-[1.55]
-      max-[380px]:text-[14px]
-    "
-    style={{
-      color: slide.colors.mobileParagraph ?? slide.colors.paragraph,
-    }}
-  >
-    {slide.description}
-  </p>
-</div>
+        <p
+          className="
+            mt-4
+            text-[15px]
+            font-normal
+            leading-[1.55]
+            max-[400px]:text-[14px]
+          "
+          style={{
+            color: slide.colors.mobileParagraph ?? slide.colors.paragraph,
+          }}
+        >
+          {slide.description}
+        </p>
+      </div>
 
       {/* TABLET + DESKTOP BUTTON */}
       {slide.cta && (

@@ -201,8 +201,20 @@ video {
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 400px) {
   .heading-hero {
     font-size: var(--font-size-hero-heading-compact);
+  }
+}
+
+
+/* Keep compact hero copy higher on narrow phones without changing normal mobile placement. */
+.hero-mobile-copy {
+  top: calc(var(--hero-mobile-copy-y) - 1%);
+}
+
+@media (max-width: 400px) {
+  .hero-mobile-copy {
+    top: calc(var(--hero-mobile-copy-y) - 6%);
   }
 }
