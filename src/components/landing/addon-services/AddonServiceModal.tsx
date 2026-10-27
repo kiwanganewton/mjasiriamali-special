@@ -1,7 +1,6 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import Button from "@/components/ui/button";
 import ModalShell from "@/components/ui/ModalShell";
 import type { AddonService } from "./addon-services.config";
 import { addonServiceDetails } from "./addon-services.details";
@@ -9,15 +8,19 @@ import { addonServiceDetails } from "./addon-services.details";
 type AddonServiceModalProps = {
   service: AddonService | null;
   onClose: () => void;
-  onAskAboutService: () => void;
 };
 
 export default function AddonServiceModal({
   service,
   onClose,
-  onAskAboutService,
 }: AddonServiceModalProps) {
   const detail = service ? addonServiceDetails[service.number] : null;
+  const serviceTitle = service?.title ?? "the selected service";
+  const emailSubject = encodeURIComponent(`Question about ${serviceTitle}`);
+  const emailBody = encodeURIComponent(
+    `Hello Dilipoint,\n\nI would like to learn more about ${serviceTitle} for my business.\n\nPlease contact me with the next steps.\n\nName:\nBusiness name:\nPhone:`,
+  );
+  const emailHref = `mailto:msp@dilipoint.com?subject=${emailSubject}&body=${emailBody}`;
 
   return (
     <ModalShell
@@ -77,11 +80,9 @@ export default function AddonServiceModal({
                 ))}
               </div>
             ) : (
-              <div className="rounded-md border border-[#c8102e]/20 bg-[#c8102e]/5 p-4">
-                <p className="text-[15px] font-medium leading-[1.7] text-neutral-700 sm:text-base [hyphens:auto] [overflow-wrap:break-word]">
-                  {detail.quoteOffer}
-                </p>
-              </div>
+              <p className="text-[15px] leading-[1.7] text-neutral-600 sm:text-base [hyphens:auto] [overflow-wrap:break-word]">
+                {detail.quoteOffer}
+              </p>
             )}
           </section>
 
@@ -107,10 +108,10 @@ export default function AddonServiceModal({
             <p className="text-sm leading-relaxed text-neutral-500 [hyphens:auto] [overflow-wrap:break-word]">
               Need this for your business? Let’s discuss the right scope.
             </p>
-            <Button
-              type="button"
-              onClick={onAskAboutService}
-              className="group w-full gap-2 rounded-sm px-5 py-2.5 text-[13px] font-semibold shadow-none sm:w-auto"
+            <a
+              href={emailHref}
+              onClick={onClose}
+              className="group hidden w-full items-center justify-center gap-2 whitespace-nowrap rounded-sm border border-brand bg-brand px-5 py-2.5 text-[13px] font-semibold text-white shadow-none transition-[transform,background-color,border-color,color,box-shadow] duration-300 ease-out hover:-translate-y-0.5 hover:bg-brand-strong hover:shadow-[0_8px_18px_rgba(0,0,0,0.14)] active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 md:inline-flex sm:w-auto"
             >
               Ask about this service
               <ArrowRight
@@ -119,7 +120,21 @@ export default function AddonServiceModal({
                 className="transition-transform duration-300 group-hover:translate-x-1"
                 aria-hidden="true"
               />
-            </Button>
+            </a>
+            <a
+              href="tel:+255756121995"
+              onClick={onClose}
+              aria-label="Call about this service at +255 756 121 995"
+              className="group inline-flex w-full items-center justify-center gap-2 whitespace-nowrap rounded-sm border border-brand bg-brand px-5 py-2.5 text-[13px] font-semibold text-white shadow-none transition-[transform,background-color,border-color,color,box-shadow] duration-300 ease-out hover:-translate-y-0.5 hover:bg-brand-strong hover:shadow-[0_8px_18px_rgba(0,0,0,0.14)] active:translate-y-0 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 md:hidden"
+            >
+              Call about this service
+              <ArrowRight
+                size={15}
+                strokeWidth={1.8}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+                aria-hidden="true"
+              />
+            </a>
           </div>
         </article>
       )}

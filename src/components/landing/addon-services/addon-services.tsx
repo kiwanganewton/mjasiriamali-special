@@ -56,16 +56,6 @@ export default function AddonServices() {
   );
   const headingY = useTransform(scrollYProgress, [0, 0.18], [20, 0]);
 
-  const askAboutService = () => {
-    setActiveService(null);
-    window.setTimeout(() => {
-      document.getElementById("contact-form")?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }, 250);
-  };
-
   return (
     <div id="addon-services" className="scroll-mt-6">
       <section
@@ -118,7 +108,6 @@ export default function AddonServices() {
       <AddonServiceModal
         service={activeService}
         onClose={() => setActiveService(null)}
-        onAskAboutService={askAboutService}
       />
     </div>
   );
