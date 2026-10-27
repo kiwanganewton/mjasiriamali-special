@@ -139,18 +139,18 @@ export default function Hero() {
               type="button"
               onClick={previousSlide}
               aria-label="Previous slide"
-              className="pointer-events-auto flex h-12 w-12 -translate-x-1/2 items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-900 shadow-[0_8px_30px_rgba(0,0,0,0.14)] transition-transform duration-300 hover:scale-105 hover:text-brand active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand max-[360px]:h-10 max-[360px]:w-10 md:h-14 md:w-14"
+              className="pointer-events-auto flex h-12 w-12 -translate-x-1/2 items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-900 shadow-[0_8px_30px_rgba(0,0,0,0.14)] transition-transform duration-300 hover:scale-105 hover:text-brand active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand max-[380px]:h-10 max-[380px]:w-10 md:h-14 md:w-14"
             >
-              <ChevronLeft className="max-[360px]:h-5 max-[360px]:w-5" size={28} strokeWidth={1.8} aria-hidden="true" />
+              <ChevronLeft className="max-[380px]:h-5 max-[380px]:w-5" size={28} strokeWidth={1.8} aria-hidden="true" />
             </button>
 
             <button
               type="button"
               onClick={nextSlide}
               aria-label="Next slide"
-              className="pointer-events-auto flex h-12 w-12 translate-x-1/2 items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-900 shadow-[0_8px_30px_rgba(0,0,0,0.14)] transition-transform duration-300 hover:scale-105 hover:text-brand active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand max-[360px]:h-10 max-[360px]:w-10 md:h-14 md:w-14"
+              className="pointer-events-auto flex h-12 w-12 translate-x-1/2 items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-900 shadow-[0_8px_30px_rgba(0,0,0,0.14)] transition-transform duration-300 hover:scale-105 hover:text-brand active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand max-[380px]:h-10 max-[380px]:w-10 md:h-14 md:w-14"
             >
-              <ChevronRight className="max-[360px]:h-5 max-[360px]:w-5" size={28} strokeWidth={1.8} aria-hidden="true" />
+              <ChevronRight className="max-[380px]:h-5 max-[380px]:w-5" size={28} strokeWidth={1.8} aria-hidden="true" />
             </button>
           </div>
 
