@@ -1,27 +1,22 @@
+
 import { ArrowRight } from "lucide-react";
 import Button from "@/components/ui/button";
 import { trustConsultationContent } from "./TrustConsultationBar.config";
 
-type TrustConsultationBarProps = {
-  onConsultationClick?: () => void;
-};
-
-export default function TrustConsultationBar({
-  onConsultationClick,
-}: TrustConsultationBarProps) {
+export default function TrustConsultationBar() {
   const content = trustConsultationContent;
 
   return (
     <section
-  aria-label="Consultation invitation"
-  style={{ colorScheme: "only light" }}
-  className="
-    relative mx-auto mt-0 mb-5
-    w-[calc(100%_-_2.5rem)] max-w-[1240px]
-    sm:mt-0 sm:mb-6 sm:w-[calc(100%_-_5rem)]
-    lg:mt-1 lg:mb-8 lg:w-[calc(100%_-_8rem)]
-  "
->
+      aria-label="Consultation invitation"
+      style={{ colorScheme: "only light" }}
+      className="
+        relative mx-auto mt-0 mb-5
+        w-[calc(100%_-_2.5rem)] max-w-[1240px]
+        sm:mt-0 sm:mb-6 sm:w-[calc(100%_-_5rem)]
+        lg:mt-1 lg:mb-8 lg:w-[calc(100%_-_8rem)]
+      "
+    >
       <div
         className="
           grid overflow-hidden
@@ -41,9 +36,7 @@ export default function TrustConsultationBar({
           "
         >
           <div>
-            <h2
-              className="heading-section max-w-[500px] text-neutral-700"
-            >
+            <h2 className="heading-section max-w-[500px] text-neutral-700">
               {content.titlePrefix}
             </h2>
 
@@ -73,14 +66,20 @@ export default function TrustConsultationBar({
             lg:px-8
           "
         >
-          <Button
-            tone="brand"
-            variant="solid"
-            onClick={onConsultationClick}
+          <a
+            href="https://dilipoint.com"
             className="
-              w-full gap-2
-              lg:border
-              lg:border-[#c8102e]
+              inline-flex w-full items-center justify-center gap-2
+              rounded-md
+              border border-[#c8102e]
+              bg-[#c8102e] px-4 py-3
+              text-center text-white
+              transition-colors
+              hover:bg-[#a50d25]
+              focus-visible:outline-none
+              focus-visible:ring-2
+              focus-visible:ring-[#c8102e]
+              focus-visible:ring-offset-2
               lg:bg-transparent
               lg:text-[#c8102e]
               lg:hover:bg-[#c8102e]
@@ -89,7 +88,7 @@ export default function TrustConsultationBar({
           >
             {content.buttonText}
             <ArrowRight size={17} aria-hidden="true" />
-          </Button>
+          </a>
         </div>
       </div>
     </section>

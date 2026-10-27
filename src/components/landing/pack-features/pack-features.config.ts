@@ -30,7 +30,7 @@ export const packFeatures: PackFeature[] = [
   {
     id: 1,
     interestKey: "content-planning",
-    title: "Content Planning",
+    title: "Strategic Content Planning",
     description:
       "Get a clearer monthly marketing direction built around your business, customers, and goals.",
     image: "/images/pack/pack0000001.webp",
@@ -40,31 +40,31 @@ export const packFeatures: PackFeature[] = [
         "Many businesses know they need to communicate regularly, but choosing what to say can become another last-minute task. When ideas are scattered, marketing can lose momentum and feel disconnected from what the business is trying to achieve. Monthly content planning gives that communication a clearer direction, shaped around your business, customers, and priorities.",
       interestSignals: ["planning", "audience", "consistency", "time"],
       comparison: {
-        title: "A clearer way to plan your marketing",
-        firstColumn: "Other agency arrangements",
-        secondColumn: "Mjasiriamali Special",
+        title: "Other Agencies vs. Mjasiriamali Special Pack",
+        firstColumn: "Other Agencies",
+        secondColumn: "Mjasiriamali Special Pack",
         rows: [
           {
-            topic: "Planning scope",
-            first: "Scope and planning support can vary by provider and package.",
-            second: "Monthly content planning is part of the package.",
+            topic: "Understanding Your Business",
+            first: "Depends on the service scope",
+            second: "Plans around your vision, business, and audience",
           },
           {
-            topic: "Business context",
-            first: "The approach depends on the agency’s process and the information shared.",
-            second: "Ideas are shaped around your business, customers, and priorities.",
+            topic: "Strategic Planning",
+            first: "May require an extra fee",
+            second: "Included in the monthly package",
           },
           {
-            topic: "Connection to content",
-            first: "Planning and creative production may be handled separately, depending on the agreement.",
-            second: "Planning gives the recurring marketing content a clearer direction.",
+            topic: "Access to Expertise",
+            first: "Can require a larger budget",
+            second: "Made expert marketing accessible to startups, even on tight budgets.",
           },
         ],
       },
       sections: [
         {
           id: "planning-purpose",
-          heading: "When every post starts from scratch",
+          heading: "",
           body:
             "Finding time to think of a new message every time you need to post can make marketing inconsistent. It can also leave useful ideas unfinished or cause the same messages to be repeated without a clear purpose. Planning creates space to decide what deserves attention before creative work begins.",
         },
@@ -76,9 +76,9 @@ export const packFeatures: PackFeature[] = [
         },
         {
           id: "planning-fit",
-          heading: "What that can change for your business",
+          heading: "What Changes When Your Marketing Has a Plan?",
           body:
-            "A clearer plan can make it easier to keep marketing moving alongside day-to-day business responsibilities. It gives creative work a reason and a context, while leaving room for the messages and priorities that matter to your business that month.",
+            "A clear plan keeps your marketing moving, connects every piece of content to your business goals, and leaves room for changing priorities as your business grows.",
         },
       ],
     },
