@@ -40,24 +40,10 @@ export default function AddonServiceModal({
             </p>
           </header>
 
-          <section className={`mt-6 rounded-lg border p-4 sm:p-5 ${
-            detail.pricing.length > 0
-              ? "border-[#a70d26] bg-[#c8102e]"
-              : "border-neutral-200 bg-neutral-50/70"
-          }
-          `} >
+          <section className="mt-6 rounded-lg border border-neutral-200 bg-neutral-50/70 p-4 sm:p-5">
             <div className="mb-4">
-              <h3
-                className={`heading-subsection ${
-                  detail.pricing.length > 0 ? "text-white" : "text-neutral-700"
-                }
-                `}
-              >
-                Pricing
-              </h3>
-              <p className={`mt-1 text-sm leading-relaxed [hyphens:auto] [overflow-wrap:break-word] ${
-                  detail.pricing.length > 0 ? "text-white/90" : "text-neutral-500"
-                }`}>
+              <h3 className="heading-subsection text-neutral-700">Pricing</h3>
+              <p className="mt-1 text-sm leading-relaxed text-neutral-500 [hyphens:auto] [overflow-wrap:break-word]">
                 Mjasiriamali Special members receive 25% off eligible add-on services.
               </p>
             </div>
@@ -75,7 +61,7 @@ export default function AddonServiceModal({
                     <div className="mt-3 grid grid-cols-2 gap-2 sm:gap-3">
                       <div className="min-w-0 rounded-md bg-white p-3">
                         <p className="text-[11px] leading-tight text-neutral-500 sm:text-xs [hyphens:auto] [overflow-wrap:break-word]">
-                          Regular client
+                          Clients Without Membership
                         </p>
                         <p className="mt-1 break-words text-sm font-semibold text-neutral-800 sm:text-base [hyphens:auto] [overflow-wrap:break-word]">
                           TSh {price.regular}
