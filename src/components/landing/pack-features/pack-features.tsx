@@ -19,9 +19,10 @@ export default function PackFeatures() {
         scroll-mt-6
         w-full
         bg-surface-muted
-        pt-10
+        pt-4
         pb-16
-        sm:pt-12
+        sm:pt-6
+        md:pt-12
         sm:pb-20
         lg:pt-14
         lg:pb-24
@@ -38,16 +39,15 @@ export default function PackFeatures() {
 
           <p
             className="
-              mt-4
+              mt-0
+              md:mt-4
               max-w-[660px]
               text-body
               text-muted
               sm:text-lg
             "
           >
-            A package built to help your business stay visible, communicate
-            clearly, and grow without the cost of building a full in-house
-            team.
+        Don't let limited resources hold back your marketing. Get four essential services under one affordable Mjasiriamali Special Pack.
           </p>
         </ScrollReveal>
 
