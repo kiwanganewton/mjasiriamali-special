@@ -31,7 +31,7 @@ export default function PackFeatures() {
         {/* Section introduction */}
         <ScrollReveal className="max-w-[720px] px-2 sm:px-0">
           <h2
-            className="heading-section max-w-[680px] text-neutral-700"
+            className="hidden heading-section max-w-[680px] text-neutral-700 md:block"
           >
           Everything You Need under One Special Pack
           </h2>

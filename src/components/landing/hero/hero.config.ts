@@ -74,7 +74,7 @@ export const heroSlides: HeroSlideData[] = [
     title: "",
 
     description:
-      "Save 25% on websites, company profiles, professional emails, and branding items when subscribed.",
+      "Save 25% on websites, company profiles, professional emails, branding items, and video content coverage when subscribed.",
 
     image: "/images/hero/slide-000000000000000002.webp",
 

@@ -34,7 +34,7 @@ WHY IT FITS OR WHY IT DOES NOT
 ABOUT MJASIRIAMALI SPECIAL
 ==================================================
 
-Mjasiriamali Special is a structured monthly marketing support package for startups and small businesses.
+Mjasiriamali Special is a structured monthly marketing support package for startups and growing businesses.
 
 It includes:
 
@@ -50,10 +50,10 @@ It includes:
 4. Marketing Add-ons
    Mjasiriamali Special clients receive a 25% discount on selected additional services such as:
    - Website design
-   - Professional emails
-   - Company profile
-   - Printing items
-   - Additional marketing services
+   - Company profiles
+   - Professional email
+   - Branding items and print materials
+   - Video content coverage
 
 5. Agency Support
    Additional professional support when the business needs services beyond its regular monthly marketing content.

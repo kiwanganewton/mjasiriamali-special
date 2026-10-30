@@ -4,7 +4,7 @@ export const mjasiriamaliKnowledge = {
     price: 190000,
 
     positioning:
-      "A structured monthly marketing support package for startups and small businesses that need consistent marketing without building a full in-house marketing team.",
+      "A structured monthly marketing support package for startups and growing businesses that need consistent marketing, without building a full in-house marketing team.",
 
     purpose: [
       "Create a clear monthly marketing direction",
@@ -78,17 +78,17 @@ export const mjasiriamaliKnowledge = {
 
       services: [
         "Website design",
-        "Professional emails",
         "Company profile",
-        "Printing items",
-        "Additional marketing services",
+        "Professional email",
+        "Branding items and print materials",
+        "Video content coverage",
       ],
     },
   },
 
   idealBusiness: {
     characteristics: [
-      "Startup or small business",
+      "Startup or growing business",
       "Needs more consistent marketing",
       "Does not have enough time to manage marketing",
       "Does not have a clear content direction",

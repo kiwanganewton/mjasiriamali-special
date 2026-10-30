@@ -26,7 +26,7 @@ export default function Footer() {
             <p className="max-w-[330px] text-sm leading-[1.8] text-neutral-400">
               Mjasiriamali Special brings marketing, design, and digital
               services together in one affordable package, helping Tanzanian
-              small businesses build their brand, reach more customers, and grow.
+              startups and growing businesses across Tanzania strengthen their brands, reach more customers, and grow sustainably.
             </p>
 
             {/* Social Media */}

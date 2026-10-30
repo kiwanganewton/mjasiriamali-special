@@ -12,7 +12,7 @@ export const faqContent = {
     {
       question: "What is the Mjasiriamali Special Pack?",
       answer:
-        "It is a monthly marketing support package for startups and small businesses that want a clearer marketing direction and more consistent professional content without building a full in-house team.",
+        "It is a monthly marketing support package for startups and growing businesses that want clear marketing direction and consistent professional content, without building a full in-house team.",
     },
     {
       question: "What does the package include?",
@@ -27,12 +27,12 @@ export const faqContent = {
     {
       question: "Who is the package designed for?",
       answer:
-        "It is designed for startups and small businesses that need more consistent marketing, have limited time or in-house marketing capacity, or want help planning professional content.",
+        "It is designed for startups and growing businesses that need more consistent marketing, have limited time or in-house capacity, or want help planning professional content.",
     },
     {
       question: "Can I get help with services beyond the monthly content?",
       answer:
-        "Yes. Additional marketing services such as website design, professional emails, company profiles, and branding items are available. Mjasiriamali Special clients receive a 25% discount on add-on services.",
+        "Yes. Additional marketing services such as website design, professional email, company profiles, branding items, and video content coverage are available. Mjasiriamali Special clients receive a 25% discount on add-on services.",
     },
     {
       question: "How do I get started?",

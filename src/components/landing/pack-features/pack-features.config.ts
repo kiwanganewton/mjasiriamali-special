@@ -156,14 +156,14 @@ export const packFeatures: PackFeature[] = [
     showReadMore: true,
     detail: {
       introduction:
-        "As a business grows, regular marketing content may not be enough on its own. You may also need a website, a company profile, professional email, or branded materials, while time and budget are already stretched. The package gives clients access to additional services at a 25% discounted rate, so they can explore support for needs beyond recurring content.",
+        "As a business grows, regular marketing content may not be enough on its own. You may also need a website, a company profile, professional email, branded materials, or video content coverage while time and budget are already stretched. The package gives clients access to additional services at a 25% discounted rate, so they can explore support for needs beyond recurring content.",
       interestSignals: ["website", "branding", "business-tools", "additional-services", "pricing"],
       sections: [
         {
           id: "addons-options",
           heading: "",
           body:
-            "Different stages of business bring different communication needs. You might need a website to give customers a place to learn about your services, a company profile to introduce your business professionally, email on your own domain, or branded and printed materials. These are examples of additional services available to discuss.",
+            "Different stages of business bring different communication needs. You might need a website to give customers a place to learn about your services, a company profile to introduce your business professionally, email on your own domain, branded and printed materials, or video content coverage to bring your products and services to life. These are examples of additional services available to discuss.",
         },
         {
           id: "addons-value",

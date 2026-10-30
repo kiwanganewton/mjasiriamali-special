@@ -12,7 +12,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Mjasiriamali Special | Dilipoint",
   description:
-    "Practical monthly marketing support for startups and small businesses.",
+    "Practical monthly marketing support for startups and growing businesses.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
