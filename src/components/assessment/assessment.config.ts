@@ -18,10 +18,10 @@ export type WhatsAppSubmission = {
 
 export const assessmentConfig = {
   intro: {
-    title: "Let's see what your business actually needs.",
+    title: "Check If This Pack Meets Your Business Needs",
     description:
-      "Answer a few quick questions about your business, your current marketing situation and where you want to go.",
-    button: "Start Assessment",
+      "Let our intelligent assessment engine quickly tell you if Mjasiriamali Special Pack is the right fit for your business.",
+    button: "Start Fit Check",
   },
 
   questions: [
@@ -236,8 +236,6 @@ export const assessmentConfig = {
     label: "WhatsApp Number",
     placeholder: "e.g. 0712 345 678",
     button: "Send My Recommendation",
-    secondaryButton: "No Need",
-
     consent:
       "By submitting your number, you agree to receive your assessment recommendation on WhatsApp.",
   },

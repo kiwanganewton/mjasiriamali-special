@@ -72,8 +72,8 @@ export default function Footer() {
 
             <div className="mt-5 space-y-5">
               <ContactItem
-                value="msp@dilipoint.com"
-                href="mailto:msp@dilipoint.com"
+                value="mjasiriamalispecial.co.tz"
+                href="mailto:mjasiriamalispecial.co.tz"
               />
 
               <ContactItem

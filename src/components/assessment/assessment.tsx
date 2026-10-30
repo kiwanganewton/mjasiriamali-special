@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowLeft,
@@ -28,6 +28,13 @@ type Recommendation = {
 };
 
 const TOTAL_QUESTIONS = assessmentConfig.questions.length;
+const recommendationStages = [
+  "Reviewing answers",
+  "Checking business needs",
+  "Finding your priorities",
+  "Matching the right support",
+  "Preparing your recommendation",
+];
 
 function normalizeTanzaniaPhone(value: string) {
   const digits = value.replace(/\D/g, "");
@@ -60,6 +67,19 @@ export default function Assessment() {
 
   const [isGeneratingRecommendation, setIsGeneratingRecommendation] =
     useState(false);
+  const [generationStage, setGenerationStage] = useState(0);
+
+  useEffect(() => {
+    if (step !== "generating") return;
+
+    const stageTimer = window.setInterval(() => {
+      setGenerationStage((current) =>
+        Math.min(current + 1, recommendationStages.length - 1)
+      );
+    }, 1800);
+
+    return () => window.clearInterval(stageTimer);
+  }, [step]);
 
   const question = assessmentConfig.questions[currentQuestion];
 
@@ -93,6 +113,7 @@ export default function Assessment() {
 
   const generateRecommendation = async () => {
     setError("");
+    setGenerationStage(0);
     setIsGeneratingRecommendation(true);
     setStep("generating");
 
@@ -174,11 +195,6 @@ export default function Assessment() {
     setStep("success");
   };
 
-  const handleSkipWhatsApp = () => {
-    setError("");
-    setStep("success");
-  };
-
   return (
     <div className="min-h-full bg-white">
       <div className="mx-auto w-full max-w-3xl px-5 py-8 sm:px-8 sm:py-10 lg:px-10 lg:py-12">
@@ -255,9 +271,18 @@ export default function Assessment() {
 
                 <div className="max-w-xl">
 
-                  {/* Loading icon */}
-                  <div className="mb-6 flex h-10 w-10 items-center justify-center border border-neutral-200 bg-neutral-50">
-                    <div className="h-5 w-5 animate-spin rounded-full border-2 border-neutral-200 border-t-[#c8102e]" />
+                  <div
+                    className="mb-6 flex items-center gap-3"
+                    role="status"
+                    aria-live="polite"
+                    aria-atomic="true"
+                  >
+                    <span className="text-[15px] leading-[1.6] text-neutral-500 sm:text-[16px]">
+                      {recommendationStages[generationStage]}
+                    </span>
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center border border-neutral-200 bg-neutral-50">
+                      <div className="h-5 w-5 animate-spin rounded-full border-2 border-neutral-200 border-t-[#c8102e]" />
+                    </div>
                   </div>
 
                   <h2 className="heading-section text-neutral-600">
@@ -269,6 +294,7 @@ export default function Assessment() {
                     marketing situation and prepare a recommendation for your
                     business.
                   </p>
+
 
                 </div>
               </div>
@@ -508,15 +534,7 @@ export default function Assessment() {
                   </div>
 
                   {/* WhatsApp Actions */}
-                  <div className="mt-7 flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
-                    <button
-                      type="button"
-                      onClick={handleSkipWhatsApp}
-                      className="text-[13px] font-semibold text-neutral-500 transition-colors hover:text-neutral-900"
-                    >
-                      {assessmentConfig.whatsapp.secondaryButton}
-                    </button>
-
+                  <div className="mt-7 flex flex-col-reverse items-end gap-3 sm:flex-row sm:justify-end">
                     <Button
                       type="button"
                       variant="solid"
@@ -540,7 +558,11 @@ export default function Assessment() {
                 {/* Back */}
                 <button
                   type="button"
-                  onClick={handleBack}
+                  onClick={() => {
+                    setError("");
+                    setCurrentQuestion(0);
+                    setStep("intro");
+                  }}
                   className="group mt-6 inline-flex items-center gap-2 text-[13px] font-semibold text-neutral-500 transition-colors hover:text-neutral-900"
                 >
                   <ArrowLeft
