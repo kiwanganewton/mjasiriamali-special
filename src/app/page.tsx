@@ -47,7 +47,7 @@ export default function Home() {
 
       {/* <Newsletter /> */}
       <WhatsAppFloatingCta />
-      <ChatbotFloatingButton />
+      {/* <ChatbotFloatingButton /> */}
 
       <PackFeatures />
 
