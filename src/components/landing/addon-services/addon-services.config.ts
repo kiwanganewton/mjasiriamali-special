@@ -42,12 +42,12 @@ export const addonServicesContent = {
         "From logos and business cards to letterheads and other branded materials, keep your business identity consistent.",
       image: "/images/addon-services/branding-items.webp",
     },
-   /*  {
+    {
       number: "05",
-      title: "Social Media Management",
+      title: "Video Content Coverage",
       description:
-        "Keep your social channels active with planned content, creative designs, publishing support, and ongoing management.",
-      image: "/images/addon-services/social-media.webp",
-    }, */
+        "Plan, film, and edit engaging business videos that showcase your products, services, people, or events across digital channels.",
+      image: "/images/addon-services/video-content-coverage.gif",
+    },
   ] satisfies AddonService[],
 };

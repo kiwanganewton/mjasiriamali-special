@@ -74,4 +74,15 @@ export const addonServiceDetails: Record<string, AddonServiceDetail> = {
     quoteOffer:
       "There is no fixed price because materials and production needs vary. Mjasiriamali Special members receive 25% off the approved quotation for requested branding materials.",
   },
+  "05": {
+    introduction:
+      "When customers cannot see your product, service, or team in action, it can be harder for them to picture the value you offer. Clear, purposeful video helps make your business feel more real, explain what you do quickly, and give people a reason to engage.",
+    solution:
+      "We plan, film, and edit business-focused video content for your digital channels. Depending on your goals, coverage can include product demonstrations, service explainers, customer or founder interviews, behind-the-scenes stories, and event highlights, shaped into platform-ready edits that keep your message clear and on-brand.",
+    scope:
+      "Every production is different. We confirm the creative direction, filming duration, locations, number and length of final edits, captions or graphics, and any travel or production requirements before preparing a quotation. You approve the scope and price before filming begins.",
+    pricing: [],
+    quoteOffer:
+      "Video content coverage is quoted to fit your goals and production needs. Mjasiriamali Special members receive 25% off the approved quotation for this service.",
+  },
 };
