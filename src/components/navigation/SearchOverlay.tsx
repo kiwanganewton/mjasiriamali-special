@@ -73,7 +73,7 @@ export default function SearchOverlay({
           <input
             ref={inputRef}
             type="search"
-            placeholder="Search Dilipoint..."
+            placeholder="Search Here..."
             className="
               h-[68px]
               min-w-0
@@ -86,7 +86,7 @@ export default function SearchOverlay({
               outline-none
               placeholder:text-neutral-400
             "
-            aria-label="Search Dilipoint"
+            aria-label="Search Here..."
           />
 
           <button

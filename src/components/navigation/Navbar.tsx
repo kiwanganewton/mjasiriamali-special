@@ -159,7 +159,7 @@ export default function Navbar() {
                   }
                   closeMobileMenu();
                 }}
-                className="block border-b border-neutral-200 py-5 text-[15px] font-medium text-neutral-900"
+                className="block py-4 text-[15px] font-medium text-neutral-900"
               >
                 {link.label}
               </Link>

@@ -11,6 +11,16 @@ export default function PackFeatures() {
   const [activeFeature, setActiveFeature] = useState<PackFeature | null>(null);
   const [isAssessmentOpen, setIsAssessmentOpen] = useState(false);
 
+  const exploreAddons = () => {
+    setActiveFeature(null);
+    window.setTimeout(() => {
+      document.getElementById("addon-services")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 250);
+  };
+
   return (
     <>
       <section
@@ -79,6 +89,7 @@ export default function PackFeatures() {
       <FeatureDetailModal
         feature={activeFeature}
         onClose={() => setActiveFeature(null)}
+        onExploreAddons={exploreAddons}
         onExploreFit={() => {
           setActiveFeature(null);
           setIsAssessmentOpen(true);

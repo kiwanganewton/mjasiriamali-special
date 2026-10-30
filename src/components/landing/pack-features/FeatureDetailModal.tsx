@@ -9,13 +9,17 @@ type FeatureDetailModalProps = {
   feature: PackFeature | null;
   onClose: () => void;
   onExploreFit: () => void;
+  onExploreAddons: () => void;
 };
 
 export default function FeatureDetailModal({
   feature,
   onClose,
   onExploreFit,
+  onExploreAddons,
 }: FeatureDetailModalProps) {
+  const isAddonsFeature = feature?.interestKey === "discounted-add-on-services";
+
   return (
     <ModalShell
       isOpen={Boolean(feature)}
@@ -110,12 +114,12 @@ export default function FeatureDetailModal({
             </p>
             <Button
               type="button"
-              onClick={onExploreFit}
-              data-action="open-package-assessment"
+              onClick={isAddonsFeature ? onExploreAddons : onExploreFit}
+              data-action={isAddonsFeature ? "scroll-to-addon-services" : "open-package-assessment"}
               data-feature-interest={feature.interestKey}
               className="group w-full gap-2 rounded-sm px-5 py-2.5 text-[13px] font-semibold shadow-none sm:w-auto"
             >
-              Check your fit
+              {isAddonsFeature ? "Explore More" : "Check your fit"}
               <ArrowRight
                 size={15}
                 strokeWidth={1.8}
